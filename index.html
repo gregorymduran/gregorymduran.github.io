@@ -294,6 +294,38 @@
       margin-bottom: 28px
     }
 
+    .portfolio-note {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 8px;
+      width: min(100%, 720px);
+      margin: 40px auto 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(13, 13, 13, 0.03);
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .portfolio-note .note-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+      line-height: 1;
+    }
+
+    .portfolio-note > span:last-child {
+      max-width: 640px;
+    }
+
+    .portfolio-note strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
     .hero h1 {
       font-family: 'Satoshi', sans-serif;
       font-size: clamp(44px, 7vw, 92px);
@@ -805,7 +837,7 @@
       <section class="hero">
         <p class="hero-tag rv" data-i18n="hero-tag">Product Design & Systems</p>
         <h1 class="rv" data-i18n="hero-h1">Me fascina el espacio donde el software y la vida cotidiana se cruzan.</h1>
-        <p class="hero-desc rv" data-i18n="hero-desc">Me motiva transformar ideas complejas en experiencias claras y útiles. 
+        <p class="hero-desc rv" data-i18n="hero-desc">Me motiva transformar ideas complejas en experiencias claras y útiles.
           No veo las interfaces como elementos aislados, sino como parte de un sistema donde cada componente tiene un propósito y 
           contribuye a una experiencia coherente.</p>
         <div class="hero-btns rv">
@@ -870,6 +902,11 @@
           </div>
           <!-- PROJECTS:END -->
 
+        </div>
+
+        <div class="portfolio-note rv" role="note">
+          <span class="note-icon" aria-hidden="true">🚧</span>
+          <span><strong>Nota:</strong> Actualmente estoy renovando la documentación de mis proyectos y casos de estudio. Algunos trabajos se encuentran en proceso de publicación mientras actualizo su contenido, proceso y resultados.</span>
         </div>
       </section>
     </div>
@@ -943,7 +980,7 @@
             <p class="contact-sub" data-i18n="contact-sub">Disponible para un rol remoto de tiempo completo. Respondo en
               español e inglés.</p>
             <div class="email-copy">
-              <span id="emailAddr">tu-email@dominio.com</span>
+              <span id="emailAddr">gregorymduran01@outlook.com</span>
               <button id="copyBtn" data-i18n="copy-btn" aria-label="Copiar correo electrónico">Copiar</button>
             </div>
           </div>
