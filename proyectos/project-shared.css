@@ -1,0 +1,639 @@
+:root {
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --ink: #0d0d0d;
+  --ink-2: #6b6b68;
+  --ink-3: #adadaa;
+  --line: #e6e4e0;
+  --accent: #0d0d0d;
+  --accent-2: #4f46e5;
+  --accent-soft: #f2f4ff;
+  --shadow: 0 20px 40px rgba(17, 17, 17, 0.06);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --ease: 240ms cubic-bezier(.16, 1, .3, 1);
+}
+
+body.project {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.project.baseball {
+  --accent: #ff6500;
+  --accent-2: #cc5200;
+  --accent-soft: #fff4e9;
+}
+
+body.project.jobs {
+  --accent: #0d0d0d;
+  --accent-2: #4f46e5;
+  --accent-soft: #eef2ff;
+}
+
+body.project.pulse {
+  --accent: #7c3aed;
+  --accent-2: #6d28d9;
+  --accent-soft: #f5f0ff;
+}
+
+body.project .g,
+body.project .g-wide,
+body.project .wrap,
+body.project .wrap-wide {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+body.project .g-wide,
+body.project .wrap-wide {
+  max-width: 1100px;
+}
+
+body.project .nav,
+body.project .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 247, 244, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body.project .nav-row,
+body.project .header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.project .nav-name,
+body.project .logo {
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+body.project .nav-back,
+body.project .header-actions a.contact-link,
+body.project .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 700;
+  transition: color var(--ease);
+}
+
+body.project .nav-back:hover,
+body.project .header-actions a.contact-link:hover,
+body.project .back-link:hover {
+  color: var(--ink);
+}
+
+body.project .case-hero,
+body.project .case-hero-visual {
+  padding: clamp(64px, 10vw, 128px) 0 clamp(48px, 7vw, 96px);
+  border-bottom: 1px solid var(--line);
+}
+
+body.project .eyebrow {
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+body.project .case-hero h1,
+body.project .cs h2,
+body.project .case-section h2,
+body.project .case-cta h2,
+body.project .step-body h3,
+body.project .card h3,
+body.project .learning h3,
+body.project .decision-card h3,
+body.project .roadmap-item h3,
+body.project .process-note .txt h3 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+body.project .case-hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  margin-bottom: 20px;
+}
+
+body.project .case-hero .subtitle,
+body.project .cs p,
+body.project .case-section .body-lg,
+body.project .case-section .body,
+body.project .challenge-half p,
+body.project .decision-card p,
+body.project .learning p,
+body.project .case-cta p,
+body.project .process-note .txt p,
+body.project .roadmap-item p,
+body.project .step-body p,
+body.project .card p {
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+body.project .case-hero .subtitle {
+  max-width: 620px;
+  margin-bottom: 40px;
+  font-size: clamp(16px, 1.7vw, 18px);
+}
+
+body.project .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+
+body.project .meta-item .label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+body.project .meta-item .value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+body.project .hero-img,
+body.project .screen-frame,
+body.project .case-hero-visual {
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  position: relative;
+  aspect-ratio: 16 / 8;
+  box-shadow: var(--shadow);
+}
+
+body.project .hero-img::after,
+body.project .screen-frame::after {
+  content: "Vista previa del proyecto";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.project .hero-img:has(img[src]:not([src=""]))::after,
+body.project .screen-frame:has(img[src]:not([src=""]))::after {
+  display: none;
+}
+
+body.project .cs,
+body.project .case-section {
+  padding: clamp(48px, 7vw, 96px) 0;
+}
+
+body.project .cs + .cs,
+body.project .case-section + .case-section {
+  border-top: 1px solid var(--line);
+}
+
+body.project .cs .eyebrow,
+body.project .case-section .eyebrow {
+  margin-bottom: 12px;
+}
+
+body.project .goal-list,
+body.project .roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+body.project .goal-list li,
+body.project .roadmap-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--ink);
+}
+
+body.project .gi {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+body.project .compare-grid,
+body.project .results-grid,
+body.project .cards,
+body.project .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+body.project .compare-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+body.project .compare-card,
+body.project .card,
+body.project .decision-card,
+body.project .result-card,
+body.project .roadmap-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+body.project .compare-card.before {
+  background: #f2f2f0;
+}
+
+body.project .compare-label,
+body.project .tag-label,
+body.project .phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.project .compare-card.before .compare-label {
+  color: var(--ink-3);
+}
+
+body.project .compare-card.after .compare-label {
+  color: var(--accent);
+}
+
+body.project .compare-card p:last-child,
+body.project .card p:last-child,
+body.project .decision-card p:last-child,
+body.project .learning p:last-child {
+  margin-bottom: 0;
+}
+
+body.project .steps,
+body.project .process-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+body.project .step,
+body.project .process-note {
+  display: flex;
+  gap: 20px;
+}
+
+body.project .step-num,
+body.project .process-note .num {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent-soft);
+  background: var(--accent);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.project .result-card {
+  text-align: center;
+}
+
+body.project .result-stat {
+  font-family: "Satoshi", sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+body.project .result-label {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+body.project .learning {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+body.project .learning:last-child {
+  margin-bottom: 0;
+}
+
+body.project .case-cta {
+  padding: clamp(48px, 7vw, 96px) 0;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+body.project .cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+body.project .btn-fill,
+body.project .btn-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform var(--ease), opacity var(--ease), border-color var(--ease), color var(--ease);
+}
+
+body.project .btn-fill {
+  background: var(--accent);
+  color: #fff;
+}
+
+body.project .btn-fill:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+body.project .btn-line {
+  color: var(--ink-2);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+}
+
+body.project .btn-line:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+body.project .footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.project .footer-name {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+body.project .footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+body.project .footer-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-3);
+  transition: color var(--ease);
+}
+
+body.project .footer-links a:hover {
+  color: var(--ink);
+}
+
+body.project .footer-copy {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+body.project .learning-quote,
+body.project .challenge-block {
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+body.project .challenge-half {
+  padding: 24px;
+}
+
+body.project .challenge-half.problem {
+  background: var(--accent-soft);
+}
+
+body.project .tag-label.problem-tag {
+  color: var(--accent);
+}
+
+body.project .tag-label.solution-tag {
+  color: var(--accent-2);
+}
+
+body.project .case-table,
+body.project .flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+body.project .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+body.project .case-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+body.project .case-table th,
+body.project .case-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+body.project .case-table th {
+  font-family: "Satoshi", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  background: var(--bg);
+}
+
+body.project .case-table td {
+  color: var(--ink);
+}
+
+body.project .phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+body.project .flow-step {
+  flex: 1;
+  min-width: 150px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+body.project .flow-step .dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+body.project .flow-step p {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+body.project .stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+body.project .stack-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+body.project .role-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  body.project .compare-grid,
+  body.project .results-grid,
+  body.project .cards,
+  body.project .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  body.project .g,
+  body.project .g-wide,
+  body.project .nav-row,
+  body.project .header-inner {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  body.project .g,
+  body.project .g-wide,
+  body.project .nav-row,
+  body.project .header-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.project .meta-row {
+    gap: 24px;
+  }
+
+  body.project .case-hero {
+    padding-top: 56px;
+  }
+}
