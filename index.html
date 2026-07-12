@@ -798,15 +798,15 @@
       <a href="#" class="nav-name">Gregory Durán</a>
       <div class="nav-right">
         <nav class="nav-links" aria-label="Principal">
-          <a href="#work" data-i18n="nav-work">Proyectos</a>
-          <a href="#about" data-i18n="nav-about">Sobre mí</a>
-          <a href="#contact" data-i18n="nav-contact-link">Contacto</a>
+          <a href="#work" data-i18n="navigation.work">Proyectos</a>
+          <a href="#about" data-i18n="navigation.about">Sobre mí</a>
+          <a href="#contact" data-i18n="navigation.contact">Contacto</a>
         </nav>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
           <button id="btnEs" class="active" onclick="setLang('es')">ES</button>
           <button id="btnEn" onclick="setLang('en')">EN</button>
         </div>
-        <a href="#contact" class="nav-contact" data-i18n="nav-cta">Hablemos</a>
+        <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
       </div>
       <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -820,10 +820,10 @@
   </header>
 
   <nav class="m-menu" id="mMenu" aria-label="Menú móvil">
-    <a href="#work" data-i18n="nav-work">Proyectos</a>
-    <a href="#about" data-i18n="nav-about">Sobre mí</a>
-    <a href="#contact" data-i18n="nav-contact-link">Contacto</a>
-    <a href="#contact" class="nav-contact" data-i18n="nav-cta">Hablemos</a>
+    <a href="#work" data-i18n="navigation.work">Proyectos</a>
+    <a href="#about" data-i18n="navigation.about">Sobre mí</a>
+    <a href="#contact" data-i18n="navigation.contact">Contacto</a>
+    <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
     <div class="lang-toggle" role="group" aria-label="Idioma / Language" style="margin-top:24px;height:42px">
       <button id="btnEsM" class="active" onclick="setLang('es')">ES</button>
       <button id="btnEnM" onclick="setLang('en')">EN</button>
@@ -835,21 +835,19 @@
     <!-- HERO -->
     <div class="g">
       <section class="hero">
-        <p class="hero-tag rv" data-i18n="hero-tag">Product Design & Systems</p>
-        <h1 class="rv" data-i18n="hero-h1">Me fascina el espacio donde el software y la vida cotidiana se cruzan.</h1>
-        <p class="hero-desc rv" data-i18n="hero-desc">Me motiva transformar ideas complejas en experiencias claras y útiles.
-          No veo las interfaces como elementos aislados, sino como parte de un sistema donde cada componente tiene un propósito y 
-          contribuye a una experiencia coherente.</p>
+        <p class="hero-tag rv" data-i18n="hero.tag">Product Design & Systems</p>
+        <h1 class="rv" data-i18n="hero.title">Me fascina el espacio donde el software y la vida cotidiana se cruzan.</h1>
+        <p class="hero-desc rv" data-i18n="hero.description">Me motiva transformar ideas complejas en experiencias claras y útiles. No veo las interfaces como elementos aislados, sino como parte de un sistema donde cada componente tiene un propósito y contribuye a una experiencia coherente.</p>
         <div class="hero-btns rv">
           <a href="#work" class="btn-fill">
-            <span data-i18n="hero-btn1">Explorar proyectos</span>
+            <span data-i18n="hero.buttonProjects">Explorar proyectos</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <a href="#contact" class="btn-line">
-            <span data-i18n="hero-btn2">Conversar sobre producto</span>
+            <span data-i18n="hero.buttonContact">Conversar sobre producto</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -862,7 +860,7 @@
     <!-- WORK -->
     <div class="g">
       <section class="work" id="work">
-        <p class="row-label" data-i18n="work-label">Proyectos seleccionados</p>
+        <p class="row-label" data-i18n="work.label">Proyectos seleccionados</p>
 
         <div class="portfolio-note rv" role="note">
           <span class="note-icon" aria-hidden="true">🚧</span>
@@ -873,7 +871,7 @@
           <!-- PROJECTS:START -->
           <!-- 01 Baseball Scoreboard -->
           <div class="proj rv" role="listitem">
-            <a href="proyectos/baseball-scoreboard.html" class="proj-link" data-i18n-aria="proj01-aria" aria-label="Baseball Scoreboard — Ver caso de estudio"></a>
+            <a href="proyectos/baseball-scoreboard.html" class="proj-link" data-i18n-aria="projects.baseball.aria"></a>
             <div class="proj-img">
               <!-- REEMPLAZAR: sube tu screenshot a assets/img/baseball-scoreboard/cover.jpg y descomenta -->
               <img src="" alt="Preview Baseball Scoreboard">
@@ -882,27 +880,27 @@
             <div class="proj-body">
               <div class="proj-meta">
                 <span class="proj-num">01</span>
-                <span class="proj-type" data-i18n="proj01-type">Web App</span>
-                <span class="proj-status live" data-i18n="status-live">Desplegado</span>
+                <span class="proj-type" data-i18n="projects.baseball.type"></span>
+                <span class="proj-status live" data-i18n="projects.baseball.status"></span>
               </div>
-              <p class="proj-name" data-i18n="proj01-name">Baseball Scoreboard</p>
-              <p class="proj-desc" data-i18n="proj01-desc">La decisión importante aquí no fue visual, fue arquitectónica: sincronizar consola y pantalla en el cliente, sin depender de un servidor. Diseñé la interfaz, escribí el código, y lo usé en producción durante el torneo del Ministerio Cristiano HOME.</p>
+              <p class="proj-name" data-i18n="projects.baseball.title"></p>
+              <p class="proj-desc" data-i18n="projects.baseball.description"></p>
             </div>
           </div>
 
           <!-- 02 Nexo -->
           <div class="proj rv" role="listitem">
-            <a href="proyectos/nexo.html" class="proj-link" data-i18n-aria="proj02-aria" aria-label="Nexo — Ver caso de estudio"></a>
+            <a href="proyectos/nexo.html" class="proj-link" data-i18n-aria="projects.nexo.aria"></a>
             <div class="proj-img">
               <img src="" alt="Preview Nexo">
             </div>
             <div class="proj-body">
               <div class="proj-meta">
                 <span class="proj-num">02</span>
-                <span class="proj-type" data-i18n="proj02-type">Web Project</span>
+                <span class="proj-type" data-i18n="projects.nexo.type"></span>
               </div>
-              <p class="proj-name" data-i18n="proj02-name">Nexo Municipal Service App</p>
-              <p class="proj-desc" data-i18n="proj02-desc">Proyecto nuevo agregado automáticamente. Detalles en desarrollo.</p>
+              <p class="proj-name" data-i18n="projects.nexo.title"></p>
+              <p class="proj-desc" data-i18n="projects.nexo.description"></p>
             </div>
           </div>
           <!-- PROJECTS:END -->
@@ -916,54 +914,51 @@
       <section class="about" id="about">
         <div class="about-grid">
           <div class="about-left rv">
-            <h2 data-i18n="about-h2">Entiendo el sistema antes de diseñar la pantalla.</h2>
-            <p data-i18n="about-p0">No sigo un proceso rígido. A menudo entiendo el problema mientras diseño: observo cómo otros productos resuelven desafíos similares, incluso en contextos completamente distintos, y exploro qué principios pueden trasladarse. Primero identifico lo que funciona; después, encuentro los puntos de fricción.</p>
-            <p data-i18n="about-p1">Mi formación en Ingeniería de Software en la universidad APEC influye directamente en cómo diseño. Pienso en sistemas, comportamientos y escenarios inesperados. Me interesa entender no solo cómo se ve una experiencia, sino cómo funciona cuando las personas interactúan con ella..</p>
-            <p data-i18n="about-p2">Para mí, diseño y desarrollo forman parte de la misma conversación. Las mejores experiencias nacen cuando las decisiones de diseño consideran tanto las necesidades de los usuarios como la realidad técnica del producto.</p>
-            <p data-i18n="about-p3">Valoro los estándares porque aportan claridad y consistencia, pero también creo que cada producto debe construir una identidad propia y una forma única de relacionarse con quienes lo usan.</p>
+            <h2 data-i18n="about.title"></h2>
+            <p data-i18n="about.paragraph0"></p>
+            <p data-i18n="about.paragraph1"></p>
+            <p data-i18n="about.paragraph2"></p>
+            <p data-i18n="about.paragraph3"></p>
           </div>
           <div class="about-right rv">
             <div class="cred">
-              <h3 data-i18n="cred-disc-title">Disciplinas</h3>
+              <h3 data-i18n="about.disciplines.title"></h3>
               <ul>
-                <li data-i18n="cred-disc-1">Diseño de producto (UX/UI)</li>
-                <li data-i18n="cred-disc-2">Sistemas de diseño</li>
-                <li data-i18n="cred-disc-3">Accesibilidad — WCAG 2.1 AA</li>
-                <li data-i18n="cred-disc-4">Investigación de usuarios</li>
-                 <li data-i18n="cred-disc-5"> Análisis Funcional</li>
+                <li data-i18n="about.disciplines.item1"></li>
+                <li data-i18n="about.disciplines.item2"></li>
+                <li data-i18n="about.disciplines.item3"></li>
+                <li data-i18n="about.disciplines.item4"></li>
+                <li data-i18n="about.disciplines.item5"></li>
               </ul>
             </div>
             <div class="cred">
-              <h3 data-i18n="cred-stack-title">Stack</h3>
+              <h3 data-i18n="about.stack.title"></h3>
               <ul>
-                <li>Figma · Affinity</li>
-                <li>Python· Javascript · HTML/CSS</li>
-                <li>Fluent Design System · WinUI3</li>
-                <li>Vs Code · Git </li>
+                <li data-i18n="about.stack.item1"></li>
+                <li data-i18n="about.stack.item2"></li>
+                <li data-i18n="about.stack.item3"></li>
+                <li data-i18n="about.stack.item4"></li>
               </ul>
             </div>
             <div class="cred">
-              <h3 data-i18n="cred-stack-title">Familiaridad / Aprendiendo</h3>
+              <h3 data-i18n="about.learning.title"></h3>
               <ul>
-                <li>PowerBI</li>
+                <li data-i18n="about.learning.item1"></li>
               </ul>
             </div>
             <div class="cred">
-              <h3 data-i18n="cred-edu-title">Educación</h3>
+              <h3 data-i18n="about.education.title"></h3>
               <ul>
-                <li data-i18n="cred-edu-1">Ingeniería de Software</li>
-                <li>Universidad APEC</li>
+                <li data-i18n="about.education.item1"></li>
+                <li data-i18n="about.education.item2"></li>
               </ul>
             </div>
             <div class="cred">
-              <h3 data-i18n="cred-lang-title">Filosofía</h3>
+              <h3 data-i18n="about.philosophy.title"></h3>
               <ul>
-                <li data-i18n="cred-lang-1">Entender antes de diseñar
- Primero identifico cómo funciona un proceso, dónde aparecen las fricciones y qué necesitan realmente las personas antes de proponer soluciones.</li>
-                <li data-i18n="cred-lang-2">Pensar en sistemas
- No veo las interfaces como elementos aislados. Cada pantalla forma parte de un sistema más grande con reglas, estados y dependencias.</li>
-   <li data-i18n="cred-lang-3"> Diseño y tecnología son la misma conversación
- Las mejores experiencias surgen cuando las decisiones de diseño consideran tanto las necesidades del usuario como la realidad técnica del producto.</li>
+                <li data-i18n="about.philosophy.item1"></li>
+                <li data-i18n="about.philosophy.item2"></li>
+                <li data-i18n="about.philosophy.item3"></li>
               </ul>
             </div>
           </div>
@@ -976,21 +971,18 @@
       <section class="contact" id="contact">
         <div class="contact-grid">
           <div class="rv">
-            <h2 data-i18n-html="contact-h2">Si piensas el producto<br>de forma parecida, hablemos.</h2>
-            <p class="contact-sub" data-i18n="contact-sub">Disponible para un rol remoto de tiempo completo. Respondo en
-              español e inglés.</p>
+            <h2 data-i18n-html="contact.title">Si piensas el producto<br>de forma parecida, hablemos.</h2>
+            <p class="contact-sub" data-i18n="contact.subtitle">Disponible para un rol remoto de tiempo completo. Respondo en español e inglés.</p>
             <div class="email-copy">
               <span id="emailAddr">gregorymduran01@outlook.com</span>
-              <button id="copyBtn" data-i18n="copy-btn" aria-label="Copiar correo electrónico">Copiar</button>
+              <button id="copyBtn" data-i18n="contact.copyButton" data-i18n-title="contact.emailLabel" title="Copiar correo electrónico">Copiar</button>
             </div>
           </div>
           <div class="social-col rv">
-            <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener" data-i18n="social-link-linkedin">LinkedIn
-              ↗</a>
-            <a href="https://github.com/gregorymduran" target="_blank" rel="noopener" data-i18n="social-link-github">GitHub ↗</a>
-            <a href="https://www.behance.net/gregmduran" target="_blank" rel="noopener" data-i18n="social-link-behance">Behance ↗</a>
-            <a href="assets/cv/CV_Gregory_Mendoza.pdf" target="_blank" rel="noopener" data-i18n="social-link-cv">Descargar CV
-              ↗</a>
+            <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener" data-i18n="contact.social.linkedin">LinkedIn ↗</a>
+            <a href="https://github.com/gregorymduran" target="_blank" rel="noopener" data-i18n="contact.social.github">GitHub ↗</a>
+            <a href="https://www.behance.net/gregmduran" target="_blank" rel="noopener" data-i18n="contact.social.behance">Behance ↗</a>
+            <a href="assets/cv/CV_Gregory_Mendoza.pdf" target="_blank" rel="noopener" data-i18n="contact.social.cv">Descargar CV ↗</a>
           </div>
         </div>
       </section>
@@ -999,255 +991,12 @@
   </main>
 
   <footer class="g footer">
-    <span data-i18n="footer-left">Gregory Iralbel Mendoza Durán · República Dominicana · 2026</span>
-    <span data-i18n="footer-right">Diseño + Ingeniería de Software</span>
+    <span data-i18n="footer.left">Gregory Iralbel Mendoza Durán · República Dominicana · 2026</span>
+    <span data-i18n="footer.right">Diseño + Ingeniería de Software</span>
   </footer>
 
-  <script>
-    (function () {
-
-      /* ── Traducciones ──────────────────── */
-      var t = {
-        es: {
-        'about-h2': 'Entiendo el sistema antes de diseñar la pantalla.',
-        'about-p0': 'No sigo un proceso fijo. Muchas veces entiendo el problema mientras ya estoy diseñando: comparo productos de industrias que no tienen relación entre sí y pruebo si una solución de un contexto funciona en otro. Primero identifico qué funciona en una interfaz existente; después busco la fricción.',
-        'about-p1': 'Estudié Ingeniería de Software en Universidad APEC. No es solo un dato de fondo — es la lente con la que veo cada proyecto. Cuando diseño pienso en componentes, en estados, en escalabilidad, en qué ocurre cuando alguien hace algo que nadie anticipó.',
-        'about-p2': 'Mientras diseño también pienso en cómo se desarrolla. No separo las dos cosas. Una interfaz que ignora sus restricciones técnicas es solo un dibujo.',
-        'about-p3': 'Me interesan los estándares, pero no cuando hacen que todos los productos se sientan iguales. Cada producto debería desarrollar su propia personalidad.',
-        'contact-h2': 'Si piensas el producto<br>de forma parecida, hablemos.',
-        'contact-sub': 'Disponible para un rol remoto de tiempo completo. Respondo en español e inglés.',
-        'copy-btn': 'Copiar',
-        'cred-disc-1': 'Diseño de producto (UX/UI)',
-        'cred-disc-2': 'Sistemas de diseño',
-        'cred-disc-3': 'Accesibilidad — WCAG 2.1 AA',
-        'cred-disc-4': 'Investigación de usuarios',
-        'cred-disc-title': 'Disciplinas',
-        'cred-edu-1': 'Ingeniería de Software',
-        'cred-edu-title': 'Educación',
-        'cred-lang-1': 'Entender por qué se tomó una decisión antes de cambiarla.',
-        'cred-lang-2': 'Adaptar el proceso al proyecto, no el proyecto al proceso.',
-        'cred-lang-title': 'Filosofía',
-        'cred-stack-title': 'Stack',
-        'social-link-linkedin': 'LinkedIn ↗',
-        'social-link-github': 'GitHub ↗',
-        'social-link-behance': 'Behance ↗',
-        'social-link-cv': 'Descargar CV ↗',
-        'footer-left': 'Gregory Iralbel Mendoza Durán · República Dominicana · 2026',
-        'footer-right': 'Diseño + Ingeniería de Software',
-        'hero-btn1': 'Explorar proyectos',
-        'hero-btn2': 'Conversar sobre producto',
-        'hero-desc': 'No empecé pensando en interfaces, sino en cómo evolucionan los sistemas operativos, cómo se automatizan los entornos y cómo las personas interactúan con la tecnología. No diseño pantallas aisladas; construyo sistemas donde cada componente tiene propósito y el todo se sostiene.',
-        'hero-h1': 'Me fascina dónde la lógica del software encuentra la vida cotidiana.',
-        'hero-tag': 'Product Design & Systems',
-        'nav-about': 'Sobre mí',
-        'nav-contact-link': 'Contacto',
-        'nav-cta': 'Hablemos',
-        'nav-work': 'Proyectos',
-        'proj01-aria': 'Baseball Scoreboard — Ver caso de estudio',
-        'proj01-desc': 'La decisión importante aquí no fue visual, fue arquitectónica: sincronizar consola y pantalla en el cliente, sin depender de un servidor. Diseñé la interfaz, escribí el código, y lo usé en producción durante el torneo del Ministerio Cristiano HOME.',
-        'proj01-name': 'Baseball Scoreboard',
-        'proj01-type': 'Web App',
-        'proj02-aria': 'Nexo — Ver caso de estudio',
-        'proj02-desc': 'Proyecto nuevo agregado automáticamente. Detalles en desarrollo.',
-        'proj02-name': 'Nexo',
-        'proj02-type': 'Web Project',
-        'proj1-aria': 'Baseball Scoreboard — Ver caso de estudio',
-        'proj1-desc': 'La decisión importante aquí no fue visual, fue arquitectónica: sincronizar consola y pantalla en el cliente, sin depender de un servidor. Diseñé la interfaz, escribí el código, y lo usé en producción durante el torneo del Ministerio Cristiano HOME.',
-        'proj1-kpi1': 'Sincronización <10 ms',
-        'proj1-kpi2': 'Cero caídas offline',
-        'proj2-aria': 'Jobs Hunter — Ver caso de estudio',
-        'proj2-desc': 'Rediseño de una plataforma de búsqueda de empleo. Analicé competidores no para copiar patrones, sino para entender qué problema resolvía cada uno. Las comparativas antes/después se validaron con usuarios reales.',
-        'proj3-aria': 'Pulse — Ver proceso de diseño',
-        'proj3-desc': 'App de Windows 11 para freelancers creativos, aún en diseño. Está construida sobre Fluent Design System porque el SO resuelve la mayoría de la coherencia visual. El trabajo está en aprovechar eso, no en reinventar.',
-        'skip': 'Saltar al contenido',
-        'status-live': 'Desplegado',
-        'status-wip': 'En diseño',
-        'work-label': 'Proyectos seleccionados',
-      },
-        en: {
-        'about-h2': 'I understand the system before designing the screen.',
-        'about-p0': 'I don\'t follow a fixed process. I often understand the problem while I\'m already designing: I compare products from unrelated industries and test whether a solution from one context works in another. I look at what already works in an existing interface before I look for the friction.',
-        'about-p1': 'I studied Software Engineering at Universidad APEC. It\'s not just background — it\'s the lens I look through for every project. When I design I think in components, states, scalability, and what happens when someone does something nobody anticipated.',
-        'about-p2': 'While I design, I\'m also thinking about how it gets built. I don\'t separate the two. An interface that ignores its technical constraints is just a drawing.',
-        'about-p3': 'I care about standards, but not when they make every product feel the same. Each product should develop its own personality.',
-        'contact-h2': 'If you think about product<br>the same way, let\'s talk.',
-        'contact-sub': 'Available for a full-time remote role. I reply in Spanish and English.',
-        'copy-btn': 'Copy',
-        'cred-disc-1': 'Product design (UX/UI)',
-        'cred-disc-2': 'Design systems',
-        'cred-disc-3': 'Accessibility — WCAG 2.1 AA',
-        'cred-disc-4': 'User research',
-        'cred-disc-title': 'Disciplines',
-        'cred-edu-1': 'Software Engineering',
-        'cred-edu-title': 'Education',
-        'cred-lang-1': 'Understand why a decision was made before changing it.',
-        'cred-lang-2': 'Adapt the process to the project, not the project to the process.',
-        'cred-lang-title': 'Philosophy',
-        'cred-stack-title': 'Stack',
-        'social-link-linkedin': 'LinkedIn ↗',
-        'social-link-github': 'GitHub ↗',
-        'social-link-behance': 'Behance ↗',
-        'social-link-cv': 'Download CV ↗',
-        'footer-left': 'Gregory Iralbel Mendoza Durán · Dominican Republic · 2026',
-        'footer-right': 'Design + Software Engineering',
-        'hero-btn1': 'Explore projects',
-        'hero-btn2': 'Talk about product',
-        'hero-desc': 'I didn\'t start thinking about interfaces, but about how operating systems evolve, how environments automate, and how people interact with technology. I don\'t design isolated screens; I build systems where every component has purpose and the whole holds together.',
-        'hero-h1': 'I\'m fascinated by where the logic of software meets everyday life.',
-        'hero-tag': 'Product Design & Systems',
-        'nav-about': 'About',
-        'nav-contact-link': 'Contact',
-        'nav-work': 'Work',
-        'proj01-aria': 'Baseball Scoreboard — View case study',
-        'proj01-desc': 'The important decision here wasn\'t visual, it was architectural: sync the operator console and projection screen on the client, without a server. I designed the interface, wrote the code, and used it in production during the Ministerio Cristiano HOME tournament.',
-        'proj01-name': 'Baseball Scoreboard',
-        'proj01-type': 'Web App',
-        'proj02-aria': 'Nexo — View case study',
-        'proj02-desc': 'New project added automatically. Details in development.',
-        'proj02-name': 'Nexo',
-        'proj02-type': 'Web Project',
-        'proj1-aria': 'Baseball Scoreboard — View case study',
-        'proj1-desc': 'The important decision here wasn\'t visual, it was architectural: sync the operator console and projection screen on the client, without a server. I designed the interface, wrote the code, and used it in production during the Ministerio Cristiano HOME tournament.',
-        'proj1-kpi1': 'Sync <10 ms',
-        'proj1-kpi2': 'Zero offline failures',
-        'proj2-aria': 'Jobs Hunter — View case study',
-        'proj2-desc': 'Redesign of a job search platform. I analyzed competitors not to copy patterns, but to understand what problem each one solved. Before/after comparisons were validated with real users.',
-        'proj3-aria': 'Pulse — View design process',
-        'proj3-desc': 'Windows 11 time tracking app for creative freelancers, still in design. Built on Fluent Design System because the OS solves most of the visual coherence. The work is leveraging that, not reinventing it.',
-        'skip': 'Skip to content',
-        'status-live': 'Deployed',
-        'status-wip': 'In design',
-        'work-label': 'Selected projects',
-      }
-      };
-
-      var currentLang = null;
-
-      function syncDefaultTranslations() {
-        document.querySelectorAll('[data-i18n]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n');
-          if (!key) return;
-          t.es[key] = el.textContent;
-          if (t.en[key] === undefined) t.en[key] = el.textContent;
-        });
-
-        document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n-html');
-          if (!key) return;
-          t.es[key] = el.innerHTML;
-          if (t.en[key] === undefined) t.en[key] = el.innerHTML;
-        });
-
-        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n-aria');
-          if (!key) return;
-          var value = el.getAttribute('aria-label') || el.getAttribute('title') || '';
-          if (!value) return;
-          t.es[key] = value;
-          if (t.en[key] === undefined) t.en[key] = value;
-        });
-      }
-
-      window.setLang = function (lang) {
-        if (lang === currentLang) return;
-        currentLang = lang;
-
-        /* html lang attr */
-        document.documentElement.lang = lang;
-
-        /* text nodes */
-        document.querySelectorAll('[data-i18n]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n');
-          if (t[lang][key] !== undefined) el.textContent = t[lang][key];
-          else if (t.es[key] !== undefined) el.textContent = t.es[key];
-        });
-
-        /* innerHTML nodes (allow <br> etc.) */
-        document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n-html');
-          if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
-          else if (t.es[key] !== undefined) el.innerHTML = t.es[key];
-        });
-
-        /* aria-labels */
-        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
-          var key = el.getAttribute('data-i18n-aria');
-          if (t[lang][key] !== undefined) el.setAttribute('aria-label', t[lang][key]);
-          else if (t.es[key] !== undefined) el.setAttribute('aria-label', t.es[key]);
-        });
-
-        /* toggle button active states (desktop + mobile) */
-        ['Es', 'En'].forEach(function (l) {
-          var btnD = document.getElementById('btn' + l);
-          var btnM = document.getElementById('btn' + l + 'M');
-          var isActive = l.toLowerCase() === lang;
-          if (btnD) btnD.classList.toggle('active', isActive);
-          if (btnM) btnM.classList.toggle('active', isActive);
-        });
-
-        /* burger aria-label */
-        var burger = document.getElementById('navBurger');
-        if (burger) {
-          burger.setAttribute('aria-label', lang === 'es' ? 'Abrir menú' : 'Open menu');
-        }
-      };
-
-      /* ── Nav scrolled ──────────────────── */
-      var nav = document.getElementById('siteNav');
-      window.addEventListener('scroll', function () {
-        nav.classList.toggle('is-scrolled', window.scrollY > 8);
-      }, { passive: true });
-
-      /* ── Mobile menu ───────────────────── */
-      var burger = document.getElementById('navBurger');
-      var menu = document.getElementById('mMenu');
-      burger.addEventListener('click', function () {
-        var open = menu.classList.toggle('open');
-        burger.setAttribute('aria-expanded', String(open));
-        burger.setAttribute('aria-label', open
-          ? (currentLang === 'es' ? 'Cerrar menú' : 'Close menu')
-          : (currentLang === 'es' ? 'Abrir menú' : 'Open menu'));
-      });
-      menu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          menu.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      /* ── Copy email ────────────────────── */
-      var copyBtn = document.getElementById('copyBtn');
-      var addr = document.getElementById('emailAddr').textContent;
-      copyBtn.addEventListener('click', function () {
-        var done = function () {
-          copyBtn.textContent = currentLang === 'es' ? 'Copiado ✓' : 'Copied ✓';
-          setTimeout(function () {
-            copyBtn.textContent = t[currentLang]['copy-btn'];
-          }, 2000);
-        };
-        if (navigator.clipboard) { navigator.clipboard.writeText(addr).then(done).catch(done); }
-        else { done(); }
-      });
-
-      /* ── Scroll reveal ─────────────────── */
-      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches
-        && 'IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-          });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
-      } else {
-        document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('in'); });
-      }
-
-      /* ── Inicializar idioma ─────────────── */
-      syncDefaultTranslations();
-      setLang('es');
-
-    })();
-  </script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/main.js"></script>
 
   <!-- Agente conversacional local: lee ./portfolio.md, sin backend -->
   <script src="./agent.js" defer></script>
