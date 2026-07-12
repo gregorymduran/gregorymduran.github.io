@@ -217,7 +217,7 @@
     document.documentElement.lang = lang;
     currentLang = lang;
     setStoredLanguage(lang);
-    if (isReady) {
+    if (window.dispatchEvent) {
       window.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang: lang } }));
     }
   }

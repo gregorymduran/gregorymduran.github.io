@@ -36,9 +36,12 @@
       var mobileButtons = [document.getElementById('btnEsM'), document.getElementById('btnEnM')];
       desktopButtons.concat(mobileButtons).forEach(function (button) {
         if (!button) return;
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
           var lang = button.id === 'btnEn' || button.id === 'btnEnM' ? 'en' : 'es';
-          window.i18n.setLanguage(lang);
+          if (window.i18n && typeof window.i18n.setLanguage === 'function') {
+            window.i18n.setLanguage(lang);
+          }
         });
       });
     }
