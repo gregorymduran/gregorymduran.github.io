@@ -438,6 +438,16 @@
     background:rgba(0,0,0,.02);color:rgba(0,0,0,.88);min-width:0;
     transition:all 220ms cubic-bezier(.2,.0,.8,1);
     -webkit-font-smoothing:antialiased;box-sizing:border-box;
+    position:relative;isolation:isolate;
+  }
+
+  .gd-agent-input::before{
+    content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
+    background:linear-gradient(90deg, rgba(59,130,246,.55), rgba(168,85,247,.55), rgba(236,72,153,.55), rgba(59,130,246,.55));
+    background-size:220% 100%;opacity:0;pointer-events:none;z-index:-1;
+    -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    transition:opacity 220ms ease;
   }
   
   .gd-agent-input::placeholder{
@@ -448,9 +458,20 @@
     background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.18);
   }
   
-  .gd-agent-input:focus{
+  .gd-agent-input:focus,
+  .gd-agent-input:focus-visible{
     background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.24);
     box-shadow:0 0 0 3px rgba(0,0,0,.08);
+  }
+
+  .gd-agent-input:focus::before,
+  .gd-agent-input:focus-visible::before{
+    opacity:1;animation:gdAgentInputGlow 2.4s linear infinite;
+  }
+
+  @keyframes gdAgentInputGlow{
+    0%{background-position:0% 50%;}
+    100%{background-position:200% 50%;}
   }
   
   .gd-agent-input:disabled{
