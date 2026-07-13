@@ -1,12 +1,16 @@
 /**
  * agent.js — Motor de conocimiento estructurado para el portafolio de Gregory Durán
  * 100% cliente, JavaScript Vanilla, sin dependencias ni backend.
+ * Bilingüe: reacciona a window 'i18n:change' y recarga su base de conocimiento
+ * (agent/portfolio.md ó agent/portfolio.en.md) según el idioma activo.
  *
  * Arquitectura modular (un único IIFE, submódulos funcionales):
  *   CONFIG -> Loader -> Parser -> Indexer -> IntentEngine -> SearchEngine -> FAQ
  *   -> ContextManager -> DOMActions -> ResponseBuilder -> ChipsEngine -> ChatUI/Bootstrap
  *
  * Uso: <script src="./agent.js" defer></script> justo antes de </body>
+ * (también se puede incluir como "../agent.js" desde subcarpetas — la ruta a
+ * agent/*.md se resuelve relativa a este script, no a la página que lo incluye)
  */
 
 (function () {
@@ -15,21 +19,39 @@
   // ═════════════════════════════════════════════
   // CONFIG
   // ═════════════════════════════════════════════
-  var AGENT_DIR = './agent/';
-  var AGENT_FILES = ['portfolio.md']; // agrega más .md aquí para ampliar el conocimiento del agente
+  var AGENT_FILES_BY_LANG = {
+    es: ['portfolio.md'],
+    en: ['portfolio.en.md']
+  };
 
   var STOPWORDS = new Set([
     'el','la','los','las','un','una','unos','unas','de','del','al','y','o','que','en','a',
     'con','por','para','se','su','sus','es','soy','eres','me','mi','tu','tus','como',
-    'cual','the','an','of','and','or','to','in','on','for','is','are','you','your','this','that'
+    'cual','the','an','of','and','or','to','in','on','for','is','are','you','your','this','that',
+    'what','which','does','do','did','my','i'
   ]);
 
   var INTENT_KEYWORDS = {
-    about_process: ['sobre mi', 'about', 'como piensas', 'como trabajas', 'proceso', 'experiencia', 'perfil', 'quien eres'],
-    skills: ['habilidad', 'habilidades', 'stack', 'tecnologia', 'tecnologias', 'herramientas'],
-    projects: ['proyecto', 'proyectos', 'trabajo', 'trabajos', 'portafolio', 'case study', 'casos'],
-    contact: ['contacto', 'contactar', 'email', 'correo', 'escribir', 'hablar']
+    about_process: ['sobre mi', 'about', 'about you', 'como piensas', 'como trabajas', 'proceso', 'process', 'experiencia', 'experience', 'perfil', 'profile', 'quien eres', 'who are you', 'how do you work', 'how do you think'],
+    skills: ['habilidad', 'habilidades', 'stack', 'tecnologia', 'tecnologias', 'herramientas', 'skill', 'skills', 'technology', 'technologies', 'tools'],
+    projects: ['proyecto', 'proyectos', 'trabajo', 'trabajos', 'portafolio', 'case study', 'casos', 'project', 'projects', 'work', 'portfolio', 'cases'],
+    contact: ['contacto', 'contactar', 'email', 'correo', 'escribir', 'hablar', 'contact', 'reach', 'hire', 'talk']
   };
+
+  // ═════════════════════════════════════════════
+  // I18N — helper de traducción compartido con locales/*.json (namespace agent.*)
+  // ═════════════════════════════════════════════
+  var currentAgentLang = 'es';
+
+  function getLang() {
+    return currentAgentLang || (window.i18n && window.i18n.getCurrentLanguage()) || 'es';
+  }
+
+  function t(key, fallback) {
+    var locale = (window.i18n && window.i18n.getLocale(getLang())) || {};
+    if (locale[key] !== undefined) return locale[key];
+    return fallback !== undefined ? fallback : key;
+  }
 
   // ═════════════════════════════════════════════
   // UTILIDADES DE TEXTO (usadas por Parser, IntentEngine y SearchEngine)
@@ -58,12 +80,29 @@
   function escapeRegex(str) { return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
   // ═════════════════════════════════════════════
-  // LOADER — centraliza la carga de todos los .md de AGENT_DIR
+  // LOADER — resuelve agent/*.md relativo al script (funciona desde cualquier profundidad)
   // ═════════════════════════════════════════════
-  function loadAgentFiles() {
-    var loads = AGENT_FILES.map(function (file) {
-      var path = AGENT_DIR + file; // RUTA RELATIVA ESTRICTA — nunca "/agent/..."
-      return fetch(path)
+  function getAgentScriptUrl() {
+    var currentScript = document.currentScript || Array.from(document.scripts).find(function (script) {
+      return /agent\.js(?:\?.*)?$/.test(script.getAttribute('src') || '');
+    });
+    return currentScript ? currentScript.getAttribute('src') : '';
+  }
+
+  function getAgentFileUrl(file) {
+    var scriptSrc = getAgentScriptUrl();
+    if (!scriptSrc) {
+      return new URL('./agent/' + file, window.location.href).toString();
+    }
+    var scriptUrl = new URL(scriptSrc, window.location.href);
+    return new URL('agent/' + file, scriptUrl).toString();
+  }
+
+  function loadAgentFiles(lang) {
+    var files = AGENT_FILES_BY_LANG[lang] || AGENT_FILES_BY_LANG.es;
+    var loads = files.map(function (file) {
+      var url = getAgentFileUrl(file);
+      return fetch(url)
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
           return res.text();
@@ -292,17 +331,18 @@
       if (history.length > MAX) history.shift();
     }
     function last() { return history.length ? history[history.length - 1] : null; }
+    function reset() { history = []; }
     function isExpandRequest(query) {
       var q = normalize(query);
-      return /(amplia|ampliar|mas detalle|cuentame mas|puedes ampliar|profundiza|dime mas|que fue despues de eso|contexto)/.test(q);
+      return /(amplia|ampliar|mas detalle|cuentame mas|puedes ampliar|profundiza|dime mas|que fue despues de eso|contexto|expand|more detail|tell me more|can you expand|go deeper|elaborate|what happened after that)/.test(q);
     }
     function isNextRequest(query) {
       var q = normalize(query);
-      return /(siguiente|que aprendiste despues|y despues|cual es el siguiente|luego que|y entonces|que paso despues|continua con)/.test(q);
+      return /(siguiente|que aprendiste despues|y despues|cual es el siguiente|luego que|y entonces|que paso despues|continua con|next|what did you learn after|and then|whats next|what is the next|continue with|after that)/.test(q);
     }
     function isFollowUp(query) { return isExpandRequest(query) || isNextRequest(query); }
 
-    return { push: push, last: last, isFollowUp: isFollowUp, isExpandRequest: isExpandRequest, isNextRequest: isNextRequest };
+    return { push: push, last: last, reset: reset, isFollowUp: isFollowUp, isExpandRequest: isExpandRequest, isNextRequest: isNextRequest };
   })();
 
   // ═════════════════════════════════════════════
@@ -356,7 +396,63 @@
   }
 
   // ═════════════════════════════════════════════
-  // CHIPS ENGINE — sugerencias dinámicas por tags compartidos + fallback fijo
+  // FAQ ENGINE — trigger (frase normalizada) -> clave semántica, bilingüe
+  // La respuesta y las etiquetas de los chips salen de locales/*.json (namespace agent.*)
+  // ═════════════════════════════════════════════
+  var FAQ_TRIGGER_MAP = {
+    es: {
+      'quien eres': 'who',
+      'que haces': 'what',
+      'que proyectos has hecho': 'projects',
+      'que habilidades tienes': 'skills',
+      'como contacto': 'contact',
+      'como diseñas': 'process'
+    },
+    en: {
+      'who are you': 'who',
+      'what do you do': 'what',
+      'what projects have you done': 'projects',
+      'what skills do you have': 'skills',
+      'how can i contact you': 'contact',
+      'whats your design process': 'process'
+    }
+  };
+  var FAQ_ORDER = ['who', 'what', 'projects', 'skills', 'contact', 'process'];
+
+  // Fallback en español, usado solo si window.i18n no cargó (p. ej. abriendo el
+  // HTML directo con file:// en vez de por un servidor) — así nunca se muestra
+  // la clave cruda ("agent.xxx") en pantalla.
+  var FAQ_ANSWER_FALLBACK_ES = {
+    who: 'Soy Gregory Durán, Product Designer con formación en Ingeniería de Software.',
+    what: 'Diseño productos digitales y me enfoco en entender el problema completo antes de pensar en una solución visual.',
+    projects: 'He trabajado en proyectos como Baseball Scoreboard, Jobs Hunter, Pulse e HidroCity.',
+    skills: 'Tengo experiencia en diseño de producto, UX/UI, investigación, arquitectura de información y desarrollo frontend con HTML, CSS, JavaScript, TypeScript y React.',
+    contact: 'Puedes escribirme a gregorymduran01@outlook.com.',
+    process: 'No sigo una metodología fija. A veces empiezo escribiendo ideas, otras haciendo diagramas mentales o diseñando directamente según el contexto del proyecto.'
+  };
+
+  function reverseTriggerMap(lang) {
+    var map = FAQ_TRIGGER_MAP[lang] || FAQ_TRIGGER_MAP.es;
+    var rev = {};
+    Object.keys(map).forEach(function (q) { rev[map[q]] = q; });
+    return rev;
+  }
+
+  function getFaqPromptChips(lang) {
+    var rev = reverseTriggerMap(lang);
+    return FAQ_ORDER.map(function (sem) {
+      return { label: t('agent.chip.' + sem + '.label', sem), query: rev[sem] };
+    });
+  }
+
+  function isFaqPrompt(query) {
+    var q = normalize(query);
+    var exact = ['faq', 'faqs', 'preguntas frecuentes', 'preguntas', 'dudas', 'frequently asked questions', 'questions'];
+    return exact.indexOf(q) !== -1 || q.indexOf('preguntas frecuentes') !== -1 || q.indexOf('preguntas del faq') !== -1 || q.indexOf('frequently asked questions') !== -1;
+  }
+
+  // ═════════════════════════════════════════════
+  // CHIPS ENGINE — sugerencias dinámicas por tags compartidos + fallback fijo, bilingüe
   // ═════════════════════════════════════════════
   function relatedSections(allSections, section, limit) {
     if (!section || !section.meta.tags.length) return [];
@@ -365,38 +461,20 @@
     }).slice(0, limit);
   }
 
-  var FAQ_PROMPT_CHIPS = [
-    { label: '¿Quién eres?', query: 'quien eres' },
-    { label: '¿Qué haces?', query: 'que haces' },
-    { label: '¿Qué proyectos has hecho?', query: 'que proyectos has hecho' },
-    { label: '¿Qué habilidades tienes?', query: 'que habilidades tienes' },
-    { label: '¿Cómo puedo contactarte?', query: 'como contacto' },
-    { label: '¿Cuál es tu proceso de diseño?', query: 'como diseñas' }
-  ];
-
-  var FAQ_ANSWER_MAP = {
-    'quien eres': 'Soy Gregory Durán, Product Designer con formación en Ingeniería de Software.',
-    'que haces': 'Diseño productos digitales y me enfoco en entender el problema completo antes de pensar en una solución visual.',
-    'que proyectos has hecho': 'He trabajado en proyectos como Baseball Scoreboard, Jobs Hunter, Pulse e HidroCity.',
-    'que habilidades tienes': 'Tengo experiencia en diseño de producto, UX/UI, investigación, arquitectura de información y desarrollo frontend con HTML, CSS, JavaScript, TypeScript y React.',
-    'como contacto': 'Puedes escribirme a gregorymduran01@outlook.com.',
-    'como diseñas': 'No sigo una metodología fija. A veces empiezo escribiendo ideas, otras haciendo diagramas mentales o diseñando directamente según el contexto del proyecto.'
-  };
-
-  function isFaqPrompt(query) {
-    var q = normalize(query);
-    return q === 'faq' || q === 'preguntas frecuentes' || q === 'preguntas' || q === 'dudas' || q.indexOf('preguntas frecuentes') !== -1 || q.indexOf('preguntas del faq') !== -1;
+  function getRecommendedChips(lang) {
+    var rev = reverseTriggerMap(lang);
+    return [
+      { label: t('agent.chip.faqEntry.label', 'FAQ'), query: lang === 'en' ? 'frequently asked questions' : 'preguntas frecuentes' },
+      { label: t('agent.chip.who.label', '¿Quién eres?'), query: rev.who },
+      { label: t('agent.chip.projects.label', '¿Qué proyectos has hecho?'), query: rev.projects },
+      { label: t('agent.chip.skills.label', '¿Qué habilidades tienes?'), query: rev.skills },
+      { label: t('agent.chip.contact.label', '¿Cómo contacto?'), query: rev.contact }
+    ];
   }
 
-  function buildChips(allSections, lastSection) {
+  function buildChips(allSections, lastSection, lang) {
     var related = relatedSections(allSections, lastSection, 2);
-    var recommended = [
-      { label: 'FAQ', query: 'preguntas frecuentes' },
-      { label: '¿Quién eres?', query: 'quien eres' },
-      { label: '¿Qué proyectos has hecho?', query: 'que proyectos has hecho' },
-      { label: '¿Qué habilidades tienes?', query: 'que habilidades tienes' },
-      { label: '¿Cómo contacto?', query: 'como contacto' }
-    ];
+    var recommended = getRecommendedChips(lang);
 
     if (related.length) {
       var relatedChips = related.map(function (s) { return { label: s.title, query: s.title }; });
@@ -431,7 +509,7 @@
     display:flex;gap:10px;padding:14px 14px 14px 14px;border-top:1px solid rgba(0,0,0,.04);
     flex-shrink:0;background:rgba(255,255,255,.04);align-items:center;
   }
-  
+
   .gd-agent-input{
     flex:1;border:1px solid rgba(0,0,0,.12);border-radius:52px;
     padding:12px 18px;font-size:13px;font-family:inherit;outline:none;
@@ -449,15 +527,15 @@
     -webkit-mask-composite:xor;mask-composite:exclude;
     transition:opacity 220ms ease;
   }
-  
+
   .gd-agent-input::placeholder{
     color:rgba(0,0,0,.45);opacity:1;
   }
-  
+
   .gd-agent-input:hover{
     background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.18);
   }
-  
+
   .gd-agent-input:focus,
   .gd-agent-input:focus-visible{
     background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.24);
@@ -473,7 +551,7 @@
     0%{background-position:0% 50%;}
     100%{background-position:200% 50%;}
   }
-  
+
   .gd-agent-input:disabled{
     opacity:.60;cursor:not-allowed;
   }
@@ -505,7 +583,7 @@
     overflow-y:auto;padding:16px 16px;display:flex;flex-direction:column;
     gap:12px;max-height:260px;
   }
-  
+
   .gd-agent-messages::-webkit-scrollbar{width:8px}
   .gd-agent-messages::-webkit-scrollbar-track{background:transparent;margin:4px 0}
   .gd-agent-messages::-webkit-scrollbar-thumb{
@@ -519,20 +597,20 @@
     border-radius:16px;white-space:pre-wrap;word-wrap:break-word;
     transition:all 220ms cubic-bezier(.2,.0,.8,1);
   }
-  
+
   .gd-agent-msg.bot{
     align-self:flex-start;background:rgba(255,255,255,.55);color:rgba(0,0,0,.88);
     -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
     border:1px solid rgba(0,0,0,.06);border-bottom-left-radius:6px;
     box-shadow:0 4px 12px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.70);
   }
-  
+
   .gd-agent-msg.user{
     align-self:flex-end;background:rgba(0,0,0,.88);color:#fff;
     border-bottom-right-radius:6px;
     box-shadow:0 4px 12px rgba(0,0,0,.16);
   }
-  
+
   .gd-agent-msg .gd-agent-src{
     display:block;margin-top:8px;font-size:10px;font-weight:700;
     letter-spacing:.08em;text-transform:uppercase;
@@ -543,7 +621,7 @@
   .gd-agent-chips{
     display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 16px;flex-shrink:0;
   }
-  
+
   .gd-agent-chip{
     font-size:12px;font-weight:500;color:rgba(0,0,0,.70);
     border:1px solid rgba(0,0,0,.12);border-radius:24px;padding:8px 14px;
@@ -551,16 +629,16 @@
     transition:all 220ms cubic-bezier(.2,.0,.8,1);
     display:inline-flex;align-items:center;justify-content:center;
   }
-  
+
   .gd-agent-chip:hover{
     background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.18);
     color:rgba(0,0,0,.88);
   }
-  
+
   .gd-agent-chip:active{
     background:rgba(0,0,0,.10);
   }
-  
+
   .gd-agent-chip:focus-visible{
     outline:2px solid rgba(0,0,0,.24);outline-offset:1px;
   }
@@ -584,7 +662,7 @@
     .gd-agent-chip{padding:6px 12px;font-size:11px}
     .gd-agent-input{padding:10px 14px;font-size:13px}
   }
-  
+
   @media(prefers-reduced-motion:reduce){
     .gd-agent-bar,.gd-agent-toggle,.gd-agent-body,.gd-agent-msg,.gd-agent-chip,.gd-agent-input{
       transition:none !important;animation:none !important;
@@ -608,8 +686,8 @@
           '<div class="gd-agent-chips" id="gdAgentChips"></div>' +
         '</div>' +
         '<div class="gd-agent-inputrow">' +
-          '<input class="gd-agent-input" id="gdAgentInput" type="text" placeholder="Pregúntame sobre este portafolio…" autocomplete="off">' +
-          '<button class="gd-agent-toggle" id="gdAgentToggle" aria-label="Minimizar/expandir conversación">' +
+          '<input class="gd-agent-input" id="gdAgentInput" type="text" data-i18n-placeholder="agent.placeholder" placeholder="Pregúntame sobre este portafolio…" autocomplete="off">' +
+          '<button class="gd-agent-toggle" id="gdAgentToggle" data-i18n-aria="agent.toggleAria" aria-label="Minimizar/expandir conversación">' +
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>' +
           '</button>' +
         '</div>' +
@@ -634,6 +712,7 @@
   function renderChips(container, chips, onPick) {
     container.innerHTML = '';
     chips.forEach(function (chip) {
+      if (!chip.query) return;
       var btn = document.createElement('button');
       btn.className = 'gd-agent-chip';
       btn.textContent = chip.label;
@@ -664,48 +743,86 @@
     input.addEventListener('click', function (e) { e.stopPropagation(); });
 
     function showChips(lastSection) {
-      renderChips(chipsEl, buildChips(sections, lastSection), handleQuery);
+      renderChips(chipsEl, buildChips(sections, lastSection, getLang()), handleQuery);
     }
 
     function showFaqOptions() {
-      addMessage(messages, 'Elige una de estas preguntas para ver la respuesta:', 'bot');
-      renderChips(chipsEl, FAQ_PROMPT_CHIPS, handleQuery);
+      addMessage(messages, t('agent.faqIntro', 'Elige una de estas preguntas para ver la respuesta:'), 'bot');
+      renderChips(chipsEl, getFaqPromptChips(getLang()), handleQuery);
     }
 
     function respondWithFaqAnswer(query) {
-      var key = normalize(query);
-      var answer = FAQ_ANSWER_MAP[key];
-      if (!answer) return false;
-      addMessage(messages, answer, 'bot');
-      ContextManager.push(query, { title: 'FAQ', sourceFile: 'portfolio.md', order: 0, meta: { intent: 'faq' } });
+      var lang = getLang();
+      var map = FAQ_TRIGGER_MAP[lang] || FAQ_TRIGGER_MAP.es;
+      var semKey = map[normalize(query)];
+      if (!semKey) return false;
+      addMessage(messages, t('agent.faqAnswer.' + semKey, FAQ_ANSWER_FALLBACK_ES[semKey]), 'bot');
+      ContextManager.push(query, { title: 'FAQ', sourceFile: 'faq', order: 0, meta: { intent: 'faq' } });
       showChips(null);
       return true;
     }
 
-    // Loader + Parser + Indexer
-    loadAgentFiles().then(function (results) {
-      var failed = [];
-      results.forEach(function (r) {
-        if (r.ok) {
-          sections = sections.concat(parseMarkdown(r.text, r.file));
-        } else {
-          failed.push(r.file + ' (' + r.error + ')');
+    // Loader + Parser + Indexer, recargable por idioma
+    function loadKnowledgeBase(lang, isSwitch) {
+      ready = false;
+      loadAgentFiles(lang).then(function (results) {
+        var failed = [];
+        var newSections = [];
+        results.forEach(function (r) {
+          if (r.ok) {
+            newSections = newSections.concat(parseMarkdown(r.text, r.file));
+          } else {
+            failed.push(r.file + ' (' + r.error + ')');
+          }
+        });
+
+        if (!newSections.length) {
+          addMessage(messages, t('agent.loadErrorPrefix', 'No pude cargar el contenido del agente. Verifica que: (1) la carpeta ./agent/ exista, (2) contiene portfolio.md, (3) ambos están en la raíz del sitio junto a index.html. Errores: ') + failed.join(', '), 'bot');
+          return;
+        }
+
+        sections = newSections;
+        index = buildIndex(sections);
+        ready = true;
+
+        addMessage(messages, isSwitch
+          ? t('agent.langSwitchNotice', 'A partir de ahora respondo en español.')
+          : t('agent.greeting', '¡Hola! Soy el asistente local de este portafolio. Pregúntame sobre proyectos, habilidades o cómo contactar a Gregory.'), 'bot');
+        showChips(null);
+
+        if (failed.length) {
+          addMessage(messages, t('agent.loadPartialWarningPrefix', 'Aviso: no se pudo cargar ') + failed.join(', ') + t('agent.loadPartialWarningSuffix', '. El resto del contenido sí está disponible.'), 'bot');
         }
       });
+    }
 
-      if (!sections.length) {
-        addMessage(messages, 'No pude cargar el contenido del agente. Verifica que: (1) la carpeta ./agent/ exista, (2) contiene portfolio.md, (3) ambos están en la raíz del sitio junto a index.html. Errores: ' + failed.join(', '), 'bot');
-        return;
-      }
+    function switchLanguage(lang) {
+      if (lang === currentAgentLang) return;
+      currentAgentLang = lang;
+      ContextManager.reset();
+      loadKnowledgeBase(lang, true);
+    }
 
-      index = buildIndex(sections);
-      ready = true;
-      addMessage(messages, '¡Hola! Soy el asistente local de este portafolio. Pregúntame sobre proyectos, habilidades o cómo contactar a Gregory.', 'bot');
-      showChips(null);
+    function startInitialLoad() {
+      currentAgentLang = getLang();
+      loadKnowledgeBase(currentAgentLang, false);
+    }
 
-      if (failed.length) {
-        addMessage(messages, 'Aviso: no se pudo cargar ' + failed.join(', ') + '. El resto del contenido sí está disponible.', 'bot');
-      }
+    if (window.i18n && window.i18n.isReady()) {
+      startInitialLoad();
+    } else if (window.i18n) {
+      window.addEventListener('i18n:ready', function onceReady() {
+        window.removeEventListener('i18n:ready', onceReady);
+        startInitialLoad();
+      });
+    } else {
+      // Sin js/i18n.js en la página: arranca en español por defecto.
+      startInitialLoad();
+    }
+
+    window.addEventListener('i18n:change', function (e) {
+      var lang = (e.detail && e.detail.lang) || getLang();
+      switchLanguage(lang);
     });
 
     function respondWithSection(section, opts) {
@@ -724,7 +841,7 @@
       input.value = '';
 
       if (!ready) {
-        addMessage(messages, 'Todavía estoy cargando el contenido del portafolio, un momento…', 'bot');
+        addMessage(messages, t('agent.stillLoading', 'Todavía estoy cargando el contenido del portafolio, un momento…'), 'bot');
         return;
       }
 
@@ -743,7 +860,7 @@
             var fileSections = index.byFile[last.section.sourceFile] || [];
             var next = fileSections[last.section.order + 1];
             if (next) { respondWithSection(next); return; }
-            addMessage(messages, 'No hay una sección siguiente después de "' + last.section.title + '" en el contenido del agente.', 'bot');
+            addMessage(messages, t('agent.noNextSection', 'No hay una sección siguiente después de esta.'), 'bot');
             showChips(last.section);
             return;
           }
@@ -759,7 +876,7 @@
         if (result) {
           respondWithSection(result);
         } else {
-          addMessage(messages, 'No encontré una sección específica sobre eso en el contenido del agente. Prueba con "proyectos", "habilidades" o "contacto".', 'bot');
+          addMessage(messages, t('agent.notFound', 'No encontré una sección específica sobre eso en el contenido del agente. Prueba con "proyectos", "habilidades" o "contacto".'), 'bot');
           var intent = inferIntent(query);
           if (intent) DOMActions.triggerAction(intent);
           showChips(last ? last.section : null);
