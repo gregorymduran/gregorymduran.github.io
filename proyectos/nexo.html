@@ -5,23 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nexo — Caso de Estudio | Gregory Durán</title>
 <meta name="description" content="Caso de estudio: diseño de Nexo, plataforma móvil para centralizar la gestión de servicios públicos esenciales.">
+<link rel="icon"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='900' fill='%23F8F7F4' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<!-- Open Graph / Twitter Card: og:image apunta a un asset que falta subir (recomendado 1200x630) -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nexo — Caso de Estudio | Gregory Durán">
+<meta property="og:description" content="Caso de estudio: diseño de Nexo, plataforma móvil para centralizar la gestión de servicios públicos esenciales.">
+<meta property="og:url" content="https://gregorymduran.github.io/proyectos/nexo.html">
+<meta property="og:image" content="https://gregorymduran.github.io/assets/img/nexo/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexo — Caso de Estudio | Gregory Durán">
+<meta name="twitter:description" content="Caso de estudio: diseño de Nexo, plataforma móvil para centralizar la gestión de servicios públicos esenciales.">
+<meta name="twitter:image" content="https://gregorymduran.github.io/assets/img/nexo/og-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap">
 <link rel="stylesheet" href="./project-shared.css">
+<link rel="stylesheet" href="../css/base.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-img,svg{display:block;max-width:100%}
-button{font:inherit;cursor:pointer;background:none;border:none}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
-
 :root{
-  --bg:#F8F7F4;--surface:#FFFFFF;--ink:#0D0D0D;--ink-2:#6B6B68;--ink-3:#ADADAA;--line:#E6E4E0;
-  --accent:#0D0D0D;--ease:240ms cubic-bezier(.16,1,.3,1);
+  --accent:#0D0D0D;
   --font-display:'Satoshi',sans-serif;--font-body:'DM Sans',sans-serif;
   --sp-8:8px;--sp-16:16px;--sp-24:24px;--sp-32:32px;--sp-48:48px;--sp-64:64px;--sp-96:96px;
   --r:12px;--r-lg:20px;
@@ -33,20 +38,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-siz
 @media(max-width:860px){.g,.g-wide{padding:0 28px}}
 @media(max-width:540px){.g,.g-wide{padding:0 20px}}
 
-.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:12px 20px;font-weight:700;z-index:200}
-.skip:focus{left:0}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-
 /* Nav */
-.nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:border-color var(--ease)}
-.nav.is-scrolled{border-color:var(--line)}
 .nav-row{height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-name{font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:-.01em}
+.nav-right{display:flex;align-items:center;gap:20px}
 .nav-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
 .nav-back:hover{color:var(--ink)}
 .nav-back svg{width:16px;height:16px}
 .nav-contact-lnk{font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
 .nav-contact-lnk:hover{color:var(--ink)}
+@media(max-width:540px){.nav-back span{display:none}}
 
 /* Hero */
 .case-hero{padding:clamp(64px,10vw,128px) 0 clamp(48px,7vw,96px);border-bottom:1px solid var(--line)}
@@ -129,37 +129,36 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
 .case-cta h2{font-family:var(--font-display);font-size:clamp(24px,3.6vw,40px);font-weight:900;letter-spacing:-.025em;margin-bottom:12px}
 .case-cta p{font-size:15px;color:var(--ink-2);margin-bottom:28px}
 .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn-fill{display:inline-flex;align-items:center;gap:7px;height:50px;padding:0 26px;border-radius:99px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;transition:opacity var(--ease),transform var(--ease)}
-.btn-fill:hover{opacity:.82;transform:translateY(-1px)}
 .btn-line{display:inline-flex;align-items:center;gap:7px;height:50px;padding:0 22px;border-radius:99px;font-weight:700;font-size:14px;color:var(--ink-2);border:1.5px solid var(--line);transition:border-color var(--ease),color var(--ease)}
 .btn-line:hover{border-color:var(--ink);color:var(--ink)}
 
 /* Footer */
-.footer{border-top:1px solid var(--line);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .footer-name{font-family:var(--font-display);font-weight:900;font-size:15px}
 .footer-links{display:flex;gap:20px;flex-wrap:wrap}
 .footer-links a{font-size:13px;font-weight:600;color:var(--ink-3);transition:color var(--ease)}
 .footer-links a:hover{color:var(--ink)}
 .footer-copy{font-size:13px;color:var(--ink-3)}
 
-/* Reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity 520ms ease,transform 520ms ease}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body class="project nexo">
 
-<a href="#main" class="skip">Saltar al contenido</a>
+<a href="#main" class="skip" data-i18n="skip">Saltar al contenido</a>
 
 <header class="nav" id="siteNav">
   <div class="g-wide nav-row">
     <a href="../index.html" class="nav-name">Gregory Durán</a>
-    <a href="../index.html#work" class="nav-back">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Volver
-    </a>
-    <a href="../index.html#contact" class="nav-contact-lnk">Contacto</a>
+    <div class="nav-right">
+      <a href="../index.html#work" class="nav-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span data-i18n="case.nav.back">Volver</span>
+      </a>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button id="btnEs" class="active">ES</button>
+        <button id="btnEn">EN</button>
+      </div>
+      <a href="../index.html#contact" class="nav-contact-lnk" data-i18n="navigation.contact">Contacto</a>
+    </div>
   </div>
 </header>
 
@@ -168,22 +167,22 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- HERO ─────────────────────────────────────────── -->
   <div class="g">
     <section class="case-hero">
-      <p class="eyebrow rv">Caso de Estudio · Case Study</p>
+      <p class="eyebrow rv" data-i18n="case.nexo.hero.eyebrow">Caso de Estudio</p>
       <h1 class="rv">Nexo</h1>
-      <p class="subtitle rv">Plataforma móvil para centralizar la gestión de servicios públicos esenciales: consulta, pago, reporte de incidencias y seguimiento en un solo lugar.</p>
+      <p class="subtitle rv" data-i18n="case.nexo.hero.subtitle">Plataforma móvil para centralizar la gestión de servicios públicos esenciales: consulta, pago, reporte de incidencias y seguimiento en un solo lugar.</p>
 
       <div class="meta-row rv">
         <div class="meta-item">
-          <span class="label">Rol</span>
-          <span class="value">Product Designer — UX/UI</span>
+          <span class="label" data-i18n="case.meta.roleLabel">Rol</span>
+          <span class="value" data-i18n="case.nexo.hero.roleValue">Product Designer — UX/UI</span>
         </div>
         <div class="meta-item">
-          <span class="label">Tipo</span>
-          <span class="value">Caso de Estudio · Portafolio</span>
+          <span class="label" data-i18n="case.meta.typeLabel">Tipo</span>
+          <span class="value" data-i18n="case.nexo.hero.typeValue">Caso de Estudio · Portafolio</span>
         </div>
         <div class="meta-item">
-          <span class="label">Herramientas</span>
-          <span class="value">Figma · FigJam</span>
+          <span class="label" data-i18n="case.meta.toolsLabel">Herramientas</span>
+          <span class="value" data-i18n="case.nexo.hero.toolsValue">Figma · FigJam</span>
         </div>
       </div>
 
@@ -196,13 +195,13 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- PROBLEMA ─────────────────────────────────────── -->
   <div class="g">
     <section class="cs" id="problema">
-      <p class="eyebrow rv">El Problema</p>
-      <h2 class="rv">Servicios dispersos, gestiones sin seguimiento</h2>
-      <p class="rv">Cada servicio público (agua, electricidad, entre otros) vive en su propio canal: apps distintas, oficinas distintas, procesos distintos. El ciudadano no tiene un lugar único donde consultar sus servicios, pagar o dar seguimiento a un reporte, y una vez que reporta una falla, pierde toda visibilidad sobre su estado.</p>
+      <p class="eyebrow rv" data-i18n="case.nexo.problem.eyebrow">El Problema</p>
+      <h2 class="rv" data-i18n="case.nexo.problem.heading">Servicios dispersos, gestiones sin seguimiento</h2>
+      <p class="rv" data-i18n="case.nexo.problem.body">Cada servicio público (agua, electricidad, entre otros) vive en su propio canal: apps distintas, oficinas distintas, procesos distintos. El ciudadano no tiene un lugar único donde consultar sus servicios, pagar o dar seguimiento a un reporte, y una vez que reporta una falla, pierde toda visibilidad sobre su estado.</p>
       <ul class="goal-list rv">
-        <li><span class="gi">1</span>Unificar el acceso a los distintos servicios en un solo lugar</li>
-        <li><span class="gi">2</span>Reducir los pasos para pagar y reportar una incidencia</li>
-        <li><span class="gi">3</span>Dar seguimiento visible al estado de cada gestión</li>
+        <li><span class="gi">1</span><span data-i18n="case.nexo.problem.goal1">Unificar el acceso a los distintos servicios en un solo lugar</span></li>
+        <li><span class="gi">2</span><span data-i18n="case.nexo.problem.goal2">Reducir los pasos para pagar y reportar una incidencia</span></li>
+        <li><span class="gi">3</span><span data-i18n="case.nexo.problem.goal3">Dar seguimiento visible al estado de cada gestión</span></li>
       </ul>
     </section>
   </div>
@@ -210,20 +209,20 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- ANTES / DESPUÉS ──────────────────────────────── -->
   <div class="g">
     <section class="cs">
-      <p class="eyebrow rv">Comparativa</p>
-      <h2 class="rv">Antes y después</h2>
+      <p class="eyebrow rv" data-i18n="case.compare.eyebrow">Comparativa</p>
+      <h2 class="rv" data-i18n="case.compare.heading">Antes y después</h2>
       <div class="compare-grid rv">
         <div class="compare-card before">
-          <span class="compare-label">Antes</span>
-          <p>Cada servicio con su propio canal, sin visibilidad conjunta.</p>
-          <p>Reportar una falla no generaba ningún seguimiento posterior.</p>
-          <p>El pago requería salir de la app hacia otro canal.</p>
+          <span class="compare-label" data-i18n="case.compare.beforeLabel">Antes</span>
+          <p data-i18n="case.nexo.compare.before1">Cada servicio con su propio canal, sin visibilidad conjunta.</p>
+          <p data-i18n="case.nexo.compare.before2">Reportar una falla no generaba ningún seguimiento posterior.</p>
+          <p data-i18n="case.nexo.compare.before3">El pago requería salir de la app hacia otro canal.</p>
         </div>
         <div class="compare-card after">
-          <span class="compare-label">Después</span>
-          <p>Un panel único con todos los servicios asociados al ciudadano.</p>
-          <p>Cada reporte genera un caso con estado y notificaciones.</p>
-          <p>Pago integrado en el mismo flujo, sin salir de la app.</p>
+          <span class="compare-label" data-i18n="case.compare.afterLabel">Después</span>
+          <p data-i18n="case.nexo.compare.after1">Un panel único con todos los servicios asociados al ciudadano.</p>
+          <p data-i18n="case.nexo.compare.after2">Cada reporte genera un caso con estado y notificaciones.</p>
+          <p data-i18n="case.nexo.compare.after3">Pago integrado en el mismo flujo, sin salir de la app.</p>
         </div>
       </div>
     </section>
@@ -232,35 +231,35 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- PROCESO ──────────────────────────────────────── -->
   <div class="g">
     <section class="cs" id="proceso">
-      <p class="eyebrow rv">Proceso</p>
-      <h2 class="rv">Proceso de diseño</h2>
+      <p class="eyebrow rv" data-i18n="case.process.eyebrow">Proceso</p>
+      <h2 class="rv" data-i18n="case.nexo.process.heading">Proceso de diseño</h2>
       <div class="steps rv">
         <div class="step">
           <span class="step-num">01</span>
           <div class="step-body">
-            <h3>Arquitectura de información</h3>
-            <p>Definí cómo se agrupan servicios, pagos, incidencias y notificaciones para que el usuario entienda de un vistazo el estado de cada gestión, mapeando la relación entre cuenta, servicio y caso.</p>
+            <h3 data-i18n="case.nexo.process.step1.title">Arquitectura de información</h3>
+            <p data-i18n="case.nexo.process.step1.body">Definí cómo se agrupan servicios, pagos, incidencias y notificaciones para que el usuario entienda de un vistazo el estado de cada gestión, mapeando la relación entre cuenta, servicio y caso.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">02</span>
           <div class="step-body">
-            <h3>User flows</h3>
-            <p>Diseñé los flujos principales — consultar un servicio, pagar, reportar una incidencia y dar seguimiento — priorizando reducir la cantidad de pantallas en las tareas más frecuentes.</p>
+            <h3 data-i18n="case.nexo.process.step2.title">User flows</h3>
+            <p data-i18n="case.nexo.process.step2.body">Diseñé los flujos principales — consultar un servicio, pagar, reportar una incidencia y dar seguimiento — priorizando reducir la cantidad de pantallas en las tareas más frecuentes.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">03</span>
           <div class="step-body">
-            <h3>Design system</h3>
-            <p>Construí un sistema de componentes (tarjetas de servicio, badges de estado, formularios de reporte) reutilizable entre servicios distintos sin perder consistencia visual.</p>
+            <h3 data-i18n="case.nexo.process.step3.title">Design system</h3>
+            <p data-i18n="case.nexo.process.step3.body">Construí un sistema de componentes (tarjetas de servicio, badges de estado, formularios de reporte) reutilizable entre servicios distintos sin perder consistencia visual.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num">04</span>
           <div class="step-body">
-            <h3>UI</h3>
-            <p>Apliqué el sistema a las pantallas finales, cuidando jerarquía visual, estados vacíos y de error, y accesibilidad de contraste y tamaño táctil.</p>
+            <h3 data-i18n="case.nexo.process.step4.title">UI</h3>
+            <p data-i18n="case.nexo.process.step4.body">Apliqué el sistema a las pantallas finales, cuidando jerarquía visual, estados vacíos y de error, y accesibilidad de contraste y tamaño táctil.</p>
           </div>
         </div>
       </div>
@@ -270,32 +269,32 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- PANTALLAS ────────────────────────────────────── -->
   <div class="g-wide">
     <section class="cs" id="pantallas">
-      <p class="eyebrow rv">Diseño</p>
-      <h2 class="rv">Pantallas principales</h2>
+      <p class="eyebrow rv" data-i18n="case.screens.eyebrow">Diseño</p>
+      <h2 class="rv" data-i18n="case.screens.heading">Pantallas principales</h2>
       <div class="screens rv">
         <div>
           <div class="screen-frame">
             <!-- REEMPLAZAR: <img src="../assets/img/nexo/screen-01.jpg" alt=""> -->
           </div>
-          <p class="screen-cap">Panel principal — resumen de servicios</p>
+          <p class="screen-cap" data-i18n="case.nexo.screens.cap1">Panel principal — resumen de servicios</p>
         </div>
         <div>
           <div class="screen-frame">
             <!-- REEMPLAZAR: <img src="../assets/img/nexo/screen-02.jpg" alt=""> -->
           </div>
-          <p class="screen-cap">Detalle de servicio y pago</p>
+          <p class="screen-cap" data-i18n="case.nexo.screens.cap2">Detalle de servicio y pago</p>
         </div>
         <div>
           <div class="screen-frame">
             <!-- REEMPLAZAR: <img src="../assets/img/nexo/screen-03.jpg" alt=""> -->
           </div>
-          <p class="screen-cap">Reporte de incidencia</p>
+          <p class="screen-cap" data-i18n="case.nexo.screens.cap3">Reporte de incidencia</p>
         </div>
         <div>
           <div class="screen-frame">
             <!-- REEMPLAZAR: <img src="../assets/img/nexo/screen-04.jpg" alt=""> -->
           </div>
-          <p class="screen-cap">Seguimiento de gestiones</p>
+          <p class="screen-cap" data-i18n="case.nexo.screens.cap4">Seguimiento de gestiones</p>
         </div>
       </div>
     </section>
@@ -304,20 +303,20 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- DECISIONES ───────────────────────────────────── -->
   <div class="g-wide">
     <section class="cs" id="decisiones">
-      <p class="eyebrow rv">Decisiones</p>
-      <h2 class="rv">Decisiones de diseño</h2>
+      <p class="eyebrow rv" data-i18n="case.decisions.eyebrow">Decisiones</p>
+      <h2 class="rv" data-i18n="case.decisions.heading">Decisiones de diseño</h2>
       <div class="cards rv">
         <div class="card">
-          <h3>Tarjeta de servicio como unidad base</h3>
-          <p>Cada servicio se representa como una tarjeta con estado visible (al día, pendiente, con incidencia), permitiendo escanear el panel completo de un vistazo.</p>
+          <h3 data-i18n="case.nexo.decisions.card1.title">Tarjeta de servicio como unidad base</h3>
+          <p data-i18n="case.nexo.decisions.card1.body">Cada servicio se representa como una tarjeta con estado visible (al día, pendiente, con incidencia), permitiendo escanear el panel completo de un vistazo.</p>
         </div>
         <div class="card">
-          <h3>Un solo flujo de reporte para todos los servicios</h3>
-          <p>En lugar de un formulario distinto por tipo de servicio, un flujo único con campos condicionales según el servicio seleccionado, reduciendo la carga cognitiva.</p>
+          <h3 data-i18n="case.nexo.decisions.card2.title">Un solo flujo de reporte para todos los servicios</h3>
+          <p data-i18n="case.nexo.decisions.card2.body">En lugar de un formulario distinto por tipo de servicio, un flujo único con campos condicionales según el servicio seleccionado, reduciendo la carga cognitiva.</p>
         </div>
         <div class="card">
-          <h3>Estado de gestión siempre visible</h3>
-          <p>Cada pago o reporte queda asociado a un estado (recibido, en proceso, resuelto) visible desde el panel principal, sin necesidad de buscar en otra sección.</p>
+          <h3 data-i18n="case.nexo.decisions.card3.title">Estado de gestión siempre visible</h3>
+          <p data-i18n="case.nexo.decisions.card3.body">Cada pago o reporte queda asociado a un estado (recibido, en proceso, resuelto) visible desde el panel principal, sin necesidad de buscar en otra sección.</p>
         </div>
       </div>
     </section>
@@ -326,20 +325,20 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- RESULTADOS ───────────────────────────────────── -->
   <div class="g">
     <section class="cs" id="resultados">
-      <p class="eyebrow rv">Resultados</p>
-      <h2 class="rv">De gestiones dispersas a un solo lugar</h2>
+      <p class="eyebrow rv" data-i18n="case.results.eyebrow">Resultados</p>
+      <h2 class="rv" data-i18n="case.nexo.results.heading">De gestiones dispersas a un solo lugar</h2>
       <div class="results-grid rv">
         <div class="result-card">
           <p class="result-stat">1</p>
-          <p class="result-label">Panel único para todos los servicios del ciudadano</p>
+          <p class="result-label" data-i18n="case.nexo.results.stat1.label">Panel único para todos los servicios del ciudadano</p>
         </div>
         <div class="result-card">
           <p class="result-stat">3</p>
-          <p class="result-label">Pasos para reportar una incidencia, antes 6</p>
+          <p class="result-label" data-i18n="case.nexo.results.stat2.label">Pasos para reportar una incidencia, antes 6</p>
         </div>
         <div class="result-card">
           <p class="result-stat">100%</p>
-          <p class="result-label">De las gestiones con estado y seguimiento visibles en la app</p>
+          <p class="result-label" data-i18n="case.nexo.results.stat3.label">De las gestiones con estado y seguimiento visibles en la app</p>
         </div>
       </div>
     </section>
@@ -348,16 +347,16 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- APRENDIZAJES ─────────────────────────────────── -->
   <div class="g">
     <section class="cs" id="aprendizajes">
-      <p class="eyebrow rv">Aprendizajes</p>
-      <h2 class="rv">Lo que me llevo</h2>
+      <p class="eyebrow rv" data-i18n="case.learnings.eyebrow">Aprendizajes</p>
+      <h2 class="rv" data-i18n="case.learnings.heading">Lo que me llevo</h2>
       <div class="learnings rv">
         <div class="learning">
-          <h3>Diseñar para consistencia entre servicios distintos</h3>
-          <p>La app debía servir a servicios con lógicas diferentes sin que el usuario sintiera que cambiaba de producto en cada sección. Esto reforzó la importancia de un design system flexible pero estable.</p>
+          <h3 data-i18n="case.nexo.learnings.item1.title">Diseñar para consistencia entre servicios distintos</h3>
+          <p data-i18n="case.nexo.learnings.item1.body">La app debía servir a servicios con lógicas diferentes sin que el usuario sintiera que cambiaba de producto en cada sección. Esto reforzó la importancia de un design system flexible pero estable.</p>
         </div>
         <div class="learning">
-          <h3>El estado es la información más importante</h3>
-          <p>En un producto de gestión de servicios, lo que el usuario más necesita ver es en qué estado está su gestión. Ese principio guió buena parte de las decisiones de arquitectura de información y UI.</p>
+          <h3 data-i18n="case.nexo.learnings.item2.title">El estado es la información más importante</h3>
+          <p data-i18n="case.nexo.learnings.item2.body">En un producto de gestión de servicios, lo que el usuario más necesita ver es en qué estado está su gestión. Ese principio guió buena parte de las decisiones de arquitectura de información y UI.</p>
         </div>
       </div>
     </section>
@@ -366,11 +365,11 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
   <!-- CTA ──────────────────────────────────────────── -->
   <div class="g">
     <section class="case-cta rv">
-      <h2>¿Tienes un proyecto?</h2>
-      <p>Hablemos.</p>
+      <h2 data-i18n="case.cta.title">¿Tienes un proyecto?</h2>
+      <p data-i18n="case.cta.subtitle">Hablemos.</p>
       <div class="cta-row">
-        <a href="../index.html#contact" class="btn-fill">Contacto</a>
-        <a href="../index.html#work" class="btn-line">Ver más proyectos</a>
+        <a href="../index.html#contact" class="btn-fill" data-i18n="navigation.contact">Contacto</a>
+        <a href="../index.html#work" class="btn-line" data-i18n="case.cta.moreProjects">Ver más proyectos</a>
       </div>
     </section>
   </div>
@@ -380,25 +379,16 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4p
 <footer class="g-wide footer">
   <span class="footer-name">Gregory Durán</span>
   <nav class="footer-links">
-    <a href="https://www.linkedin.com/in/gregory-iralbel-mendoza-duran" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="#" target="_blank" rel="noopener">GitHub</a>
-    <a href="../index.html#work">Proyectos</a>
-    <a href="../index.html#contact">Contacto</a>
+    <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/gregorymduran" target="_blank" rel="noopener">GitHub</a>
+    <a href="../index.html#work" data-i18n="navigation.work">Proyectos</a>
+    <a href="../index.html#contact" data-i18n="navigation.contact">Contacto</a>
   </nav>
   <span class="footer-copy">© 2026</span>
 </footer>
 
-<script>
-(function(){
-  var nav=document.getElementById('siteNav');
-  window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>8)},{passive:true});
-  if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  } else {
-    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
-  }
-})();
-</script>
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../agent.js" defer></script>
 </body>
 </html>

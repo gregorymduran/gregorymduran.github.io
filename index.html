@@ -7,66 +7,27 @@
   <title>Gregory Durán — Product Designer</title>
   <meta name="description"
     content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='900' fill='%23F8F7F4' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+  <!-- Open Graph / Twitter Card: og:image apunta a un asset que falta subir (recomendado 1200x630) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gregory Durán — Product Designer">
+  <meta property="og:description"
+    content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+  <meta property="og:url" content="https://gregorymduran.github.io/">
+  <meta property="og:image" content="https://gregorymduran.github.io/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gregory Durán — Product Designer">
+  <meta name="twitter:description"
+    content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+  <meta name="twitter:image" content="https://gregorymduran.github.io/assets/img/og-cover.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700,800,900&display=swap">
+  <link rel="stylesheet" href="css/base.css">
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    img,
-    svg {
-      display: block;
-      max-width: 100%
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      background: none;
-      border: none
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none
-    }
-
-    ul {
-      list-style: none
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      * {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important
-      }
-
-      html {
-        scroll-behavior: auto
-      }
-    }
-
-    :root {
-      --bg: #F8F7F4;
-      --surface: #FFFFFF;
-      --ink: #0D0D0D;
-      --ink-2: #6B6B68;
-      --ink-3: #ADADAA;
-      --line: #E6E4E0;
-      --ease: 240ms cubic-bezier(.16, 1, .3, 1);
-    }
-
     body {
       background: var(--bg);
       color: var(--ink);
@@ -94,22 +55,6 @@
       }
     }
 
-    .skip {
-      position: absolute;
-      left: -999px;
-      top: 0;
-      background: var(--ink);
-      color: #fff;
-      padding: 12px 20px;
-      font-weight: 700;
-      z-index: 200
-    }
-
-    .skip:focus {
-      left: 0
-    }
-
-    a:focus-visible,
     button:focus-visible {
       outline: 2px solid var(--ink);
       outline-offset: 3px;
@@ -117,33 +62,11 @@
     }
 
     /* ── Nav ─────────────────────────────── */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid transparent;
-      background: rgba(248, 247, 244, .88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      transition: border-color var(--ease);
-    }
-
-    .nav.is-scrolled {
-      border-color: var(--line)
-    }
-
     .nav-row {
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between
-    }
-
-    .nav-name {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 900;
-      font-size: 16px;
-      letter-spacing: -.01em
     }
 
     .nav-right {
@@ -165,37 +88,6 @@
     }
 
     .nav-links a:hover {
-      color: var(--ink)
-    }
-
-    /* Lang toggle */
-    .lang-toggle {
-      display: flex;
-      align-items: center;
-      border: 1.5px solid var(--line);
-      border-radius: 99px;
-      overflow: hidden;
-      height: 34px;
-      flex-shrink: 0;
-    }
-
-    .lang-toggle button {
-      height: 100%;
-      padding: 0 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      color: var(--ink-3);
-      transition: background var(--ease), color var(--ease);
-      border-radius: 0;
-    }
-
-    .lang-toggle button.active {
-      background: var(--ink);
-      color: #fff;
-    }
-
-    .lang-toggle button:not(.active):hover {
       color: var(--ink)
     }
 
@@ -349,25 +241,6 @@
       gap: 14px;
       flex-wrap: wrap;
       align-items: center
-    }
-
-    .btn-fill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      height: 50px;
-      padding: 0 26px;
-      border-radius: 99px;
-      background: var(--ink);
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      transition: opacity var(--ease), transform var(--ease);
-    }
-
-    .btn-fill:hover {
-      opacity: .82;
-      transform: translateY(-1px)
     }
 
     .btn-line {
@@ -744,17 +617,6 @@
       color: var(--ink)
     }
 
-    /* ── Footer ───────────────────────────── */
-    .footer {
-      border-top: 1px solid var(--line);
-      padding: 24px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px
-    }
-
     .footer span {
       font-size: 13px;
       color: var(--ink-3)
@@ -765,25 +627,6 @@
     #about,
     #contact {
       scroll-margin-top: 72px
-    }
-
-    /* ── Reveal ───────────────────────────── */
-    .rv {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 520ms ease, transform 520ms ease
-    }
-
-    .rv.in {
-      opacity: 1;
-      transform: none
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      .rv {
-        opacity: 1;
-        transform: none
-      }
     }
   </style>
 </head>
@@ -803,8 +646,8 @@
           <a href="#contact" data-i18n="navigation.contact">Contacto</a>
         </nav>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-          <button id="btnEs" class="active" onclick="setLang('es')">ES</button>
-          <button id="btnEn" onclick="setLang('en')">EN</button>
+          <button id="btnEs" class="active">ES</button>
+          <button id="btnEn">EN</button>
         </div>
         <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
       </div>
@@ -825,8 +668,8 @@
     <a href="#contact" data-i18n="navigation.contact">Contacto</a>
     <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
     <div class="lang-toggle" role="group" aria-label="Idioma / Language" style="margin-top:24px;height:42px">
-      <button id="btnEsM" class="active" onclick="setLang('es')">ES</button>
-      <button id="btnEnM" onclick="setLang('en')">EN</button>
+      <button id="btnEsM" class="active">ES</button>
+      <button id="btnEnM">EN</button>
     </div>
   </nav>
 
@@ -874,7 +717,6 @@
             <a href="proyectos/baseball-scoreboard.html" class="proj-link" data-i18n-aria="projects.baseball.aria"></a>
             <div class="proj-img">
               <!-- REEMPLAZAR: sube tu screenshot a assets/img/baseball-scoreboard/cover.jpg y descomenta -->
-              <img src="" alt="Preview Baseball Scoreboard">
               <!-- <img src="assets/img/baseball-scoreboard/cover.jpg" alt="Preview Baseball Scoreboard"> -->
             </div>
             <div class="proj-body">
@@ -892,12 +734,14 @@
           <div class="proj rv" role="listitem">
             <a href="proyectos/nexo.html" class="proj-link" data-i18n-aria="projects.nexo.aria"></a>
             <div class="proj-img">
-              <img src="" alt="Preview Nexo">
+              <!-- REEMPLAZAR: sube tu screenshot a assets/img/nexo/cover.jpg y descomenta -->
+              <!-- <img src="assets/img/nexo/cover.jpg" alt="Preview Nexo"> -->
             </div>
             <div class="proj-body">
               <div class="proj-meta">
                 <span class="proj-num">02</span>
                 <span class="proj-type" data-i18n="projects.nexo.type"></span>
+                <span class="proj-status wip" data-i18n="projects.nexo.status"></span>
               </div>
               <p class="proj-name" data-i18n="projects.nexo.title"></p>
               <p class="proj-desc" data-i18n="projects.nexo.description"></p>
