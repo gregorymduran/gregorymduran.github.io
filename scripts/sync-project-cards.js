@@ -29,6 +29,22 @@ const knownProjects = [
     enStatus: 'Deployed'
   },
   {
+    slug: 'kerygma-stage',
+    alias: 'kerygma',
+    type: 'Desktop App',
+    status: 'live',
+    image: 'assets/img/kerygma-stage/cover.jpg',
+    imageAlt: 'Preview Kerygma Stage',
+    esTitle: 'Kerygma Stage',
+    enTitle: 'Kerygma Stage',
+    esDesc: 'Software de proyección para iglesias que reemplaza PowerPoint y ProPresenter: consola de operador separada de la pantalla del público, subtítulos en vivo 100% offline y detección de versículo por voz. Lo diseñé y construí de punta a punta (React + Tauri/Rust), y lo usa semanalmente la Iglesia Hogar de Salvación y Alabanza.',
+    enDesc: 'Church presentation software that replaces PowerPoint and ProPresenter: an operator console kept separate from the audience screen, fully offline live captions, and voice-driven Bible verse detection. I designed and built it end to end (React + Tauri/Rust), and Iglesia Hogar de Salvación y Alabanza uses it weekly.',
+    esAria: 'Kerygma Stage — Ver caso de estudio',
+    enAria: 'Kerygma Stage — View case study',
+    esStatus: 'Desplegado',
+    enStatus: 'Deployed'
+  },
+  {
     slug: 'nexo',
     alias: 'nexo',
     type: 'Web Project',
@@ -109,7 +125,10 @@ function resolveProject(slug) {
 
 function buildProjectCard(project, index) {
   const number = String(index + 1).padStart(2, '0');
-  const imageBlock = `              <!-- REEMPLAZAR: sube tu screenshot a ${project.image} y descomenta -->\n              <!-- <img src="${project.image}" alt="${project.imageAlt}"> -->`;
+  // Si el screenshot ya existe se emite el <img> real; si no, el placeholder comentado.
+  const imageBlock = fs.existsSync(path.join(root, project.image))
+    ? `              <img src="${project.image}" alt="${project.imageAlt}" loading="lazy">`
+    : `              <!-- REEMPLAZAR: sube tu screenshot a ${project.image} y descomenta -->\n              <!-- <img src="${project.image}" alt="${project.imageAlt}"> -->`;
   const status = project.status
     ? `\n                <span class="proj-status ${project.status}" data-i18n="projects.${project.alias}.status"></span>`
     : '';

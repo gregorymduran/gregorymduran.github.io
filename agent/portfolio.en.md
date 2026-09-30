@@ -145,6 +145,16 @@ It was the project where I learned the most about synchronization, architecture,
 
 ---
 
+### Kerygma Stage {intent: kerygma_stage; tags: realtime, church, offline, rust; priority: 10}
+
+Desktop software that replaces PowerPoint and ProPresenter for projecting song lyrics and Bible verses during a live worship service. Iglesia Hogar de Salvación y Alabanza uses it weekly.
+
+I designed and built the whole product: a React interface over a Rust backend (Tauri), with live captions and voice-driven verse detection that run 100% on-device, with no dependency on the internet or the cloud.
+
+The most important decision was separating what the operator stages from what the audience actually sees, so no one in the congregation ever sees a mistake mid-correction.
+
+---
+
 ### Jobs Hunter {intent: jobs_hunter; tags: ux, research; priority: 9}
 
 Conceptual redesign of a job search platform.

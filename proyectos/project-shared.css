@@ -637,3 +637,139 @@ body.project .role-card {
     padding-top: 56px;
   }
 }
+
+/* Visor de capturas (lightbox) — ver bindLightbox en js/main.js */
+body.project .is-zoomable {
+  cursor: zoom-in;
+}
+
+body.project .is-zoomable img {
+  transition: transform var(--ease);
+}
+
+body.project .is-zoomable:hover img {
+  transform: scale(1.02);
+}
+
+body.project .is-zoomable:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+html.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(8, 8, 10, .96);
+  color: #F8F7F4;
+}
+
+.lightbox::backdrop {
+  background: rgba(8, 8, 10, .6);
+}
+
+.lightbox[open] {
+  animation: lightbox-in 200ms ease-out;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 64px 88px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: calc(100dvh - 140px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+.lightbox-cap {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lightbox-count {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(248, 247, 244, .6);
+}
+
+.lightbox-btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(248, 247, 244, .2);
+  border-radius: 50%;
+  background: rgba(248, 247, 244, .08);
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.lightbox-btn:hover {
+  background: rgba(248, 247, 244, .18);
+  border-color: rgba(248, 247, 244, .4);
+}
+
+.lightbox-btn:focus-visible {
+  outline: 2px solid #F8F7F4;
+  outline-offset: 2px;
+}
+
+.lightbox-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lightbox-close { top: 14px; right: 16px; }
+.lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+  .lightbox-figure { padding: 64px 12px 88px; }
+  .lightbox-img { max-height: calc(100dvh - 200px); }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 22px; transform: none; }
+  .lightbox-prev { left: calc(50% - 56px); }
+  .lightbox-next { right: calc(50% - 56px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.project .is-zoomable img { transition: none; }
+  body.project .is-zoomable:hover img { transform: none; }
+  .lightbox[open] { animation: none; }
+}

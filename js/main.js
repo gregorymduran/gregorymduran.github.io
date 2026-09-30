@@ -109,10 +109,118 @@
       }
     }
 
+    // Visor de capturas: amplía las imágenes del hero y de la galería de pantallas
+    // en un <dialog> nativo (Esc, foco y fondo inerte los maneja el navegador).
+    function bindLightbox() {
+      var frames = Array.prototype.slice.call(
+        document.querySelectorAll('body.project .hero-img, body.project .screen-frame')
+      ).filter(function (frame) {
+        var img = frame.querySelector('img');
+        return img && img.getAttribute('src');
+      });
+      if (!frames.length || typeof HTMLDialogElement === 'undefined') return;
+
+      function t(key, fallbackEs, fallbackEn) {
+        var lang = window.i18n ? window.i18n.getCurrentLanguage() : 'es';
+        var locale = window.i18n && window.i18n.getLocale(lang) || {};
+        return locale[key] || (lang === 'en' ? fallbackEn : fallbackEs);
+      }
+
+      function captionFor(frame) {
+        var cap = frame.parentElement && frame.parentElement.querySelector('.screen-cap');
+        return cap ? cap.textContent.trim() : frame.querySelector('img').alt;
+      }
+
+      var dialog = document.createElement('dialog');
+      dialog.className = 'lightbox';
+      dialog.innerHTML =
+        '<figure class="lightbox-figure">' +
+          '<img class="lightbox-img" alt="">' +
+          '<figcaption class="lightbox-cap"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption>' +
+        '</figure>' +
+        '<button type="button" class="lightbox-btn lightbox-close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+        '<button type="button" class="lightbox-btn lightbox-prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>' +
+        '<button type="button" class="lightbox-btn lightbox-next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>';
+      document.body.appendChild(dialog);
+
+      var dImg = dialog.querySelector('.lightbox-img');
+      var dText = dialog.querySelector('.lightbox-text');
+      var dCount = dialog.querySelector('.lightbox-count');
+      var btnClose = dialog.querySelector('.lightbox-close');
+      var btnPrev = dialog.querySelector('.lightbox-prev');
+      var btnNext = dialog.querySelector('.lightbox-next');
+      var current = 0;
+      var opener = null;
+
+      function labelButtons() {
+        btnClose.setAttribute('aria-label', t('lightbox.close', 'Cerrar', 'Close'));
+        btnPrev.setAttribute('aria-label', t('lightbox.prev', 'Anterior', 'Previous'));
+        btnNext.setAttribute('aria-label', t('lightbox.next', 'Siguiente', 'Next'));
+        frames.forEach(function (frame) {
+          frame.setAttribute('aria-label', t('lightbox.open', 'Ampliar', 'Enlarge') + ': ' + captionFor(frame));
+        });
+      }
+
+      function show(index) {
+        current = (index + frames.length) % frames.length;
+        var img = frames[current].querySelector('img');
+        dImg.src = img.currentSrc || img.src;
+        dImg.alt = img.alt;
+        dText.textContent = captionFor(frames[current]);
+        dCount.textContent = frames.length > 1 ? (current + 1) + ' / ' + frames.length : '';
+      }
+
+      function open(index) {
+        opener = frames[index];
+        show(index);
+        labelButtons();
+        dialog.showModal();
+        document.documentElement.classList.add('lightbox-open');
+      }
+
+      frames.forEach(function (frame, index) {
+        frame.classList.add('is-zoomable');
+        frame.setAttribute('role', 'button');
+        frame.setAttribute('tabindex', '0');
+        frame.addEventListener('click', function () { open(index); });
+        frame.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            open(index);
+          }
+        });
+      });
+
+      var single = frames.length < 2;
+      btnPrev.hidden = single;
+      btnNext.hidden = single;
+      btnClose.addEventListener('click', function () { dialog.close(); });
+      btnPrev.addEventListener('click', function () { show(current - 1); });
+      btnNext.addEventListener('click', function () { show(current + 1); });
+      dialog.addEventListener('keydown', function (event) {
+        if (single) return;
+        if (event.key === 'ArrowLeft') show(current - 1);
+        if (event.key === 'ArrowRight') show(current + 1);
+      });
+      // Click en el fondo (fuera de la imagen y los botones) cierra.
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog || event.target.classList.contains('lightbox-figure')) dialog.close();
+      });
+      dialog.addEventListener('close', function () {
+        document.documentElement.classList.remove('lightbox-open');
+        if (opener) opener.focus();
+      });
+
+      labelButtons();
+      window.addEventListener('i18n:change', labelButtons);
+      window.addEventListener('i18n:ready', labelButtons);
+    }
+
     bindLanguageButtons();
     bindMenu();
     bindCopyAction();
     bindReveal();
+    bindLightbox();
 
     window.addEventListener('i18n:change', function (event) {
       setLanguageButtons(event.detail && event.detail.lang ? event.detail.lang : window.i18n.getCurrentLanguage());
