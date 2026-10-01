@@ -1,6 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
+// Regenera las tarjetas de proyecto de index.html (entre PROJECTS:START y PROJECTS:END)
+// a partir de proyectos/*.html y de la metadata de abajo.
+//
+// Reglas:
+// - Un proyecto sin metadata en knownProjects NO se publica (se avisa en consola):
+//   nunca se genera texto de relleno ni imágenes vacías.
+// - hidden: true deja la página accesible pero fuera de la home (p. ej. conceptos en curso).
+// - Las traducciones solo se agregan si faltan: el copy editado a mano en
+//   locales/{es,en}.json nunca se sobrescribe.
+//
+// Uso: node scripts/sync-project-cards.js
+
 const root = path.resolve(__dirname, '..');
 const projectsDir = path.join(root, 'proyectos');
 const indexPath = path.join(root, 'index.html');
@@ -9,85 +21,55 @@ const startMarker = '<!-- PROJECTS:START -->';
 const endMarker = '<!-- PROJECTS:END -->';
 
 // slug = nombre del archivo en proyectos/*.html
-// alias = prefijo usado en las claves de traducción (data-i18n="projects.<alias>.*"),
-// tal como viven hoy en locales/es.json y locales/en.json
+// alias = prefijo de las claves de traducción (data-i18n="projects.<alias>.*")
 const knownProjects = [
   {
     slug: 'baseball-scoreboard',
     alias: 'baseball',
-    type: 'Web App',
-    status: 'live',
+    order: 1,
     image: 'assets/img/baseball-scoreboard/cover.jpg',
-    imageAlt: 'Preview Baseball Scoreboard',
-    esTitle: 'Baseball Scoreboard',
-    enTitle: 'Baseball Scoreboard',
-    esDesc: 'La decisión importante aquí no fue visual, fue arquitectónica: sincronizar consola y pantalla en el cliente, sin depender de un servidor. Diseñé la interfaz, escribí el código, y lo usé en producción durante el torneo del Ministerio Cristiano HOME.',
-    enDesc: 'The important decision here wasn’t visual, it was architectural: synchronizing the operator console and projection screen on the client without relying on a server. I designed the interface, wrote the code, and used it in production during the Ministerio Cristiano HOME tournament.',
-    esAria: 'Baseball Scoreboard — Ver caso de estudio',
-    enAria: 'Baseball Scoreboard — View case study',
-    esStatus: 'Desplegado',
-    enStatus: 'Deployed'
+    facts: 3,
+    es: {
+      title: 'Baseball Scoreboard',
+      type: 'Web App',
+      status: 'En uso real',
+      aria: 'Baseball Scoreboard — Ver caso de estudio',
+      imageAlt: 'Consola del operador y pantalla de proyección de Baseball Scoreboard'
+    },
+    en: {
+      title: 'Baseball Scoreboard',
+      type: 'Web App',
+      status: 'In real use',
+      aria: 'Baseball Scoreboard — View case study',
+      imageAlt: 'Baseball Scoreboard operator console and projection screen'
+    }
   },
   {
     slug: 'kerygma-stage',
     alias: 'kerygma',
-    type: 'Desktop App',
-    status: 'live',
+    order: 2,
     image: 'assets/img/kerygma-stage/cover.jpg',
-    imageAlt: 'Preview Kerygma Stage',
-    esTitle: 'Kerygma Stage',
-    enTitle: 'Kerygma Stage',
-    esDesc: 'Software de proyección para iglesias que reemplaza PowerPoint y ProPresenter: consola de operador separada de la pantalla del público, subtítulos en vivo 100% offline y detección de versículo por voz. Lo diseñé y construí de punta a punta (React + Tauri/Rust), y lo usa semanalmente la Iglesia Hogar de Salvación y Alabanza.',
-    enDesc: 'Church presentation software that replaces PowerPoint and ProPresenter: an operator console kept separate from the audience screen, fully offline live captions, and voice-driven Bible verse detection. I designed and built it end to end (React + Tauri/Rust), and Iglesia Hogar de Salvación y Alabanza uses it weekly.',
-    esAria: 'Kerygma Stage — Ver caso de estudio',
-    enAria: 'Kerygma Stage — View case study',
-    esStatus: 'Desplegado',
-    enStatus: 'Deployed'
+    facts: 3,
+    es: {
+      title: 'Kerygma Stage',
+      type: 'Desktop App',
+      status: 'En uso semanal',
+      aria: 'Kerygma Stage — Ver caso de estudio',
+      imageAlt: 'Consola del operador de Kerygma Stage con vista previa y vista en vivo'
+    },
+    en: {
+      title: 'Kerygma Stage',
+      type: 'Desktop App',
+      status: 'Used weekly',
+      aria: 'Kerygma Stage — View case study',
+      imageAlt: 'Kerygma Stage operator console with separate preview and live views'
+    }
   },
   {
+    // Concepto en curso: sin capturas ni resultados todavía.
     slug: 'nexo',
     alias: 'nexo',
-    type: 'Web Project',
-    status: 'wip',
-    image: 'assets/img/nexo/cover.jpg',
-    imageAlt: 'Preview Nexo',
-    esTitle: 'Nexo',
-    enTitle: 'Nexo',
-    esDesc: 'Proyecto nuevo agregado automáticamente. Detalles en desarrollo.',
-    enDesc: 'New project added automatically. Details in development.',
-    esAria: 'Nexo — Ver caso de estudio',
-    enAria: 'Nexo — View case study',
-    esStatus: 'En progreso',
-    enStatus: 'In progress'
-  },
-  {
-    slug: 'jobs-hunter',
-    alias: 'jobs-hunter',
-    type: 'Case Study',
-    image: 'assets/img/jobs-hunter/cover.jpg',
-    imageAlt: 'Preview Jobs Hunter',
-    esTitle: 'Jobs Hunter',
-    enTitle: 'Jobs Hunter',
-    esDesc: 'Rediseño de una plataforma de búsqueda de empleo. Analicé competidores no para copiar patrones, sino para entender qué problema resolvía cada uno. Las comparativas antes/después se validaron con usuarios reales.',
-    enDesc: 'Redesign of a job search platform. I analyzed competitors not to copy patterns, but to understand what problem each one solved. Before/after comparisons were validated with real users.',
-    esAria: 'Jobs Hunter — Ver caso de estudio',
-    enAria: 'Jobs Hunter — View case study'
-  },
-  {
-    slug: 'pulse',
-    alias: 'pulse',
-    type: 'Windows 11 App',
-    status: 'wip',
-    image: 'assets/img/pulse/cover.jpg',
-    imageAlt: 'Preview Pulse App',
-    esTitle: 'Pulse',
-    enTitle: 'Pulse',
-    esDesc: 'App de Windows 11 para freelancers creativos, aún en diseño. Está construida sobre Fluent Design System porque el SO resuelve la mayoría de la coherencia visual. El trabajo está en aprovechar eso, no en reinventar.',
-    enDesc: 'Windows 11 time tracking app for creative freelancers, still in design. Built on Fluent Design System because the OS solves most of the visual coherence. The work is leveraging that, not reinventing it.',
-    esAria: 'Pulse — Ver proceso de diseño',
-    enAria: 'Pulse — View design process',
-    esStatus: 'En diseño',
-    enStatus: 'In design'
+    hidden: true
   }
 ];
 
@@ -98,110 +80,118 @@ function readProjectSlugs() {
 
   return fs.readdirSync(projectsDir)
     .filter((file) => path.extname(file).toLowerCase() === '.html')
-    .map((file) => path.basename(file, '.html'))
-    .sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }));
+    .map((file) => path.basename(file, '.html'));
 }
 
-function resolveProject(slug) {
-  const known = knownProjects.find((item) => item.slug === slug);
-  if (known) return known;
-
-  // Proyecto sin metadata todavía: alias = slug, texto de relleno explícito
-  const name = slug.replace(/[-_]/g, ' ').replace(/\b\w/g, (ch) => ch.toUpperCase());
-  return {
-    slug,
-    alias: slug,
-    type: 'Web Project',
-    image: `assets/img/${slug}/cover.jpg`,
-    imageAlt: `Preview ${name}`,
-    esTitle: name,
-    enTitle: name,
-    esDesc: 'Proyecto nuevo agregado automáticamente. Detalles en desarrollo.',
-    enDesc: 'New project added automatically. Details in development.',
-    esAria: `${name} — Ver caso de estudio`,
-    enAria: `${name} — View case study`
-  };
+function readLocale(lang) {
+  return JSON.parse(fs.readFileSync(path.join(localesDir, `${lang}.json`), 'utf8'));
 }
 
-function buildProjectCard(project, index) {
+function escapeAttr(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+
+function buildProjectCard(project, index, es) {
   const number = String(index + 1).padStart(2, '0');
-  // Si el screenshot ya existe se emite el <img> real; si no, el placeholder comentado.
-  const imageBlock = fs.existsSync(path.join(root, project.image))
-    ? `              <img src="${project.image}" alt="${project.imageAlt}" loading="lazy">`
-    : `              <!-- REEMPLAZAR: sube tu screenshot a ${project.image} y descomenta -->\n              <!-- <img src="${project.image}" alt="${project.imageAlt}"> -->`;
-  const status = project.status
-    ? `\n                <span class="proj-status ${project.status}" data-i18n="projects.${project.alias}.status"></span>`
-    : '';
+  const key = (name) => `projects.${project.alias}.${name}`;
+  const text = (name) => es[key(name)] || '';
+  const facts = Array.from({ length: project.facts || 0 }, (_, i) =>
+    `                <li data-i18n="${key(`fact${i + 1}`)}">${text(`fact${i + 1}`)}</li>`
+  ).join('\n');
 
-  const html = `          <!-- ${number} ${project.esTitle} -->\n          <div class="proj rv" role="listitem">\n            <a href="proyectos/${project.slug}.html" class="proj-link" data-i18n-aria="projects.${project.alias}.aria"></a>\n            <div class="proj-img">\n${imageBlock}\n            </div>\n            <div class="proj-body">\n              <div class="proj-meta">\n                <span class="proj-num">${number}</span>\n                <span class="proj-type" data-i18n="projects.${project.alias}.type"></span>${status}\n              </div>\n              <p class="proj-name" data-i18n="projects.${project.alias}.title"></p>\n              <p class="proj-desc" data-i18n="projects.${project.alias}.description"></p>\n            </div>\n          </div>`;
-
-  const translations = {
-    es: {
-      [`projects.${project.alias}.aria`]: project.esAria,
-      [`projects.${project.alias}.type`]: project.type,
-      [`projects.${project.alias}.title`]: project.esTitle,
-      [`projects.${project.alias}.description`]: project.esDesc
-    },
-    en: {
-      [`projects.${project.alias}.aria`]: project.enAria,
-      [`projects.${project.alias}.type`]: project.type,
-      [`projects.${project.alias}.title`]: project.enTitle,
-      [`projects.${project.alias}.description`]: project.enDesc
-    }
-  };
-
-  if (project.status) {
-    translations.es[`projects.${project.alias}.status`] = project.esStatus || project.status;
-    translations.en[`projects.${project.alias}.status`] = project.enStatus || project.status;
-  }
-
-  return { html, translations };
+  return `          <!-- ${number} ${project.es.title} -->
+          <article class="proj rv" role="listitem">
+            <a href="proyectos/${project.slug}.html" class="proj-link" data-i18n-aria="${key('aria')}" aria-label="${escapeAttr(text('aria'))}"></a>
+            <div class="proj-img">
+              <img src="${project.image}" data-i18n-alt="${key('imageAlt')}" alt="${escapeAttr(text('imageAlt'))}" width="1600" height="1000" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-meta">
+                <span class="proj-num">${number}</span>
+                <span class="proj-type" data-i18n="${key('type')}">${text('type')}</span>
+                <span class="proj-status" data-i18n="${key('status')}">${text('status')}</span>
+              </div>
+              <h3 class="proj-name" data-i18n="${key('title')}">${text('title')}</h3>
+              <p class="proj-desc" data-i18n="${key('description')}">${text('description')}</p>
+              <p class="proj-role"><strong data-i18n="projects.roleLabel">${es['projects.roleLabel'] || 'Rol:'}</strong> <span data-i18n="${key('role')}">${text('role')}</span></p>
+              <ul class="proj-kpi">
+${facts}
+              </ul>
+              <span class="proj-cta" aria-hidden="true"><span data-i18n="projects.cta">${es['projects.cta'] || 'Ver caso de estudio'}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </span>
+            </div>
+          </article>`;
 }
 
-function findSection(html, tokenStart, tokenEnd) {
-  const startIndex = html.indexOf(tokenStart);
-  const endIndex = html.indexOf(tokenEnd, startIndex);
-  if (startIndex === -1 || endIndex === -1) return null;
-  return { startIndex, endIndex };
-}
-
-function updateProjectsSection(html, cards) {
-  const section = findSection(html, startMarker, endMarker);
-  if (!section) {
+function updateProjectsSection(html, cardsHtml) {
+  const startIndex = html.indexOf(startMarker);
+  const endIndex = html.indexOf(endMarker, startIndex);
+  if (startIndex === -1 || endIndex === -1) {
     throw new Error('No se encontraron los marcadores PROJECTS:START / PROJECTS:END en index.html');
   }
-
-  const cardHtml = cards.map((card) => card.html).join('\n\n');
-  return html.slice(0, section.startIndex + startMarker.length) + '\n' + cardHtml + '\n          ' + html.slice(section.endIndex);
+  return html.slice(0, startIndex + startMarker.length) + '\n' + cardsHtml + '\n          ' + html.slice(endIndex);
 }
 
-function updateLocaleFile(lang, values) {
+function addMissingTranslations(lang, values) {
   const localePath = path.join(localesDir, `${lang}.json`);
-  const existing = JSON.parse(fs.readFileSync(localePath, 'utf8'));
-  const merged = Object.assign(existing, values);
-  fs.writeFileSync(localePath, JSON.stringify(merged, null, 2) + '\n', 'utf8');
+  const existing = readLocale(lang);
+  let added = 0;
+  Object.keys(values).forEach((k) => {
+    if (existing[k] === undefined) {
+      existing[k] = values[k];
+      added += 1;
+    }
+  });
+  fs.writeFileSync(localePath, JSON.stringify(existing, null, 2) + '\n', 'utf8');
+  return added;
 }
 
 function main() {
   const slugs = readProjectSlugs();
-  const projects = slugs.map(resolveProject);
-  const cards = projects.map((project, index) => buildProjectCard(project, index));
+  const published = [];
 
-  const html = fs.readFileSync(indexPath, 'utf8');
-  const updated = updateProjectsSection(html, cards);
-  fs.writeFileSync(indexPath, updated, 'utf8');
-
-  const esValues = {};
-  const enValues = {};
-  cards.forEach((card) => {
-    Object.assign(esValues, card.translations.es);
-    Object.assign(enValues, card.translations.en);
+  slugs.forEach((slug) => {
+    const meta = knownProjects.find((item) => item.slug === slug);
+    if (!meta) {
+      console.warn(`⚠ proyectos/${slug}.html no tiene metadata en knownProjects: no se publica en la home.`);
+      return;
+    }
+    if (meta.hidden) return;
+    if (!fs.existsSync(path.join(root, meta.image))) {
+      console.warn(`⚠ Falta la portada ${meta.image}: ${slug} no se publica en la home.`);
+      return;
+    }
+    published.push(meta);
   });
 
-  updateLocaleFile('es', esValues);
-  updateLocaleFile('en', enValues);
+  published.sort((a, b) => (a.order || 99) - (b.order || 99));
 
-  console.log(`index.html y locales/{es,en}.json actualizados con ${slugs.length} proyecto(s): ${slugs.join(', ')}.`);
+  ['es', 'en'].forEach((lang) => {
+    const values = {};
+    published.forEach((p) => {
+      Object.keys(p[lang]).forEach((name) => {
+        values[`projects.${p.alias}.${name}`] = p[lang][name];
+      });
+    });
+    const added = addMissingTranslations(lang, values);
+    if (added) console.log(`${lang}.json: ${added} clave(s) nuevas.`);
+  });
+
+  const es = readLocale('es');
+  ['description', 'role'].forEach((name) => {
+    published.forEach((p) => {
+      if (!es[`projects.${p.alias}.${name}`]) {
+        console.warn(`⚠ Falta projects.${p.alias}.${name} en locales/es.json y en.json: escríbelo a mano.`);
+      }
+    });
+  });
+
+  const cardsHtml = published.map((p, i) => buildProjectCard(p, i, es)).join('\n\n');
+  const html = fs.readFileSync(indexPath, 'utf8');
+  fs.writeFileSync(indexPath, updateProjectsSection(html, cardsHtml), 'utf8');
+
+  console.log(`index.html actualizado con ${published.length} proyecto(s): ${published.map((p) => p.slug).join(', ')}.`);
 }
 
 main();

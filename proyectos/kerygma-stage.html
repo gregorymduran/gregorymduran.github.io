@@ -3,145 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerygma Stage — Caso de Estudio | Gregory Durán</title>
-<meta name="description" content="Caso de estudio: software de proyección para iglesias que reemplaza PowerPoint y ProPresenter, con subtítulos en vivo 100% offline y detección de versículo por voz.">
+<title data-i18n="meta.kerygma.title">Kerygma Stage — Caso de estudio | Gregory Durán</title>
+<meta name="description" content="Caso de estudio de Product Design: software de proyección para cultos en vivo. Vista previa vs. en vivo, IA que sugiere en lugar de decidir y una arquitectura offline-first.">
+<link rel="canonical" href="https://gregorymduran.github.io/proyectos/kerygma-stage.html">
+<meta name="author" content="Gregory Durán">
+<meta name="theme-color" content="#F8F7F4">
 <link rel="icon"
   href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='900' fill='%23F8F7F4' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
-<!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kerygma Stage — Caso de Estudio | Gregory Durán">
-<meta property="og:description" content="Caso de estudio: software de proyección para iglesias que reemplaza PowerPoint y ProPresenter, con subtítulos en vivo 100% offline y detección de versículo por voz.">
+<meta property="og:site_name" content="Gregory Durán">
+<meta property="og:title" content="Kerygma Stage — Caso de estudio | Gregory Durán">
+<meta property="og:description" content="Software de proyección para cultos en vivo: vista previa vs. en vivo, IA que sugiere en lugar de decidir y una arquitectura offline-first.">
 <meta property="og:url" content="https://gregorymduran.github.io/proyectos/kerygma-stage.html">
 <meta property="og:image" content="https://gregorymduran.github.io/assets/img/kerygma-stage/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kerygma Stage — Caso de Estudio | Gregory Durán">
-<meta name="twitter:description" content="Caso de estudio: software de proyección para iglesias que reemplaza PowerPoint y ProPresenter, con subtítulos en vivo 100% offline y detección de versículo por voz.">
+<meta name="twitter:title" content="Kerygma Stage — Caso de estudio | Gregory Durán">
+<meta name="twitter:description" content="Software de proyección para cultos en vivo: vista previa vs. en vivo, IA que sugiere en lugar de decidir y una arquitectura offline-first.">
 <meta name="twitter:image" content="https://gregorymduran.github.io/assets/img/kerygma-stage/og-cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Kerygma Stage — Product Design case study",
+      "description": "Church presentation software for live services: preview vs. live, AI that suggests instead of deciding, and an offline-first architecture.",
+      "image": "https://gregorymduran.github.io/assets/img/kerygma-stage/og-cover.jpg",
+      "url": "https://gregorymduran.github.io/proyectos/kerygma-stage.html",
+      "mainEntityOfPage": "https://gregorymduran.github.io/proyectos/kerygma-stage.html",
+      "inLanguage": ["es", "en"],
+      "genre": "Case study",
+      "author": { "@type": "Person", "@id": "https://gregorymduran.github.io/#person", "name": "Gregory Durán", "url": "https://gregorymduran.github.io/" },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Kerygma Stage",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Gregory Durán", "item": "https://gregorymduran.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Kerygma Stage", "item": "https://gregorymduran.github.io/proyectos/kerygma-stage.html" }
+      ]
+    }
+  ]
+}
+</script>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap">
-<link rel="stylesheet" href="./project-shared.css">
 <link rel="stylesheet" href="../css/base.css">
-<style>
-:root{
-  --accent:#0D0D0D;
-  --font-display:'Satoshi',sans-serif;--font-body:'DM Sans',sans-serif;
-  --sp-8:8px;--sp-16:16px;--sp-24:24px;--sp-32:32px;--sp-48:48px;--sp-64:64px;--sp-96:96px;
-  --r:12px;--r-lg:20px;
-}
-
-body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.g{max-width:920px;margin:0 auto;padding:0 48px}
-.g-wide{max-width:1100px;margin:0 auto;padding:0 48px}
-@media(max-width:860px){.g,.g-wide{padding:0 28px}}
-@media(max-width:540px){.g,.g-wide{padding:0 20px}}
-
-/* Nav */
-.nav-row{height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
-.nav-back:hover{color:var(--ink)}
-.nav-back svg{width:16px;height:16px}
-.nav-contact-lnk{font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
-.nav-contact-lnk:hover{color:var(--ink)}
-@media(max-width:540px){.nav-back span{display:none}}
-
-/* Hero */
-.case-hero{padding:clamp(64px,10vw,128px) 0 clamp(48px,7vw,96px);border-bottom:1px solid var(--line)}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:20px}
-.case-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px}
-.case-hero .subtitle{font-size:clamp(16px,1.7vw,18px);color:var(--ink-2);max-width:560px;line-height:1.65;margin-bottom:40px}
-.meta-row{display:flex;gap:40px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--line)}
-.meta-item .label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
-.meta-item .value{font-size:14px;font-weight:700;color:var(--ink)}
-
-/* Hero image */
-.hero-img{margin-top:40px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:#EAE8E4;aspect-ratio:16/8;position:relative}
-.hero-img img{width:100%;height:100%;object-fit:cover}
-.hero-img::after{content:'Vista previa del proyecto';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.hero-img:has(img[src]:not([src=""]))::after{display:none}
-
-/* Sections */
-.cs{padding:clamp(48px,7vw,96px) 0}
-.cs + .cs{border-top:1px solid var(--line)}
-.cs .eyebrow{margin-bottom:12px}
-.cs h2{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.025em;line-height:1.2;margin-bottom:20px}
-.cs p{font-size:15px;color:var(--ink-2);line-height:1.72;margin-bottom:14px}
-.cs p:last-child{margin-bottom:0}
-
-/* Goal list */
-.goal-list{display:flex;flex-direction:column;gap:14px;margin-top:20px}
-.goal-list li{display:flex;gap:14px;font-size:15px;color:var(--ink);align-items:flex-start}
-.gi{width:26px;height:26px;border-radius:50%;background:#EAE8E4;color:var(--ink-2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;margin-top:1px}
-
-/* Before / After */
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
-@media(max-width:640px){.compare-grid{grid-template-columns:1fr}}
-.compare-card{border-radius:var(--r);padding:var(--sp-24)}
-.compare-card.before{background:#F2F2F0;border:1px solid var(--line)}
-.compare-card.after{background:var(--surface);border:1px solid var(--line)}
-.compare-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;display:block}
-.compare-card.before .compare-label{color:var(--ink-3)}
-.compare-card.after .compare-label{color:var(--ink)}
-.compare-card p{font-size:14px;color:var(--ink);line-height:1.55;margin-bottom:10px}
-.compare-card p:last-child{margin-bottom:0}
-
-/* Process steps */
-.steps{display:flex;flex-direction:column;gap:24px;margin-top:24px}
-.step{display:flex;gap:20px}
-.step-num{font-family:var(--font-display);font-size:20px;font-weight:900;color:#E6E4E0;flex-shrink:0;width:32px;line-height:1.3}
-.step-body h3{font-family:var(--font-display);font-size:17px;font-weight:800;margin-bottom:6px}
-.step-body p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* Decision cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:760px){.cards{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--sp-24)}
-.card h3{font-family:var(--font-display);font-size:16px;font-weight:800;margin-bottom:8px}
-.card p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* Results */
-.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:640px){.results-grid{grid-template-columns:1fr}}
-.result-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--sp-24);text-align:center}
-.result-stat{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--ink);margin-bottom:8px}
-.result-label{font-size:13px;color:var(--ink-2);line-height:1.5}
-
-/* Screen gallery */
-.screens{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
-@media(max-width:640px){.screens{grid-template-columns:1fr}}
-.screen-frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#EAE8E4;aspect-ratio:16/11;position:relative}
-.screen-frame img{width:100%;height:100%;object-fit:cover}
-.screen-frame::after{content:'Pantalla';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.screen-frame:has(img[src]:not([src=""]))::after{display:none}
-/* Las capturas de la app son 16:10/16:9 — el 16:8 compartido recortaba encabezados y el reloj */
-body.project.kerygma .screen-frame{aspect-ratio:16/10}
-.screen-cap{font-size:12px;font-weight:600;color:var(--ink-3);margin-top:8px;text-align:center}
-
-/* Learnings */
-.learnings{display:flex;flex-direction:column;gap:24px;margin-top:24px}
-.learning{border-left:3px solid var(--line);padding-left:var(--sp-24)}
-.learning h3{font-family:var(--font-display);font-size:17px;font-weight:800;margin-bottom:8px}
-.learning p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* CTA */
-.case-cta{padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--line);text-align:center}
-.case-cta h2{font-family:var(--font-display);font-size:clamp(24px,3.6vw,40px);font-weight:900;letter-spacing:-.025em;margin-bottom:12px}
-.case-cta p{font-size:15px;color:var(--ink-2);margin-bottom:28px}
-.cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn-line{display:inline-flex;align-items:center;gap:7px;height:50px;padding:0 22px;border-radius:99px;font-weight:700;font-size:14px;color:var(--ink-2);border:1.5px solid var(--line);transition:border-color var(--ease),color var(--ease)}
-.btn-line:hover{border-color:var(--ink);color:var(--ink)}
-
-/* Footer */
-.footer-name{font-family:var(--font-display);font-weight:900;font-size:15px}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:13px;font-weight:600;color:var(--ink-3);transition:color var(--ease)}
-.footer-links a:hover{color:var(--ink)}
-.footer-copy{font-size:13px;color:var(--ink-3)}
-
-</style>
+<link rel="stylesheet" href="./project-shared.css">
 </head>
 <body class="project kerygma">
 
@@ -153,11 +72,11 @@ body.project.kerygma .screen-frame{aspect-ratio:16/10}
     <div class="nav-right">
       <a href="../index.html#work" class="nav-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-i18n="case.nav.back">Volver</span>
+        <span data-i18n="case.nav.back">Proyectos</span>
       </a>
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-        <button id="btnEs" class="active">ES</button>
-        <button id="btnEn">EN</button>
+        <button type="button" id="btnEs" class="active" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+        <button type="button" id="btnEn" lang="en" aria-pressed="false" aria-label="English">EN</button>
       </div>
       <a href="../index.html#contact" class="nav-contact-lnk" data-i18n="navigation.contact">Contacto</a>
     </div>
@@ -168,376 +87,490 @@ body.project.kerygma .screen-frame{aspect-ratio:16/10}
 
   <!-- HERO ─────────────────────────────────────────── -->
   <div class="g">
-    <section class="case-hero">
-      <p class="eyebrow rv" data-i18n="case.kerygma.hero.eyebrow">Caso de Estudio · Producto en uso real</p>
+    <header class="case-hero">
+      <p class="eyebrow rv" data-i18n="case.kerygma.hero.eyebrow">Caso de estudio · Producto en uso semanal</p>
       <h1 class="rv">Kerygma Stage</h1>
-      <p class="subtitle rv" data-i18n="case.kerygma.hero.subtitle">Reemplacé PowerPoint y las herramientas tipo ProPresenter con un software de proyección diseñado para el ritmo real de un culto: consola de operador separada de la pantalla del público, subtítulos en vivo 100% offline y detección de versículo por voz.</p>
-
-      <div class="meta-row rv">
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.roleLabel">Rol</span>
-          <span class="value" data-i18n="case.kerygma.hero.roleValue">Product Designer · Full-Stack Developer</span>
-        </div>
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.typeLabel">Tipo</span>
-          <span class="value" data-i18n="case.kerygma.hero.typeValue">Producto digital · Uso real en iglesia</span>
-        </div>
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.toolsLabel">Herramientas</span>
-          <span class="value" data-i18n="case.kerygma.hero.toolsValue">Figma · React · Tauri (Rust)</span>
-        </div>
-      </div>
-
-      <div class="hero-img rv">
-        <img src="../assets/img/kerygma-stage/cover-hero.jpg" alt="Kerygma Stage — Consola del operador con vista previa y vista en vivo separadas, junto al control remoto en el celular" width="2400" height="1200">
-      </div>
-    </section>
+      <p class="subtitle rv" data-i18n="case.kerygma.hero.subtitle">Software de proyección para cultos en vivo, diseñado alrededor de una idea: lo que el operador prepara y lo que ve la congregación nunca deberían ser lo mismo hasta que él lo decida.</p>
+    </header>
   </div>
-
-  <!-- CONTEXTO ─────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="contexto">
-      <p class="eyebrow rv" data-i18n="case.kerygma.context.eyebrow">Contexto</p>
-      <h2 class="rv" data-i18n="case.kerygma.context.heading">De PowerPoint improvisado a un software propio</h2>
-      <p class="rv" data-i18n="case.kerygma.context.p1">Muchas iglesias proyectan letras de canciones y versículos bíblicos durante el culto con PowerPoint, Google Slides o herramientas como ProPresenter — pensadas para presentaciones de oficina, o con un costo y complejidad que no siempre encajan con un equipo de voluntarios.</p>
-      <p class="rv" data-i18n="case.kerygma.context.p2">Investigué qué problemas reales enfrentaban los operadores de proyección — no solo los de mi propia iglesia, sino los diez problemas más comunes reportados por operadores en general — y usé esa investigación como base del producto, no mis propias suposiciones.</p>
-      <p class="rv" data-i18n="case.kerygma.context.p3">Kerygma Stage nació de esa investigación: un software de escritorio construido específicamente para proyectar en un culto en vivo, con las limitaciones reales de un voluntario operando bajo presión, sin internet garantizado, y con un público que nunca debe ver un error.</p>
-    </section>
-  </div>
-
-  <!-- ROL Y USUARIOS ───────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="rol">
-      <p class="eyebrow rv" data-i18n="case.kerygma.role.eyebrow">Mi rol</p>
-      <h2 class="rv" data-i18n="case.kerygma.role.heading">Diseño y desarrollo full-stack, de punta a punta</h2>
-      <p class="rv" data-i18n="case.kerygma.role.body">Diseñé la experiencia completa y construí tanto el frontend (React) como el backend nativo (Rust, sobre Tauri) — incluyendo el servidor local para control remoto y el motor de transcripción de voz en tiempo real.</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.kerygma.role.goal1">Investigación de los problemas reales de operadores de proyección</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.kerygma.role.goal2">Arquitectura de la aplicación de escritorio (Tauri + React + Rust)</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.kerygma.role.goal3">Diseño de interfaz y rediseño visual completo de la marca</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.kerygma.role.goal4">Implementación de subtítulos en vivo y detección de versículo por voz, 100% locales</span></li>
-      </ul>
-    </section>
-  </div>
-
   <div class="g-wide">
-    <section class="cs" id="usuarios">
-      <p class="eyebrow rv" data-i18n="case.kerygma.users.eyebrow">Usuarios</p>
-      <h2 class="rv" data-i18n="case.kerygma.users.heading">Tres roles, un mismo culto en vivo</h2>
-      <p class="rv" data-i18n="case.kerygma.users.body">El sistema debía servir a personas con necesidades opuestas dentro del mismo servicio: quien opera, quien predica, y la congregación.</p>
-      <div class="cards rv">
+    <div class="hero-img rv">
+      <img src="../assets/img/kerygma-stage/cover-hero.jpg" data-i18n-alt="case.kerygma.hero.imageAlt" alt="Consola del operador con vista previa y vista en vivo separadas, junto al control remoto en el celular" width="2400" height="1200">
+    </div>
+  </div>
+
+  <!-- 01 OVERVIEW ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="overview" aria-labelledby="t-overview">
+      <div class="sec-head">
+        <p class="sec-num"><b>01</b> <span data-i18n="case.sec.overview">Resumen</span></p>
+        <h2 id="t-overview" data-i18n="case.kerygma.overview.heading">El proyecto en 30 segundos</h2>
+      </div>
+      <dl class="overview rv">
+        <div class="wide">
+          <dt data-i18n="case.ov.product">Producto</dt>
+          <dd data-i18n="case.kerygma.ov.product">Software de escritorio para proyectar letras, versículos y anuncios durante un culto en vivo.</dd>
+        </div>
+        <div class="wide">
+          <dt data-i18n="case.ov.context">Contexto</dt>
+          <dd data-i18n="case.kerygma.ov.context">Equipos de voluntarios en iglesias que usan PowerPoint, Google Slides o herramientas tipo ProPresenter. Lo usa semanalmente la Iglesia Hogar de Salvación y Alabanza.</dd>
+        </div>
+        <div class="full">
+          <dt data-i18n="case.ov.problem">Problema</dt>
+          <dd data-i18n="case.kerygma.ov.problem">En las herramientas genéricas, preparar es exponer: corregir, buscar un versículo o improvisar ocurre a la vista de toda la congregación.</dd>
+        </div>
+        <div class="wide">
+          <dt data-i18n="case.ov.role">Mi rol</dt>
+          <dd data-i18n="case.kerygma.ov.role">Product Designer y desarrollador full-stack, de punta a punta: investigación, arquitectura, diseño de interacción e interfaz, frontend (React) y backend nativo (Rust).</dd>
+        </div>
+        <div>
+          <dt data-i18n="case.ov.platform">Plataforma</dt>
+          <dd data-i18n="case.kerygma.ov.platform">Escritorio (Windows) + control remoto desde el celular</dd>
+        </div>
+        <div>
+          <dt data-i18n="case.ov.status">Estado</dt>
+          <dd data-i18n="case.kerygma.ov.status">En uso semanal; en desarrollo activo</dd>
+        </div>
+        <div class="full">
+          <dt data-i18n="case.ov.tech">Tecnología</dt>
+          <dd>React · Fluent UI · Tauri 2 (Rust) · whisper.cpp · Axum</dd>
+        </div>
+      </dl>
+      <nav class="toc rv" data-i18n-aria="case.toc.label" aria-label="Secciones del caso de estudio">
+        <ol>
+          <li><a href="#context"><span>02</span> <span data-i18n="case.sec.context">Contexto</span></a></li>
+          <li><a href="#problem"><span>03</span> <span data-i18n="case.sec.problem">El problema</span></a></li>
+          <li><a href="#research"><span>04</span> <span data-i18n="case.sec.research">Investigación</span></a></li>
+          <li><a href="#insights"><span>05</span> <span data-i18n="case.sec.insights">Hallazgos clave</span></a></li>
+          <li><a href="#decisions"><span>06</span> <span data-i18n="case.sec.decisions">Decisiones de diseño</span></a></li>
+          <li><a href="#iteration"><span>07</span> <span data-i18n="case.sec.iteration">Iteración</span></a></li>
+          <li><a href="#product"><span>08</span> <span data-i18n="case.sec.product">Producto final</span></a></li>
+          <li><a href="#results"><span>09</span> <span data-i18n="case.sec.results">Resultados</span></a></li>
+          <li><a href="#learnings"><span>10</span> <span data-i18n="case.sec.learnings">Aprendizajes</span></a></li>
+          <li><a href="#tech"><span>11</span> <span data-i18n="case.sec.tech">Contexto técnico</span></a></li>
+        </ol>
+      </nav>
+    </section>
+  </div>
+
+  <!-- 02 CONTEXT ───────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="context" aria-labelledby="t-context">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>02</b> <span data-i18n="case.sec.context">Contexto</span></p>
+        <h2 id="t-context" data-i18n="case.kerygma.context.heading">Un culto en vivo no se puede repetir</h2>
+      </div>
+      <p class="rv" data-i18n="case.kerygma.context.p1">Muchas iglesias proyectan letras y versículos con PowerPoint o Google Slides, pensados para presentaciones de oficina, o con herramientas como ProPresenter, cuyo costo y complejidad no siempre encajan con un equipo de voluntarios.</p>
+      <p class="rv" data-i18n="case.kerygma.context.p2">Kerygma Stage nació para ese contexto: un voluntario operando bajo presión, sin internet garantizado, frente a una congregación que nunca debería ver un error.</p>
+
+      <h3 class="sub-head rv" data-i18n="case.kerygma.context.usersHead">Tres audiencias en el mismo momento</h3>
+      <div class="cards three rv">
         <div class="card">
           <h3 data-i18n="case.kerygma.users.card1.title">Operador</h3>
-          <p data-i18n="case.kerygma.users.card1.body">Elige y proyecta letras, versículos y anuncios en tiempo real. Necesita ver un adelanto de lo que viene sin que el público lo vea todavía.</p>
+          <p data-i18n="case.kerygma.users.card1.body">Elige y proyecta letras, versículos y anuncios en tiempo real.</p>
+          <p class="need" data-i18n="case.kerygma.users.card1.need">Necesita: ver y preparar lo que sigue sin que el público lo vea todavía.</p>
         </div>
         <div class="card">
-          <h3 data-i18n="case.kerygma.users.card2.title">Predicador</h3>
-          <p data-i18n="case.kerygma.users.card2.body">Necesita su propia pantalla de confidencia con el texto actual, el siguiente y un cronómetro — sin depender de girarse hacia la pantalla del público.</p>
+          <h3 data-i18n="case.kerygma.users.card2.title">Predicador y músicos</h3>
+          <p data-i18n="case.kerygma.users.card2.body">Siguen el culto desde el escenario.</p>
+          <p class="need" data-i18n="case.kerygma.users.card2.need">Necesitan: su propia pantalla con el texto actual, el siguiente, reloj y acordes, sin girarse hacia la del público.</p>
         </div>
         <div class="card">
           <h3 data-i18n="case.kerygma.users.card3.title">Congregación</h3>
-          <p data-i18n="case.kerygma.users.card3.body">Ve únicamente la pantalla de proyección final: letras, versículos, anuncios y, cuando aplica, subtítulos en vivo.</p>
+          <p data-i18n="case.kerygma.users.card3.body">Ve solo la proyección final.</p>
+          <p class="need" data-i18n="case.kerygma.users.card3.need">Necesita: texto legible y ningún cambio a medio hacer.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head rv" data-i18n="case.kerygma.context.constraintsHead">Restricciones</h3>
+      <ul class="goal-list rv">
+        <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.kerygma.constraint1">El wifi de una iglesia no es confiable: el culto no puede depender de internet.</span></li>
+        <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.kerygma.constraint2">El audio de un culto es sensible: no debería salir del edificio.</span></li>
+        <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.kerygma.constraint3">Operadores voluntarios, con niveles de experiencia muy distintos.</span></li>
+        <li><span class="gi" aria-hidden="true">4</span><span data-i18n="case.kerygma.constraint4">Ritmo impredecible: un versículo citado sin aviso tiene que aparecer en segundos.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 03 PROBLEM ───────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="problem" aria-labelledby="t-problem">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>03</b> <span data-i18n="case.sec.problem">El problema</span></p>
+        <h2 id="t-problem" data-i18n="case.kerygma.problem.heading">Herramientas genéricas para un trabajo que no lo es</h2>
+      </div>
+      <p class="problem-statement rv" data-i18n="case.kerygma.problem.statement">Con una sola vista compartida, todo lo que el operador hace —preparar, corregir, buscar— ocurre frente a la congregación.</p>
+      <p class="rv" data-i18n="case.kerygma.problem.body">Los problemas que los operadores reportan una y otra vez:</p>
+      <ul class="goal-list rv">
+        <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.kerygma.problem.goal1">No se puede ver lo que viene sin que el público ya lo vea.</span></li>
+        <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.kerygma.problem.goal2">Corregir un error en vivo expone el error mientras se corrige.</span></li>
+        <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.kerygma.problem.goal3">Insertar un versículo o una cita improvisada es lento.</span></li>
+        <li><span class="gi" aria-hidden="true">4</span><span data-i18n="case.kerygma.problem.goal4">Los saltos de línea rompen letras y versículos largos en momentos incómodos.</span></li>
+        <li><span class="gi" aria-hidden="true">5</span><span data-i18n="case.kerygma.problem.goal5">Quien predica no tiene una pantalla de confidencia útil.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 04 RESEARCH ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="research" aria-labelledby="t-research">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>04</b> <span data-i18n="case.sec.research">Investigación</span></p>
+        <h2 id="t-research" data-i18n="case.kerygma.research.heading">Problemas reportados, no suposiciones</h2>
+      </div>
+      <div class="methods rv">
+        <div class="method">
+          <span class="tag" data-i18n="case.kerygma.research.m1.tag">Investigación secundaria</span>
+          <p data-i18n="case.kerygma.research.m1.body">Recopilé los diez problemas que operadores de PowerPoint, Google Slides y ProPresenter reportan con más frecuencia, y las diez funciones que más piden.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.kerygma.research.m2.tag">Análisis de herramientas</span>
+          <p data-i18n="case.kerygma.research.m2.body">Comparé cómo esas herramientas resuelven (o no) la vista previa, la edición en vivo y la búsqueda de contenido.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.kerygma.research.m3.tag">Contexto propio</span>
+          <p data-i18n="case.kerygma.research.m3.body">Los cultos de mi propia iglesia sirvieron como contexto real para entender el ritmo de un servicio y priorizar.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.kerygma.research.m4.tag">Validación en uso real</span>
+          <p data-i18n="case.kerygma.research.m4.body">Cada función se prueba en un culto real, con micrófono, celular y monitores reales, antes de darla por terminada.</p>
+        </div>
+      </div>
+      <p class="rv" style="margin-top:20px" data-i18n="case.kerygma.research.priority">Prioricé por el impacto reportado, no por lo técnicamente más interesante de construir.</p>
+      <p class="evidence rv"><strong data-i18n="case.evidence.label">Sobre la evidencia:</strong> <span data-i18n="case.kerygma.research.evidence">La investigación inicial es secundaria (problemas reportados por operadores) y no incluye entrevistas formales. La validación viene del uso semanal en una iglesia y de las pruebas en cultos reales.</span></p>
+    </section>
+  </div>
+
+  <!-- 05 INSIGHTS ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="insights" aria-labelledby="t-insights">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>05</b> <span data-i18n="case.sec.insights">Hallazgos clave</span></p>
+        <h2 id="t-insights" data-i18n="case.kerygma.insights.heading">Tres hallazgos que definieron el producto</h2>
+      </div>
+      <div class="insights rv">
+        <div class="insight">
+          <span class="n" aria-hidden="true">1</span>
+          <h3 data-i18n="case.kerygma.insight1.title">El problema central no eran las funciones, era la visibilidad.</h3>
+          <p data-i18n="case.kerygma.insight1.body">La mayoría de los problemas reportados vienen de lo mismo: una sola vista compartida entre operador y público.</p>
+          <p class="leads" data-i18n="case.kerygma.insight1.leads">→ Decisión 1: vista previa vs. en vivo</p>
+        </div>
+        <div class="insight">
+          <span class="n" aria-hidden="true">2</span>
+          <h3 data-i18n="case.kerygma.insight2.title">Un error automático frente a la congregación cuesta más que una acción manual lenta.</h3>
+          <p data-i18n="case.kerygma.insight2.body">La automatización ayuda a encontrar contenido rápido, pero quien responde frente al público es el operador.</p>
+          <p class="leads" data-i18n="case.kerygma.insight2.leads">→ Decisión 2: sugerir, no automatizar</p>
+        </div>
+        <div class="insight">
+          <span class="n" aria-hidden="true">3</span>
+          <h3 data-i18n="case.kerygma.insight3.title">Conectividad y privacidad definen si el producto se puede usar un domingo cualquiera.</h3>
+          <p data-i18n="case.kerygma.insight3.body">No son detalles técnicos: si algo depende de internet o envía el audio fuera, no sirve en este contexto.</p>
+          <p class="leads" data-i18n="case.kerygma.insight3.leads">→ Decisión 3: offline-first</p>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- PROBLEMA ─────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="problema">
-      <p class="eyebrow rv" data-i18n="case.kerygma.problem.eyebrow">El Problema</p>
-      <h2 class="rv" data-i18n="case.kerygma.problem.heading">Herramientas genéricas para un trabajo que no lo es</h2>
-      <p class="rv" data-i18n="case.kerygma.problem.body">Antes de diseñar nada, documenté los problemas que los operadores reportaban una y otra vez con PowerPoint, Google Slides y herramientas similares.</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.kerygma.problem.goal1">El operador no puede ver por adelantado lo que está por proyectar sin que el público ya lo vea</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.kerygma.problem.goal2">Los saltos de línea rompen letras y versículos largos en momentos incómodos</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.kerygma.problem.goal3">Editar un error en vivo expone el error al público mientras se corrige</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.kerygma.problem.goal4">Insertar un versículo o cita improvisada en medio del culto es lento</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.kerygma.problem.goal5">El texto se vuelve ilegible sobre fondos de video con mucho movimiento</span></li>
-      </ul>
-    </section>
-  </div>
-
-  <!-- ANTES / DESPUÉS ──────────────────────────────── -->
-  <div class="g">
-    <section class="cs">
-      <p class="eyebrow rv" data-i18n="case.compare.eyebrow">Comparativa</p>
-      <h2 class="rv" data-i18n="case.compare.heading">Antes y después</h2>
-      <div class="compare-grid rv">
-        <div class="compare-card before">
-          <span class="compare-label" data-i18n="case.compare.beforeLabel">Antes</span>
-          <p data-i18n="case.kerygma.compare.before1">Una sola vista compartida: lo que el operador prepara es exactamente lo que ve el público.</p>
-          <p data-i18n="case.kerygma.compare.before2">Corregir un error en vivo significa que el público lo ve mientras se arregla.</p>
-          <p data-i18n="case.kerygma.compare.before3">Insertar un versículo fuera de guion implica salir de la presentación y buscar manualmente.</p>
-        </div>
-        <div class="compare-card after">
-          <span class="compare-label" data-i18n="case.compare.afterLabel">Después</span>
-          <p data-i18n="case.kerygma.compare.after1">Vista previa y vista en vivo separadas: el operador prepara la siguiente diapositiva sin exponerla.</p>
-          <p data-i18n="case.kerygma.compare.after2">Edición en vivo sin salir de pantalla completa ni mostrar el cambio a medio hacer.</p>
-          <p data-i18n="case.kerygma.compare.after3">Buscador de Biblia y repertorio integrados, con un atajo tipo Ctrl+K para saltar a cualquier canción o versículo al instante.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- INVESTIGACIÓN ────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="investigacion">
-      <p class="eyebrow rv" data-i18n="case.kerygma.research.eyebrow">Investigación</p>
-      <h2 class="rv" data-i18n="case.kerygma.research.heading">Diez problemas reales, no suposiciones</h2>
-      <p class="rv" data-i18n="case.kerygma.research.p1">En vez de asumir qué necesitaba un operador de proyección, partí de una investigación de los diez problemas más comunes reportados por operadores de herramientas como PowerPoint, Google Slides y ProPresenter, y las diez funciones que más pedían.</p>
-      <p class="rv" data-i18n="case.kerygma.research.p2">Esa investigación se convirtió en la referencia para priorizar qué construir primero:</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.kerygma.research.goal1">Vista previa ciega antes de salir en vivo</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.kerygma.research.goal2">Saltos de línea que rompen letras y versículos largos</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.kerygma.research.goal3">Sin forma discreta de saltar entre elementos durante el culto</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.kerygma.research.goal4">No se puede editar en vivo sin exponer el cambio al público</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.kerygma.research.goal5">Pantalla de confidencia pobre o inexistente para quien predica</span></li>
-      </ul>
-      <p class="rv" data-i18n="case.kerygma.research.p3">Prioricé por impacto real reportado, no por lo técnicamente más interesante de construir.</p>
-    </section>
-  </div>
-
-  <!-- PRINCIPIOS ───────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="principios">
-      <p class="eyebrow rv" data-i18n="case.kerygma.principles.eyebrow">Principios</p>
-      <h2 class="rv" data-i18n="case.kerygma.principles.heading">Reglas que guiaron cada decisión</h2>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.kerygma.principles.item1">El público nunca ve un error ni un cambio a medio hacer</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.kerygma.principles.item2">El operador siempre puede ver por adelantado lo que sigue</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.kerygma.principles.item3">Todo debe funcionar sin conexión a internet</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.kerygma.principles.item4">Sugerir y confirmar, nunca automatizar una decisión en silencio</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.kerygma.principles.item5">La privacidad importa: el audio del culto nunca sale del dispositivo</span></li>
-        <li><span class="gi">6</span><span data-i18n="case.kerygma.principles.item6">Un atajo de teclado para cada acción frecuente</span></li>
-        <li><span class="gi">7</span><span data-i18n="case.kerygma.principles.item7">Quien predica necesita su propia pantalla, no la del público</span></li>
-        <li><span class="gi">8</span><span data-i18n="case.kerygma.principles.item8">Cada función nueva se prueba con hardware real, no solo con tests</span></li>
-      </ul>
-    </section>
-  </div>
-
-  <!-- PROCESO ──────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="proceso">
-      <p class="eyebrow rv" data-i18n="case.process.eyebrow">Proceso</p>
-      <h2 class="rv" data-i18n="case.kerygma.process.heading">Cuatro fases, de la investigación a un culto real</h2>
-      <div class="steps rv">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div class="step-body">
-            <h3 data-i18n="case.kerygma.process.step1.title">Investigación de pain points</h3>
-            <p data-i18n="case.kerygma.process.step1.body">Documenté los diez problemas más reportados por operadores de proyección en iglesias, y las funciones más pedidas, como base objetiva del roadmap.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div class="step-body">
-            <h3 data-i18n="case.kerygma.process.step2.title">Arquitectura preview/vivo</h3>
-            <p data-i18n="case.kerygma.process.step2.body">Diseñé la separación entre lo que prepara el operador y lo que efectivamente sale al público — el cambio estructural más grande frente a las herramientas genéricas.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div class="step-body">
-            <h3 data-i18n="case.kerygma.process.step3.title">Rediseño visual — Kerygma Stage</h3>
-            <p data-i18n="case.kerygma.process.step3.body">Rediseñé toda la identidad visual: acento verde, tipografía Inter, superficies planas sin efectos de vidrio, inspirado en herramientas como Linear y Vercel — pensado para uso prolongado bajo presión, no para impresionar en una demo.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <div class="step-body">
-            <h3 data-i18n="case.kerygma.process.step4.title">Validación en cultos reales</h3>
-            <p data-i18n="case.kerygma.process.step4.body">Cada función se probó en un culto real antes de darla por terminada: micrófono real para subtítulos, celular real para el control remoto, monitor real para las salidas de proyección.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- PANTALLAS ────────────────────────────────────── -->
+  <!-- 06 DECISIONS ─────────────────────────────────── -->
   <div class="g-wide">
-    <section class="cs" id="pantallas">
-      <p class="eyebrow rv" data-i18n="case.screens.eyebrow">Diseño</p>
-      <h2 class="rv" data-i18n="case.screens.heading">Pantallas principales</h2>
-      <div class="screens rv">
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-inicio.jpg" alt="Pantalla de inicio con el culto del día, estadísticas y canciones más cantadas" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap5">Inicio: el culto de hoy y estadísticas del repertorio</p>
+    <section class="cs" id="decisions" aria-labelledby="t-decisions">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>06</b> <span data-i18n="case.sec.decisions">Decisiones de diseño</span></p>
+          <h2 id="t-decisions" data-i18n="case.kerygma.decisions.heading">Tres decisiones que pesan más que todas las funciones</h2>
         </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-repertorio.jpg" alt="Repertorio de canciones con etiquetas, tonalidad, BPM y veces cantada" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap6">Repertorio con etiquetas, tonalidad y BPM</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-editor.jpg" alt="Editor visual de una canción con la tira de diapositivas y el panel de propiedades" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap7">Editor visual de diapositivas</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-planificador.jpg" alt="Planificador con la secuencia del culto agrupada en secciones" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap8">Planificador: orden del culto por secciones</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-biblia.jpg" alt="Búsqueda de Salmos 23 con la vista previa de la diapositiva y opciones de reparto" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap9">Biblia: búsqueda y reparto en diapositivas</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-comandos.jpg" alt="Paleta de comandos Ctrl+K con resultados del repertorio y de la Biblia" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap10">Búsqueda global con Ctrl+K</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-consola.jpg" alt="Consola del operador: la siguiente diapositiva en vista previa mientras otra está en vivo" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap1">Consola del operador</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-grid.jpg" alt="Consola en modo matriz con todas las diapositivas del culto agrupadas por sección" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap11">Consola en modo Matriz</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-proyeccion.jpg" alt="Pantalla de proyección que ve la congregación, con la letra de la canción" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap2">Pantalla de proyección</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-confidencia.jpg" alt="Pantalla de confidencia con reloj, acordes y las próximas diapositivas" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap3">Pantalla de confidencia (Stage Display)</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-remoto.jpg" alt="Control remoto desde el celular: anterior, siguiente y blackout" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap4">Control remoto desde el celular</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/kerygma-stage/screen-ajustes.jpg" alt="Ajustes de monitor de proyección y de la pantalla de confidencia" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.kerygma.screens.cap12">Ajustes de proyección y pantallas</p>
-        </div>
+      </div>
+      <div class="decisions">
+        <article class="decision rv" id="preview-live">
+          <div class="decision-head"><span class="n">D1</span><h3 data-i18n="case.kerygma.d1.title">Vista previa vs. en vivo</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.kerygma.d1.problem">Preparar la siguiente diapositiva o corregir un error ocurría a la vista de todos.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.kerygma.d1.insight">Operador y congregación necesitan ver cosas distintas en el mismo instante.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.kerygma.d1.decision">Dos zonas separadas: el operador prepara y revisa en la vista previa; nada llega a la proyección hasta que lo confirma, incluso al editar en vivo.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.kerygma.d1.why">El público nunca ve un cambio a medio hacer, y el operador puede adelantarse sin miedo.</dd></div>
+          </dl>
+          <p class="tradeoff"><strong data-i18n="case.tradeoff">Trade-off:</strong> <span data-i18n="case.kerygma.d1.tradeoff">cada cambio requiere un paso más (confirmar). Los atajos de teclado para las acciones frecuentes compensan ese costo.</span></p>
+          <figure>
+            <div class="screen-frame">
+              <img src="../assets/img/kerygma-stage/screen-consola.jpg" data-i18n-alt="case.kerygma.img.console" alt="Consola del operador: la siguiente diapositiva en vista previa mientras otra está en vivo" loading="lazy" width="2400" height="1500">
+            </div>
+            <figcaption class="screen-cap" data-i18n="case.kerygma.d1.cap">La siguiente diapositiva espera en la vista previa mientras otra está en vivo.</figcaption>
+          </figure>
+        </article>
+
+        <article class="decision rv" id="suggest-automate">
+          <div class="decision-head"><span class="n">D2</span><h3 data-i18n="case.kerygma.d2.title">Sugerir vs. automatizar</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.kerygma.d2.problem">Durante la predicación se citan versículos sin aviso, y buscarlos a mano es lento.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.kerygma.d2.insight">La detección por voz puede confundirse (por ejemplo, «Juan» y «1 Juan»), y un cambio equivocado frente a la congregación es peor que uno lento.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.kerygma.d2.decision">Cuando el sistema detecta una referencia bíblica en lo que se dice, la sugiere en un aviso al operador. La proyección no cambia hasta que él la confirma.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.kerygma.d2.why">La IA ahorra la búsqueda; el criterio, y la responsabilidad frente al público, siguen en el operador.</dd></div>
+          </dl>
+          <p class="tradeoff"><strong data-i18n="case.discarded">Descartado:</strong> <span data-i18n="case.kerygma.d2.discarded">que la detección cambiara la proyección por sí sola. Habría sido más rápido, pero un error automático frente a toda la congregación no se puede deshacer en silencio.</span></p>
+        </article>
+
+        <article class="decision rv" id="offline-first">
+          <div class="decision-head"><span class="n">D3</span><h3 data-i18n="case.kerygma.d3.title">Offline-first</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.kerygma.d3.problem">El wifi no es confiable, y transcribir en la nube significaría enviar fuera del edificio todo lo que se dice en el culto.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.kerygma.d3.insight">Conectividad y privacidad deciden si el producto se puede usar en este contexto.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.kerygma.d3.decision">Todo funciona sin conexión y sin cuenta. Subtítulos y detección de versículos corren en el dispositivo; el control remoto usa la red local, no internet.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.kerygma.d3.why">El culto no depende de la red, y el audio nunca sale del dispositivo.</dd></div>
+          </dl>
+          <p class="tradeoff"><strong data-i18n="case.tradeoff">Trade-off:</strong> <span data-i18n="case.kerygma.d3.tradeoff">la transcripción local depende del hardware del equipo y exige más trabajo de ingeniería (modelos, rendimiento, permisos de micrófono) que una API en la nube.</span></p>
+          <figure>
+            <div class="screen-frame">
+              <img src="../assets/img/kerygma-stage/screen-remoto.jpg" data-i18n-alt="case.kerygma.img.remote" alt="Control remoto desde el celular: anterior, siguiente y blackout" loading="lazy" width="2400" height="1500">
+            </div>
+            <figcaption class="screen-cap" data-i18n="case.kerygma.d3.cap">El control remoto funciona desde el celular a través de la red local, sin internet.</figcaption>
+          </figure>
+        </article>
       </div>
     </section>
   </div>
 
-  <!-- DECISIONES ───────────────────────────────────── -->
+  <!-- 07 ITERATION ─────────────────────────────────── -->
   <div class="g-wide">
-    <section class="cs" id="decisiones">
-      <p class="eyebrow rv" data-i18n="case.decisions.eyebrow">Decisiones</p>
-      <h2 class="rv" data-i18n="case.decisions.heading">Decisiones de diseño</h2>
-      <div class="cards rv">
-        <div class="card">
-          <h3 data-i18n="case.kerygma.decisions.card1.title">Vista previa y vivo separados</h3>
-          <p data-i18n="case.kerygma.decisions.card1.body">La decisión de diseño más importante: nada llega al público hasta que el operador lo confirma explícitamente, incluso al editar en vivo.</p>
+    <section class="cs" id="iteration" aria-labelledby="t-iteration">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>07</b> <span data-i18n="case.sec.iteration">Iteración</span></p>
+          <h2 id="t-iteration" data-i18n="case.kerygma.iteration.heading">Del PowerPoint compartido a dos vistas separadas</h2>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.kerygma.decisions.card2.title">Subtítulos 100% offline</h3>
-          <p data-i18n="case.kerygma.decisions.card2.body">Elegí un motor de transcripción local (Whisper) en vez de un servicio en la nube: el wifi de una iglesia no siempre es confiable, y el audio nunca debería salir del edificio.</p>
+      </div>
+      <div class="iteration rv">
+        <div class="stage before">
+          <p class="stage-label" data-i18n="case.stage.before">Antes</p>
+          <ul>
+            <li data-i18n="case.kerygma.before1">Una sola vista: lo que el operador toca es lo que ve el público.</li>
+            <li data-i18n="case.kerygma.before2">Corregir un error en vivo significa que todos lo ven mientras se arregla.</li>
+            <li data-i18n="case.kerygma.before3">Insertar un versículo fuera de guion implica salir de la presentación y buscar a mano.</li>
+          </ul>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.kerygma.decisions.card3.title">Sugerir, no automatizar</h3>
-          <p data-i18n="case.kerygma.decisions.card3.body">Cuando el sistema detecta un versículo mencionado en voz alta, lo sugiere en un banner — nunca cambia la proyección por sí solo.</p>
+        <div class="stage">
+          <p class="stage-label" data-i18n="case.stage.exploration">Exploración</p>
+          <ul>
+            <li data-i18n="case.kerygma.explore1">Priorización a partir de los problemas reportados por operadores.</li>
+            <li data-i18n="case.kerygma.explore2">Separación vista previa / en vivo como cambio estructural.</li>
+            <li data-i18n="case.kerygma.explore3">Rediseño de la arquitectura a local-first, con un modelo de datos propio.</li>
+            <li data-i18n="case.kerygma.explore4">Rediseño visual: tipografía Inter, superficies planas y un solo acento, pensado para horas de uso bajo presión.</li>
+            <li data-i18n="case.kerygma.explore5">Pruebas en cultos reales con micrófono, celular y monitores reales.</li>
+          </ul>
+          <p class="discarded"><strong data-i18n="case.discarded">Descartado:</strong> <span data-i18n="case.kerygma.discarded">transcripción en la nube y detección de versículos que cambia la proyección sola.</span></p>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.kerygma.decisions.card4.title">Control remoto por celular</h3>
-          <p data-i18n="case.kerygma.decisions.card4.body">Un servidor local permite operar ciertas funciones desde el teléfono, sin depender de estar frente a la consola principal.</p>
+        <div class="stage after">
+          <p class="stage-label" data-i18n="case.stage.after">Después</p>
+          <ul>
+            <li data-i18n="case.kerygma.after1">Vista previa y vista en vivo separadas.</li>
+            <li data-i18n="case.kerygma.after2">Edición en vivo sin exponer el cambio a medio hacer.</li>
+            <li data-i18n="case.kerygma.after3">Biblia y repertorio a un atajo (Ctrl+K) de distancia.</li>
+          </ul>
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-grid.jpg" data-i18n-alt="case.kerygma.img.grid" alt="Consola en modo matriz con todas las diapositivas del culto agrupadas por sección" loading="lazy" width="2400" height="1500">
+          </div>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.kerygma.decisions.card5.title">Multi-monitor sin configuración</h3>
-          <p data-i18n="case.kerygma.decisions.card5.body">Cualquier salida adicional de proyección refleja automáticamente la misma pantalla, sin configurar nada por ventana — útil para salas de desborde.</p>
+      </div>
+
+      <div class="g" style="padding:0;margin:0">
+        <h3 class="sub-head rv" data-i18n="case.kerygma.iteration.findingsHead">Lo que solo apareció con hardware real</h3>
+        <ul class="goal-list rv">
+          <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.kerygma.finding1">Permisos de micrófono bloqueados por Windows.</span></li>
+          <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.kerygma.finding2">Un algoritmo de audio en tiempo real que generaba cortes.</span></li>
+          <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.kerygma.finding3">Transcripción inconsistente de números hablados, clave para capítulos y versículos.</span></li>
+        </ul>
+        <p class="rv" style="margin-top:16px" data-i18n="case.kerygma.iteration.findingsNote">Ninguna prueba unitaria detectó estos problemas; probar en un culto real sí.</p>
+
+        <div class="ai-note rv">
+          <p><strong data-i18n="case.ai.implementationTitle">Implementación asistida por IA.</strong> <span data-i18n="case.kerygma.ai.body">Usé IA como copiloto de código durante la implementación, revisando, adaptando y probando el código generado en cultos reales. La investigación, la priorización y las decisiones de producto y diseño fueron mías.</span></p>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- IMPLEMENTACIÓN ───────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="implementacion">
-      <p class="eyebrow rv" data-i18n="case.kerygma.implementation.eyebrow">Implementación</p>
-      <h2 class="rv" data-i18n="case.kerygma.implementation.heading">Cómo funciona por dentro</h2>
-      <p class="rv" data-i18n="case.kerygma.implementation.p1">Construido con Tauri: interfaz en React sobre un backend nativo en Rust, lo que permite acceso real al sistema (micrófono, red local, archivos) sin empaquetar un navegador completo.</p>
-      <p class="rv" data-i18n="case.kerygma.implementation.p2">Los subtítulos y la detección de versículo por voz corren sobre un motor de transcripción local (whisper.cpp) integrado directamente en Rust — el audio se procesa en el dispositivo y nunca se envía a ningún servidor.</p>
-      <p class="rv" data-i18n="case.kerygma.implementation.p3">El control remoto usa un servidor HTTP y WebSocket local (Axum, en Rust) que expone una página web simple al celular del operador dentro de la misma red, sin depender de internet.</p>
-    </section>
-  </div>
-
-  <!-- RESULTADOS ───────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="resultados">
-      <p class="eyebrow rv" data-i18n="case.results.eyebrow">Resultados</p>
-      <h2 class="rv" data-i18n="case.kerygma.results.heading">De diapositivas improvisadas a un software hecho a su medida</h2>
-      <div class="results-grid rv">
-        <div class="result-card">
-          <p class="result-stat">3</p>
-          <p class="result-label" data-i18n="case.kerygma.results.stat1.label">Roles distintos servidos por la misma app: operador, predicador y congregación</p>
-        </div>
-        <div class="result-card">
-          <p class="result-stat">100%</p>
-          <p class="result-label" data-i18n="case.kerygma.results.stat2.label">Del audio para subtítulos y detección de versículo se procesa en el dispositivo, sin nube</p>
-        </div>
-        <div class="result-card">
-          <p class="result-stat">Semanal</p>
-          <p class="result-label" data-i18n="case.kerygma.results.stat3.label">Uso real en los cultos de Iglesia Hogar de Salvación y Alabanza</p>
+  <!-- 08 FINAL PRODUCT ─────────────────────────────── -->
+  <div class="g-wide">
+    <section class="cs" id="product" aria-labelledby="t-product">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>08</b> <span data-i18n="case.sec.product">Producto final</span></p>
+          <h2 id="t-product" data-i18n="case.kerygma.product.heading">Una pantalla para cada audiencia</h2>
         </div>
       </div>
-      <p class="rv" style="margin-top:24px" data-i18n="case.kerygma.results.note">La aplicación sigue en desarrollo activo — cada parte de este roadmap se agrega y se valida directamente en los cultos de la iglesia que la usa, no en un entorno de prueba aislado.</p>
+      <figure class="figure-lg rv">
+        <div class="screen-frame">
+          <img src="../assets/img/kerygma-stage/screen-proyeccion.jpg" data-i18n-alt="case.kerygma.img.projection" alt="Pantalla de proyección que ve la congregación, con la letra de la canción" loading="lazy" width="2400" height="1500">
+        </div>
+        <figcaption class="screen-cap"><strong data-i18n="case.kerygma.cap1.title">Proyección para la congregación</strong><span data-i18n="case.kerygma.cap1.body">Solo el contenido final, sin controles. El texto se ajusta para no romper letras y versículos en lugares incómodos.</span></figcaption>
+      </figure>
+      <figure class="figure-lg rv">
+        <div class="screen-frame">
+          <img src="../assets/img/kerygma-stage/screen-confidencia.jpg" data-i18n-alt="case.kerygma.img.stage" alt="Pantalla de confidencia con reloj, acordes y las próximas diapositivas" loading="lazy" width="2400" height="1500">
+        </div>
+        <figcaption class="screen-cap"><strong data-i18n="case.kerygma.cap2.title">Pantalla de confidencia (stage display)</strong><span data-i18n="case.kerygma.cap2.body">Para el escenario: reloj, acordes y lo que viene después, sin depender de girarse hacia la pantalla del público.</span></figcaption>
+      </figure>
+
+      <div class="g" style="padding:0;margin:0">
+        <h3 class="sub-head rv" data-i18n="case.kerygma.features.head">Otras funciones, en breve</h3>
+      </div>
+      <div class="features">
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-biblia.jpg" data-i18n-alt="case.kerygma.img.bible" alt="Búsqueda de Salmos 23 con la vista previa de la diapositiva y opciones de reparto" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.bible.title">Búsqueda bíblica</strong><span data-i18n="case.kerygma.f.bible.body">Busca un pasaje y lo reparte en diapositivas legibles, con vista previa antes de proyectar.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-comandos.jpg" data-i18n-alt="case.kerygma.img.commands" alt="Paleta de comandos Ctrl+K con resultados del repertorio y de la Biblia" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.commands.title">Ctrl+K</strong><span data-i18n="case.kerygma.f.commands.body">Salta a cualquier canción o versículo sin salir de la consola.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-editor.jpg" data-i18n-alt="case.kerygma.img.editor" alt="Editor visual de una canción con la tira de diapositivas y el panel de propiedades" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.editor.title">Editor</strong><span data-i18n="case.kerygma.f.editor.body">Edición visual de cada diapositiva: texto, imágenes, fondos y efectos.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-ajustes.jpg" data-i18n-alt="case.kerygma.img.settings" alt="Ajustes de monitor de proyección y de la pantalla de confidencia" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.monitors.title">Multi-monitor</strong><span data-i18n="case.kerygma.f.monitors.body">Detecta monitores secundarios y coloca la proyección; las salidas adicionales reflejan la misma pantalla, útil para salas de desborde.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-planificador.jpg" data-i18n-alt="case.kerygma.img.planner" alt="Planificador con la secuencia del culto agrupada en secciones" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.planner.title">Planificador</strong><span data-i18n="case.kerygma.f.planner.body">El orden del culto por secciones, preparado antes del servicio.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/kerygma-stage/screen-repertorio.jpg" data-i18n-alt="case.kerygma.img.library" alt="Repertorio de canciones con etiquetas, tonalidad, BPM y veces cantada" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.kerygma.f.library.title">Repertorio</strong><span data-i18n="case.kerygma.f.library.body">Canciones con etiquetas, tonalidad y BPM para encontrarlas rápido.</span></figcaption>
+        </figure>
+      </div>
+      <div class="g" style="padding:0;margin:0">
+        <ul class="minor rv">
+          <li><strong data-i18n="case.kerygma.f.captions.title">Subtítulos en vivo</strong><span data-i18n="case.kerygma.f.captions.body">Transcripción de la voz en tiempo real, procesada en el dispositivo.</span></li>
+          <li><strong data-i18n="case.kerygma.f.verses.title">Detección de versículos</strong><span data-i18n="case.kerygma.f.verses.body">Reconoce referencias bíblicas en lo que se dice y las sugiere al operador (D2).</span></li>
+        </ul>
+      </div>
     </section>
   </div>
 
-  <!-- APRENDIZAJES ─────────────────────────────────── -->
+  <!-- 09 RESULTS ───────────────────────────────────── -->
+  <div class="g-wide">
+    <section class="cs" id="results" aria-labelledby="t-results">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>09</b> <span data-i18n="case.sec.results">Resultados</span></p>
+          <h2 id="t-results" data-i18n="case.kerygma.results.heading">Uso real, sin métricas infladas</h2>
+        </div>
+      </div>
+      <div class="results rv">
+        <div class="result-col usage">
+          <h3 data-i18n="case.results.usage">Uso</h3>
+          <p class="result-kind" data-i18n="case.results.usageKind">Contexto real de uso.</p>
+          <div class="stat"><span class="v" data-i18n="case.kerygma.results.stat1.v">Semanal</span><span class="l" data-i18n="case.kerygma.results.stat1">uso en los cultos de la Iglesia Hogar de Salvación y Alabanza</span></div>
+          <div class="stat"><span class="v">3</span><span class="l" data-i18n="case.kerygma.results.stat2">audiencias servidas por la misma app: operador, escenario y congregación</span></div>
+        </div>
+        <div class="result-col measured">
+          <h3 data-i18n="case.results.measured">Resultados medidos</h3>
+          <p class="result-kind" data-i18n="case.results.measuredKind">Lo que se puede afirmar con evidencia.</p>
+          <ul>
+            <li data-i18n="case.kerygma.results.measured1">Las pruebas en cultos reales revelaron problemas que los tests no detectaban (micrófono, audio, números hablados) y se corrigieron.</li>
+            <li data-i18n="case.kerygma.results.measured2">Todavía no hay métricas formales, como errores en pantalla o tiempo para insertar un versículo, que comparen el antes y el después.</li>
+          </ul>
+        </div>
+        <div class="result-col expected">
+          <h3 data-i18n="case.results.expected">Resultados esperados</h3>
+          <p class="result-kind" data-i18n="case.results.expectedKind">Intención del diseño, no medida.</p>
+          <ul>
+            <li data-i18n="case.kerygma.results.expected1">Que la congregación no vea errores ni cambios a medio hacer.</li>
+            <li data-i18n="case.kerygma.results.expected2">Insertar versículos improvisados más rápido.</li>
+            <li data-i18n="case.kerygma.results.expected3">Que el culto no dependa de la conectividad.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 10 LEARNINGS ─────────────────────────────────── -->
   <div class="g">
-    <section class="cs" id="aprendizajes">
-      <p class="eyebrow rv" data-i18n="case.learnings.eyebrow">Aprendizajes</p>
-      <h2 class="rv" data-i18n="case.learnings.heading">Lo que me llevo</h2>
+    <section class="cs" id="learnings" aria-labelledby="t-learnings">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>10</b> <span data-i18n="case.sec.learnings">Aprendizajes</span></p>
+        <h2 id="t-learnings" data-i18n="case.kerygma.learnings.heading">Lo que me llevo y lo que haría distinto</h2>
+      </div>
       <div class="learnings rv">
         <div class="learning">
-          <h3 data-i18n="case.kerygma.learnings.item1.title">Diseñar para dos públicos a la vez</h3>
-          <p data-i18n="case.kerygma.learnings.item1.body">El operador y la congregación necesitan literalmente ver cosas distintas en el mismo instante. Esa tensión, no la estética, fue el problema de diseño central de todo el proyecto.</p>
+          <p class="k" data-i18n="case.learn.learned">Lo que aprendí</p>
+          <h3 data-i18n="case.kerygma.learn1.title">Diseñar para dos audiencias a la vez</h3>
+          <p data-i18n="case.kerygma.learn1.body">Operador y congregación necesitan ver cosas distintas en el mismo instante. Esa tensión, no la estética, fue el problema de diseño central.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.kerygma.learnings.item2.title">Offline no es una limitación, es una decisión de producto</h3>
-          <p data-i18n="case.kerygma.learnings.item2.body">El wifi de una iglesia no es confiable y el audio de un culto es sensible. Procesar todo localmente (subtítulos, detección de versículo) resultó ser más una ventaja de producto que una restricción técnica.</p>
+          <p class="k" data-i18n="case.learn.learned">Lo que aprendí</p>
+          <h3 data-i18n="case.kerygma.learn2.title">Offline es una decisión de producto</h3>
+          <p data-i18n="case.kerygma.learn2.body">Procesar todo localmente terminó siendo una ventaja de producto (confiabilidad y privacidad), no solo una restricción técnica.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.kerygma.learnings.item3.title">Sugerir y confirmar gana a automatizar</h3>
-          <p data-i18n="case.kerygma.learnings.item3.body">La primera versión de la detección de versículo por voz podía haber cambiado la proyección sola. Decidí que solo sugiriera y esperara confirmación — un error automático frente a toda una congregación es mucho peor que uno manual.</p>
+          <p class="k" data-i18n="case.learn.different">Lo que haría diferente</p>
+          <h3 data-i18n="case.kerygma.learn3.title">Definir desde el inicio cómo medir</h3>
+          <p data-i18n="case.kerygma.learn3.body">Registrar, por ejemplo, cuántas correcciones se hacen en vivo o cuánto tarda insertar un versículo me permitiría hablar de impacto con datos.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.kerygma.learnings.item4.title">El hardware real revela lo que ningún test detecta</h3>
-          <p data-i18n="case.kerygma.learnings.item4.body">Permisos de micrófono bloqueados por Windows, un algoritmo de audio en tiempo real que generaba cortes, transcripción inconsistente de números hablados — ningún test unitario encontró estos problemas; probar con un micrófono y un celular reales sí.</p>
-        </div>
-        <div class="learning">
-          <h3 data-i18n="case.kerygma.learnings.item5.title">Un rediseño visual también es una decisión de producto</h3>
-          <p data-i18n="case.kerygma.learnings.item5.body">Cambiar a una identidad más sobria (Kerygma Stage) no fue solo estética: una interfaz que se usa por horas, bajo presión, semana tras semana, necesita calma visual antes que impacto de primera impresión.</p>
+          <p class="k" data-i18n="case.learn.limits">Limitaciones</p>
+          <h3 data-i18n="case.kerygma.learn4.title">Un solo contexto de validación</h3>
+          <p data-i18n="case.kerygma.learn4.body">Se valida principalmente en una iglesia. Con más tiempo, lo probaría con operadores de otras iglesias y con voluntarios nuevos.</p>
         </div>
       </div>
+    </section>
+  </div>
+
+  <!-- 11 TECHNICAL CONTEXT ─────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="tech" aria-labelledby="t-tech">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>11</b> <span data-i18n="case.sec.tech">Contexto técnico</span></p>
+        <h2 id="t-tech" data-i18n="case.kerygma.tech.heading">La arquitectura al servicio de las decisiones de diseño</h2>
+      </div>
+      <ul class="tech rv">
+        <li>
+          <h3 data-i18n="case.kerygma.tech1.title">Un solo renderizador para todas las pantallas</h3>
+          <p data-i18n="case.kerygma.tech1.body">Vista previa, pantalla de confidencia y proyección usan el mismo componente, sobre un lienzo lógico fijo de 1280×720 que se escala a cada monitor.</p>
+          <p class="impact" data-i18n="case.kerygma.tech1.impact">En la experiencia: lo que el operador revisa es exactamente lo que verá el público (D1).</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.kerygma.tech2.title">Transcripción en el dispositivo</h3>
+          <p data-i18n="case.kerygma.tech2.body">whisper.cpp integrado en Rust captura el micrófono y transcribe localmente.</p>
+          <p class="impact" data-i18n="case.kerygma.tech2.impact">En la experiencia: subtítulos y sugerencias de versículos sin internet ni nube (D2, D3).</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.kerygma.tech3.title">Servidor en la red local</h3>
+          <p data-i18n="case.kerygma.tech3.body">Un servidor HTTP y WebSocket (Axum) dentro de la app sirve una página simple al celular del operador.</p>
+          <p class="impact" data-i18n="case.kerygma.tech3.impact">En la experiencia: control remoto sin depender de internet (D3).</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.kerygma.tech4.title">Escritorio nativo con Tauri</h3>
+          <p data-i18n="case.kerygma.tech4.body">Interfaz en React sobre un backend en Rust, con acceso a micrófono, red, archivos y monitores sin empaquetar un navegador completo.</p>
+          <p class="impact" data-i18n="case.kerygma.tech4.impact">En la experiencia: multi-monitor y atajos globales que una web app no podría ofrecer.</p>
+        </li>
+      </ul>
+      <ul class="stack-chips rv" data-i18n-aria="case.stack.label" aria-label="Tecnologías">
+        <li>React</li><li>Fluent UI</li><li>Tauri 2</li><li>Rust</li><li>whisper.cpp</li><li>Axum</li><li>Figma</li>
+      </ul>
     </section>
   </div>
 
   <!-- CTA ──────────────────────────────────────────── -->
   <div class="g">
-    <section class="case-cta rv">
-      <h2 data-i18n="case.cta.title">¿Tienes un proyecto?</h2>
-      <p data-i18n="case.cta.subtitle">Hablemos.</p>
+    <section class="case-cta rv" aria-labelledby="t-cta">
+      <h2 id="t-cta" data-i18n="case.cta.title">¿Buscas a alguien que diseñe pensando en cómo se construye?</h2>
+      <p data-i18n="case.cta.subtitle">Estoy abierto a roles remotos de Product Design a tiempo completo.</p>
       <div class="cta-row">
-        <a href="../index.html#contact" class="btn-fill" data-i18n="navigation.contact">Contacto</a>
-        <a href="../index.html#work" class="btn-line" data-i18n="case.cta.moreProjects">Ver más proyectos</a>
+        <a href="../index.html#contact" class="btn-fill" data-i18n="case.cta.contact">Contactarme</a>
+        <a href="./baseball-scoreboard.html" class="btn-line"><span data-i18n="case.cta.next">Siguiente caso:</span> Baseball Scoreboard →</a>
       </div>
     </section>
   </div>
@@ -546,9 +579,9 @@ body.project.kerygma .screen-frame{aspect-ratio:16/10}
 
 <footer class="g-wide footer">
   <span class="footer-name">Gregory Durán</span>
-  <nav class="footer-links">
-    <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/gregorymduran" target="_blank" rel="noopener">GitHub</a>
+  <nav class="footer-links" data-i18n-aria="footer.navLabel" aria-label="Enlaces del pie de página">
+    <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/gregorymduran" target="_blank" rel="noopener">GitHub ↗</a>
     <a href="../index.html#work" data-i18n="navigation.work">Proyectos</a>
     <a href="../index.html#contact" data-i18n="navigation.contact">Contacto</a>
   </nav>

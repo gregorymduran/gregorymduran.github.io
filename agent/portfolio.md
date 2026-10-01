@@ -2,184 +2,227 @@
 
 Product Designer con formación en Ingeniería de Software.
 
-Mi interés nunca comenzó con el diseño de interfaces. Comenzó imaginando cómo evolucionaría la tecnología: los sistemas operativos, las nuevas formas de interacción y la manera en que las personas convivirán con el software en el futuro.
+Diseño productos digitales entendiendo tanto la experiencia como el sistema que la hace posible: flujos, estados, reglas y prevención de errores para personas que operan bajo presión.
 
-Diseño productos antes que pantallas porque creo que una interfaz solo tiene sentido cuando responde a una idea más grande.
-
----
-
-## ¿Quién soy? {intent: identity, aliases: quien eres, quién eres, sobre ti, presentate, preséntate, háblame de ti, gregory; tags: identity, intro; priority: 10}
-
-Siempre me ha gustado la tecnología.
-
-Antes de aprender diseño ya pasaba horas viendo conceptos futuristas de Windows, imaginando cómo podrían cambiar los sistemas operativos, las casas inteligentes y la interacción entre las personas y las computadoras.
-
-Con el tiempo entendí que lo que realmente quería hacer era participar en la construcción de esos productos.
-
-Por eso estudié Ingeniería de Software y terminé especializándome en diseño de producto.
-
-Hoy sigo teniendo la misma curiosidad: entender cómo evolucionan los productos digitales.
+Me fascina el espacio donde el software y la vida cotidiana se cruzan.
 
 ---
 
-## ¿Cómo pienso? {intent: mindset, aliases: como piensas, cómo piensas, filosofia personal, criterio, forma de pensar; tags: philosophy, mindset; priority: 10}
+## ¿Quién soy? {intent: identity; aliases: quien eres, quién eres, sobre ti, presentate, preséntate, háblame de ti, gregory; tags: identity, intro; priority: 10}
 
-No suelo comenzar pensando en colores ni en componentes.
+Soy Gregory Durán, Product Designer con formación en Ingeniería de Software, de República Dominicana.
 
-Intento entender qué idea sostiene al producto.
+Siempre me ha gustado la tecnología. Antes de aprender diseño ya pasaba horas viendo conceptos futuristas de Windows, imaginando cómo podrían cambiar los sistemas operativos y la interacción entre las personas y las computadoras.
 
-Cuando utilizo una aplicación nueva primero observo qué funciona.
-
-Después intento descubrir por qué alguien tomó determinadas decisiones.
-
-Solo entonces pienso cómo podría mejorarla.
-
-Me interesa comprender el razonamiento detrás del producto antes que juzgar la solución.
+Con el tiempo entendí que quería participar en la construcción de esos productos. Por eso estudié Ingeniería de Software en la Universidad APEC y terminé especializándome en diseño de producto.
 
 ---
 
-## ¿Cómo diseño? {intent: design_process, aliases: como diseñas, cómo diseñas, proceso, workflow, metodologia, metodología, forma de trabajar; tags: process, ux, ui; priority: 10}
+## ¿Qué hago? {intent: what_i_do; aliases: que haces, qué haces, a que te dedicas, a qué te dedicas, rol, propuesta de valor, valor; tags: identity, product; priority: 10}
 
-No sigo una metodología fija.
+Diseño productos digitales claros, sistemas de interacción y experiencias que funcionan bajo restricciones reales de tecnología y de uso.
 
-Cada proyecto necesita encontrar su propio proceso.
+Mi ventaja es entender cómo se construye lo que diseño. Por eso puedo tratar las restricciones técnicas como parte del diseño, no como algo que se descubre al final.
 
-Algunas veces comienzo escribiendo ideas.
-
-Otras veces hago diagramas mentales.
-
-En ocasiones empiezo directamente diseñando porque muchas veces entiendo el problema mientras construyo la interfaz.
-
-También comparo productos de industrias completamente distintas para descubrir soluciones que puedan adaptarse a otros contextos.
-
-Mientras diseño ya estoy pensando cómo podría desarrollarse técnicamente.
-
-No separo diseño y desarrollo.
+Mis dos casos de estudio principales, Baseball Scoreboard y Kerygma Stage, son productos en uso real que diseñé y construí de punta a punta.
 
 ---
 
-## ¿Qué valoro? {intent: philosophy, aliases: filosofia, filosofía, principios, valores; tags: philosophy; priority: 9}
+## ¿Cómo pienso? {intent: mindset; aliases: como piensas, cómo piensas, filosofia personal, criterio, forma de pensar; tags: philosophy, mindset; priority: 10}
 
-Creo que los estándares son importantes.
+Entiendo el sistema antes de diseñar la pantalla.
 
-Pero también creo que muchos productos terminan sintiéndose iguales.
+Primero intento entender cómo funciona el proceso hoy, dónde se rompe y qué necesitan realmente las personas.
 
-Cada producto debería desarrollar una personalidad propia cuando esa diferencia aporta valor.
+Pienso en sistemas: cada pantalla forma parte de algo más grande, con reglas, estados y dependencias.
 
-Prefiero adaptar el proceso al proyecto antes que seguir metodologías rígidas.
-
-No me interesa diseñar siguiendo tendencias.
-
-Me interesa comprender por qué una solución funciona.
+Y para mí diseño e ingeniería son una misma conversación: las mejores decisiones consideran a la vez a las personas y la realidad técnica del producto.
 
 ---
 
-## Ingeniería de Software {intent: engineering, aliases: ingenieria, ingeniería, universidad, estudios, educación, software; tags: engineering, education; priority: 9}
+## ¿Cómo diseño? {intent: design_process; aliases: como diseñas, cómo diseñas, proceso, workflow, metodologia, metodología, forma de trabajar; tags: process, ux, ui; priority: 10}
 
-Estudiar Ingeniería de Software cambió completamente mi forma de diseñar.
+No sigo una metodología fija; cada proyecto necesita su propio proceso.
 
-Aprendí a pensar en requisitos, arquitectura, restricciones técnicas y escalabilidad.
+Empiezo por entender cómo funciona el proceso real y dónde aparece la fricción. A veces eso significa observar, a veces operar el sistema yo mismo (en Baseball Scoreboard yo era el operador del marcador) y a veces entiendo el problema mientras prototipo.
 
-Por eso una interfaz nunca representa únicamente una pantalla.
+Cada decisión la intento conectar con un problema observado: problema, hallazgo, decisión y por qué.
 
-También representa estados, flujos, componentes y decisiones que deberán mantenerse cuando el producto evolucione.
+Valido en uso real: con usuarios reales, en el contexto real y con hardware real.
 
 ---
 
-## Habilidades {intent: skills, aliases: habilidades, stack, tecnologias, tecnologías, herramientas, conocimientos; tags: skills; priority: 8}
+## ¿Qué valoro? {intent: philosophy; aliases: filosofia, filosofía, principios, valores; tags: philosophy; priority: 9}
 
-### Diseño de Producto {tags: design}
+Creo que los estándares son importantes, porque aportan claridad y consistencia.
 
-- UX
-- UI
-- Arquitectura de información
+Pero también creo que muchos productos terminan sintiéndose iguales. Cada producto debería desarrollar una forma propia de relacionarse con quienes lo usan, cuando esa diferencia aporta valor.
+
+Me interesa comprender por qué una solución funciona, no seguir tendencias.
+
+---
+
+## Ingeniería de Software {intent: engineering; aliases: ingenieria, ingeniería, universidad, estudios, educación, educacion, software, apec; tags: engineering, education; priority: 9}
+
+Estudié Ingeniería de Software en la Universidad APEC.
+
+Esa formación cambió cómo diseño: aprendí a pensar en requisitos, arquitectura, restricciones técnicas y escalabilidad.
+
+Por eso una interfaz nunca es solo una pantalla: también es un conjunto de estados, reglas, dependencias y casos límite que alguien tendrá que construir y mantener.
+
+---
+
+## Habilidades {intent: skills; aliases: habilidades, stack, tecnologias, tecnologías, herramientas, conocimientos, capacidades; tags: skills; priority: 8}
+
+Priorizo capacidades sobre herramientas.
+
+### Diseño {tags: design}
+
+- Product Design
+- Diseño de interacción
+- UX/UI
+- Prototipado
+- Accesibilidad (WCAG 2.1 AA)
+
+Herramientas: Figma, Figma Make, Affinity.
+
+### Investigación {tags: research}
+
+- Observación en contexto
+- Análisis de dominio y reglas
+- Análisis de productos existentes
+- Validación en uso real
+
+### Sistemas {tags: systems}
+
 - Sistemas de diseño
-- Investigación de usuarios
-- Wireframes
-- Prototipos de alta fidelidad
-- Accesibilidad
+- Arquitectura de información
+- Estados y flujos
+- Prevención de errores
 
-### Desarrollo Frontend {tags: frontend}
+Referencia: Fluent Design System.
 
-- HTML
-- CSS
-- JavaScript
-- TypeScript
+### Ingeniería {tags: frontend, engineering}
+
+- HTML/CSS
+- JavaScript / TypeScript
 - React
-- Vite
-
-### Herramientas {tags: tools}
-
-- Figma
-- Affinity Suite
+- Python
 - Git
-- GitHub
+
+En proyectos también he usado Vite y Tauri (Rust).
 
 ---
 
-## ¿Qué me inspira? {intent: inspiration, aliases: inspiracion, inspiración, referencias, influencias, windows, fluent; tags: inspiration; priority: 8}
+## ¿Qué me inspira? {intent: inspiration; aliases: inspiracion, inspiración, referencias, influencias, windows, fluent; tags: inspiration; priority: 8}
 
 Me inspiran especialmente los sistemas operativos.
 
 Disfruto analizando Windows, Fluent Design, iOS, iPadOS, Microsoft Office, Notion, Feedly y DoorDash.
 
-No porque quiera copiar su apariencia.
-
-Me interesa entender cómo organizan la información, cómo construyen identidad y cómo resuelven problemas de interacción.
+No porque quiera copiar su apariencia: me interesa entender cómo organizan la información, cómo construyen identidad y cómo resuelven problemas de interacción.
 
 ---
 
-## Proyectos {intent: projects, aliases: proyectos, portafolio, portfolio, casos, trabajos, case studies; tags: projects; priority: 8}
+## Proyectos {intent: projects; aliases: proyectos, portafolio, portfolio, casos, trabajos, case studies, casos de estudio; tags: projects; priority: 8}
 
-Los proyectos representan distintas etapas de mi forma de pensar.
+Mis dos casos de estudio principales son productos en uso real que diseñé y construí de punta a punta:
 
-Más que mostrar funcionalidades, muestran cómo abordé cada problema.
+- Baseball Scoreboard: marcador en vivo y proyección para un torneo comunitario de Béisbol Bíblico.
+- Kerygma Stage: software de proyección para cultos en vivo, usado cada semana en una iglesia.
 
-### Baseball Scoreboard {intent: baseball_scoreboard; tags: realtime, sports, javascript; priority: 10}
+Cada caso muestra el contexto, la investigación, las decisiones de diseño, la iteración, los resultados (separando uso, resultados medidos y esperados) y lo que aprendí.
 
-Sistema utilizado durante un torneo real para sincronizar una consola de operador con una pantalla de proyección sin depender de un servidor.
+### Baseball Scoreboard {intent: baseball_scoreboard; aliases: baseball, beisbol, béisbol, marcador, scoreboard; tags: realtime, sports, offline; priority: 10}
 
-Además del diseño participé en toda la lógica del producto y su implementación.
+Marcador en vivo y pantalla de proyección para el torneo comunitario de Béisbol Bíblico del Ministerio Cristiano HOME.
 
-Fue el proyecto donde más aprendí sobre sincronización, arquitectura y diseño para uso en tiempo real.
+El problema: un solo voluntario registraba cada jugada a mano en pizarras y PowerPoint mientras el partido seguía, y cualquier error quedaba proyectado frente a todos. Ese voluntario era yo.
 
----
-
-### Kerygma Stage {intent: kerygma_stage; tags: realtime, church, offline, rust; priority: 10}
-
-Software de escritorio que reemplaza PowerPoint y ProPresenter para proyectar letras de canciones y versículos bíblicos durante un culto en vivo. Lo usa semanalmente la Iglesia Hogar de Salvación y Alabanza.
-
-Diseñé y construí el producto completo: interfaz en React sobre un backend en Rust (Tauri), con subtítulos en vivo y detección de versículo por voz que corren 100% en el dispositivo, sin depender de internet ni de la nube.
-
-La decisión más importante fue separar lo que prepara el operador de lo que realmente ve el público, para que nadie en la congregación vea nunca un error a medio corregir.
+Mi rol: Product Designer y desarrollador frontend, de punta a punta (React, TypeScript, Vite).
 
 ---
 
-### Jobs Hunter {intent: jobs_hunter; tags: ux, research; priority: 9}
+### Baseball Scoreboard: decisiones de diseño {intent: baseball_decisions; aliases: decisiones baseball, decisiones del marcador; tags: baseball, decisions; priority: 8}
 
-Rediseño conceptual de una plataforma de búsqueda de empleo.
+Cuatro decisiones principales, cada una conectada con un problema observado:
 
-Analicé productos similares, documenté comparativas y validé decisiones con usuarios para entender qué problemas eran reales y cuáles provenían de suposiciones iniciales.
-
----
-
-### Pulse {intent: pulse; tags: windows, fluent; priority: 9}
-
-Aplicación conceptual para seguimiento del tiempo orientada a trabajadores independientes.
-
-Fue una oportunidad para explorar Fluent Design y pensar cómo un sistema operativo puede influir en la experiencia completa del producto.
+1. Acciones frecuentes a un solo clic, porque out, carrera y cambio de turno se repiten decenas de veces por partido.
+2. Una proyección diseñada aparte, no un espejo de la consola: el público necesita leer el marcador a distancia y el operador necesita controles.
+3. Prevenir y recuperar: acciones destructivas separadas, confirmación para lo irreversible, historial de jugadas y deshacer la última jugada.
+4. Funcionar sin internet: consola y proyección se sincronizan en el navegador, sin servidor.
 
 ---
 
-### HidroCity {intent: hidrocity; tags: mobile, public_services; priority: 8}
+### Baseball Scoreboard: resultados {intent: baseball_results; aliases: resultados baseball, impacto baseball, metricas baseball, métricas; tags: baseball, results; priority: 8}
 
-Concepto de aplicación para la gestión de servicios de agua potable.
+Uso: 10–15 partidos operados con el sistema, 6 equipos y entre 25 y 50 espectadores presenciales por jornada. Se usó durante todo el torneo.
 
-El objetivo fue simplificar procesos cotidianos y adaptar la experiencia tanto para ciudadanos como para personal de la institución.
+El uso real reveló reglas que no estaban contempladas y se incorporaron después.
+
+No medí tasas de error ni tiempos antes y después, así que no reporto mejoras cuantitativas. Menos errores visibles y menor carga para el operador son la intención del diseño, no resultados medidos.
 
 ---
 
-## ¿Qué tipo de productos disfruto? {intent: interests, aliases: que productos te gustan, productos favoritos, intereses; tags: interests; priority: 8}
+### Kerygma Stage {intent: kerygma_stage; aliases: kerygma, proyeccion, proyección, iglesia, culto; tags: realtime, church, offline, rust; priority: 10}
+
+Software de escritorio para proyectar letras, versículos y anuncios durante un culto en vivo. Lo usa semanalmente la Iglesia Hogar de Salvación y Alabanza.
+
+El problema: en herramientas genéricas como PowerPoint o Google Slides, preparar es exponer. Corregir, buscar un versículo o improvisar ocurre a la vista de toda la congregación.
+
+Mi rol: Product Designer y desarrollador full-stack, de punta a punta: interfaz en React sobre un backend en Rust (Tauri).
+
+---
+
+### Kerygma Stage: decisiones de diseño {intent: kerygma_decisions; aliases: decisiones kerygma, vista previa, en vivo, offline first, sugerir; tags: kerygma, decisions; priority: 8}
+
+Tres decisiones pesan más que todas las funciones:
+
+1. Vista previa vs. en vivo: el operador prepara y revisa en la vista previa; nada llega a la proyección hasta que lo confirma, incluso al editar en vivo.
+2. Sugerir vs. automatizar: cuando el sistema detecta un versículo en lo que se dice, lo sugiere al operador; la proyección no cambia hasta que él lo confirma.
+3. Offline-first: todo funciona sin conexión; subtítulos y detección de versículos corren en el dispositivo y el audio nunca sale del edificio.
+
+Otras funciones: búsqueda bíblica, Ctrl+K, editor, multi-monitor, control remoto desde el celular y pantalla de confidencia.
+
+---
+
+### Kerygma Stage: resultados {intent: kerygma_results; aliases: resultados kerygma, impacto kerygma; tags: kerygma, results; priority: 8}
+
+Uso: semanal, en los cultos de la Iglesia Hogar de Salvación y Alabanza, sirviendo a tres audiencias con la misma app: operador, escenario y congregación.
+
+Las pruebas en cultos reales revelaron problemas que los tests no detectaban (permisos de micrófono, cortes de audio, números hablados) y se corrigieron.
+
+Todavía no hay métricas formales de antes y después; lo demás son resultados esperados, no medidos.
+
+---
+
+### Lo que aprendí {intent: learnings; aliases: aprendizajes, que aprendiste, qué aprendiste, lecciones, que harias diferente, qué harías diferente; tags: learnings; priority: 7}
+
+Entender el dominio antes de diseñar: sin trabajo de campo, cualquier interfaz habría resuelto el problema equivocado.
+
+Diseñar contra la presión real, no contra un escenario ideal.
+
+Lo que haría diferente: definir desde el inicio cómo medir, por ejemplo registrar errores y correcciones antes de reemplazar un proceso, para hablar de impacto con datos.
+
+---
+
+### Exploraciones conceptuales {intent: concept_projects; aliases: jobs hunter, pulse, hidrocity, nexo, conceptos; tags: concepts; priority: 6}
+
+También he trabajado en proyectos conceptuales como Jobs Hunter, Pulse, HidroCity y Nexo. No están publicados como casos de estudio porque todavía no tienen suficiente proceso documentado para presentarlos con evidencia.
+
+---
+
+## ¿Cómo uso la IA? {intent: ai_workflow; aliases: ia, inteligencia artificial, ai, chatgpt, claude, copiloto; tags: ai, process; priority: 9}
+
+Uso IA como copiloto de diseño e ingeniería para explorar ideas, analizar información, cuestionar supuestos y acelerar la implementación.
+
+Las decisiones de producto, la dirección de diseño, la validación y el criterio final son míos.
+
+En Baseball Scoreboard la usé para explorar alternativas de interfaz y casos límite, y como copiloto de código. En Kerygma Stage, como copiloto de código. En ambos revisé, adapté y probé todo en uso real.
+
+---
+
+## ¿Qué tipo de productos disfruto? {intent: interests; aliases: que productos te gustan, productos favoritos, intereses; tags: interests; priority: 8}
 
 Me interesan especialmente:
 
@@ -187,70 +230,49 @@ Me interesan especialmente:
 - Herramientas de productividad.
 - Dashboards.
 - Software empresarial.
-- Plataformas complejas.
+- Productos que se usan bajo presión o en tiempo real.
 - Interfaces donde la interacción tenga un papel importante.
 
-Si tuviera recursos ilimitados dedicaría varios años a diseñar un sistema operativo.
-
-Lo considero el producto digital más completo porque conecta prácticamente todas las experiencias que vivimos con la tecnología.
+Si tuviera recursos ilimitados dedicaría varios años a diseñar un sistema operativo: es el producto digital que conecta prácticamente todas las experiencias que vivimos con la tecnología.
 
 ---
 
-## FAQ {intent: faq, aliases: faq, preguntas frecuentes, dudas, preguntas; tags: faq; priority: 10}
+## FAQ {intent: faq; aliases: faq, preguntas frecuentes, dudas, preguntas; tags: faq; priority: 10}
 
 Algunas preguntas que suelen aparecer:
 
-¿Quién eres? Soy Gregory Durán, Product Designer con formación en Ingeniería de Software. Mi interés por el diseño nació mucho antes de aprender herramientas; comenzó imaginando cómo evolucionaría la tecnología, especialmente los sistemas operativos y las nuevas formas de interacción entre las personas y el software.
+¿Quién eres? Soy Gregory Durán, Product Designer con formación en Ingeniería de Software.
 
-¿Qué haces? Diseño productos digitales. Me interesa comprender el problema completo antes que diseñar una pantalla aislada. Intento conectar las necesidades del usuario, los objetivos del producto y las posibilidades técnicas en una solución coherente.
+¿Qué haces? Diseño productos digitales entendiendo tanto la experiencia como el sistema que la hace posible.
 
-¿Eres diseñador o desarrollador? Tengo formación en Ingeniería de Software y trabajo como Product Designer. Mientras diseño también pienso en cómo se implementará técnicamente una solución, por eso no veo ambas disciplinas como mundos separados.
+¿Eres diseñador o desarrollador? Soy Product Designer. Mi formación en Ingeniería de Software me permite diseñar entendiendo cómo se construye el producto, y en mis dos casos de estudio también lo implementé.
 
-¿Cómo comenzaste en el diseño? Mi interés comenzó viendo conceptos futuristas de Windows, sistemas operativos y nuevas formas de interacción. Antes de diseñar interfaces hice algunos trabajos de diseño gráfico, pero con el tiempo descubrí que lo que realmente disfrutaba era pensar productos completos.
+¿Qué proyecto te representa mejor? Baseball Scoreboard y Kerygma Stage: productos en uso real donde las restricciones técnicas definieron muchas decisiones de experiencia.
 
-¿Cómo es tu proceso de diseño? No sigo una metodología fija. Algunas veces comienzo escribiendo ideas, otras haciendo diagramas mentales y en ocasiones diseñando directamente. Muchas veces entiendo el problema mientras construyo la interfaz.
+¿Tienes métricas de impacto? Reporto datos de uso reales (por ejemplo, 10–15 partidos en Baseball Scoreboard y uso semanal en Kerygma Stage). No medí formalmente errores ni tiempos antes y después, así que no presento mejoras cuantitativas.
 
-¿Cómo analizas una aplicación? Cuando utilizo una aplicación nueva primero intento descubrir qué funciona. Después trato de entender por qué alguien tomó determinadas decisiones. Solo entonces pienso en posibles mejoras.
+¿Cómo haces investigación? Con observación en contexto, análisis del dominio y de productos existentes, y validación en uso real. En Baseball Scoreboard fui el operador; en Kerygma Stage partí de los problemas que reportan los operadores de proyección.
 
-¿Qué valoras en una interfaz? Valoro que una interfaz tenga personalidad y responda al contexto del producto. Creo que los estándares son importantes, pero no deberían hacer que todos los productos se sientan iguales.
+¿Qué herramientas utilizas? Figma, Figma Make y Affinity para diseño; HTML/CSS, JavaScript, TypeScript, React, Python y Git como contexto técnico. Las herramientas son secundarias frente al criterio.
 
-¿Qué no te gusta del diseño actual? No me gustan las interfaces genéricas ni los productos que siguen tendencias sin preguntarse si realmente aportan valor. Prefiero adaptar el proceso a cada proyecto.
+¿Usas IA? Sí, como copiloto para explorar, cuestionar supuestos y acelerar la implementación. Las decisiones y la validación son mías.
 
-¿Qué productos te inspiran? Me inspiran especialmente Windows, Fluent Design, iOS, iPadOS, Microsoft Office, Notion, Feedly y DoorDash. Más que copiar su apariencia, me interesa entender cómo organizan la información y construyen experiencias.
-
-¿Por qué te gusta Windows? Windows fue una de las razones por las que me interesé por el diseño de productos. Siempre me llamó la atención cómo evolucionaban sus interfaces y cómo un sistema operativo puede definir la experiencia de todo un ecosistema.
-
-¿Por qué estudiaste Ingeniería de Software? La Ingeniería de Software me enseñó a pensar en arquitectura, requisitos, escalabilidad y restricciones técnicas. Hoy utilizo esos conocimientos cada vez que diseño un producto.
-
-¿Qué herramientas utilizas? Trabajo principalmente con Figma, Adobe Creative Cloud, HTML, CSS, JavaScript, TypeScript y React. Sin embargo, considero que las herramientas son secundarias frente al criterio de diseño.
-
-¿Qué tecnologías conoces? Tengo experiencia con HTML, CSS, JavaScript, TypeScript, React, Vite y Git. También trabajo con Fluent Design System y WinUI como referencias para el diseño de interfaces.
-
-¿Qué proyecto te representa mejor? Probablemente Baseball Scoreboard. Fue un proyecto real donde participé tanto en el diseño como en el desarrollo, y me permitió resolver problemas de interacción y sincronización en tiempo real.
-
-¿Cuál fue el mayor reto que enfrentaste? Uno de los mayores retos fue diseñar soluciones que fueran fáciles de utilizar mientras resolvían restricciones técnicas reales. Me interesa encontrar ese equilibrio entre experiencia e implementación.
-
-¿Qué tipo de proyectos disfrutas? Me interesan especialmente los sistemas operativos, herramientas de productividad, dashboards, software empresarial y cualquier producto donde pueda explorar nuevas formas de interacción.
-
-¿Qué construirías si tuvieras recursos ilimitados? Construiría un sistema operativo. Me parece el producto digital más complejo y el que más influye en cómo experimentamos el resto de aplicaciones.
-
-¿Cómo trabajas con desarrolladores? Me gusta trabajar de forma colaborativa. Intento comprender las restricciones técnicas desde el principio y mantener conversaciones constantes para que diseño y desarrollo evolucionen juntos.
+¿Cómo trabajas con desarrolladores? Intento comprender las restricciones técnicas desde el principio y mantener conversaciones constantes para que diseño y desarrollo evolucionen juntos.
 
 ¿Cómo recibes el feedback? Escucho primero. Me interesa entender el razonamiento detrás de cada comentario antes de decidir si una solución debe cambiar o mantenerse.
 
-¿Qué buscas actualmente? Estoy abierto a oportunidades remotas de tiempo completo relacionadas con diseño de producto y productos digitales donde pueda participar en la evolución del producto, no únicamente en el diseño de pantallas.
+¿Qué buscas actualmente? Roles remotos de tiempo completo en Product Design, donde pueda participar en la evolución del producto, no únicamente en el diseño de pantallas.
 
-¿En qué idiomas puedes trabajar? Puedo comunicarme en español e inglés.
+¿En qué idiomas puedes trabajar? Español e inglés.
 
 ¿Cómo puedo contactarte? Puedes escribirme a: gregorymduran01@outlook.com
 
 ---
 
-## Contacto {intent: contact, aliases: contacto, contactar, correo, email, trabajar, contratar, disponibilidad; tags: contact; priority: 10}
+## Contacto {intent: contact; aliases: contacto, contactar, correo, email, trabajar, contratar, disponibilidad, disponible, cv, linkedin; tags: contact; priority: 10}
 
-Actualmente estoy abierto a oportunidades remotas de tiempo completo relacionadas con diseño de producto.
+Estoy abierto a oportunidades remotas de tiempo completo en Product Design. Respondo en español e inglés.
 
-También disfruto conversar sobre tecnología, sistemas operativos, interacción y evolución de productos digitales.
+Correo: gregorymduran01@outlook.com
 
-Correo:
-gregorymduran01@outlook.com
+También estoy en LinkedIn (linkedin.com/in/gregmduran), GitHub (github.com/gregorymduran) y Behance (behance.net/gregmduran). Mi CV está disponible en la sección de contacto.

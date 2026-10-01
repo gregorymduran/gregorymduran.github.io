@@ -67,13 +67,14 @@
   }
 
   function storeFallbackValues() {
-    document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria]').forEach(function (element) {
+    document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria], [data-i18n-alt]').forEach(function (element) {
       var entry = {
         text: element.textContent || '',
         html: element.innerHTML || '',
         placeholder: element.getAttribute('placeholder') || '',
         title: element.getAttribute('title') || '',
-        aria: element.getAttribute('aria-label') || ''
+        aria: element.getAttribute('aria-label') || '',
+        alt: element.getAttribute('alt') || ''
       };
       fallbackValues.set(element, entry);
     });
@@ -84,7 +85,8 @@
       return Promise.resolve(translationsCache[lang]);
     }
 
-    return fetch(getLocaleUrl(lang), { cache: 'force-cache' })
+    // no-cache: revalida con el servidor (304 barato) para que un deploy nuevo no deje traducciones viejas en caché.
+    return fetch(getLocaleUrl(lang), { cache: 'no-cache' })
       .then(function (response) {
         if (!response.ok) {
           throw new Error('No se pudo cargar ' + getLocaleUrl(lang));
@@ -103,14 +105,15 @@
   }
 
   function collectKeys() {
-    return Array.from(document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria]'))
+    return Array.from(document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria], [data-i18n-alt]'))
       .map(function (element) {
         return [
           element.getAttribute('data-i18n'),
           element.getAttribute('data-i18n-html'),
           element.getAttribute('data-i18n-placeholder'),
           element.getAttribute('data-i18n-title'),
-          element.getAttribute('data-i18n-aria')
+          element.getAttribute('data-i18n-aria'),
+          element.getAttribute('data-i18n-alt')
         ].filter(Boolean);
       })
       .flat();
@@ -118,19 +121,13 @@
 
   function validateTranslations(lang, locale) {
     var keys = collectKeys();
-    var definedKeys = Object.keys(locale || {});
-    var definedSet = new Set(definedKeys);
-    var usedSet = new Set(keys);
+    var definedSet = new Set(Object.keys(locale || {}));
 
+    // Solo se reportan claves faltantes: un mismo archivo de idioma sirve a todas
+    // las páginas, así que "definida pero sin usar en esta página" es lo normal.
     keys.forEach(function (key) {
       if (!definedSet.has(key)) {
         warn('⚠ Falta la traducción:\n' + key + '\n' + lang + '.json');
-      }
-    });
-
-    definedKeys.forEach(function (key) {
-      if (!usedSet.has(key)) {
-        warn('⚠ Clave definida pero nunca utilizada:\n' + key);
       }
     });
   }
@@ -147,7 +144,7 @@
 
   function applyTranslations(lang) {
     var locale = translationsCache[lang] || {};
-    var elements = Array.from(document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria]'));
+    var elements = Array.from(document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder], [data-i18n-title], [data-i18n-aria], [data-i18n-alt]'));
 
     elements.forEach(function (element) {
       var textKey = element.getAttribute('data-i18n');
@@ -155,12 +152,14 @@
       var placeholderKey = element.getAttribute('data-i18n-placeholder');
       var titleKey = element.getAttribute('data-i18n-title');
       var ariaKey = element.getAttribute('data-i18n-aria');
+      var altKey = element.getAttribute('data-i18n-alt');
       var fallback = fallbackValues.get(element) || {
         text: element.textContent || '',
         html: element.innerHTML || '',
         placeholder: element.getAttribute('placeholder') || '',
         title: element.getAttribute('title') || '',
-        aria: element.getAttribute('aria-label') || ''
+        aria: element.getAttribute('aria-label') || '',
+        alt: element.getAttribute('alt') || ''
       };
 
       if (textKey) {
@@ -210,6 +209,13 @@
         }
         if (locale[ariaKey] === undefined && translationsCache[defaultLang] && translationsCache[defaultLang][ariaKey] === undefined && fallback.aria !== undefined) {
           warn('⚠ Elemento con data-i18n-aria pero sin traducción: ' + ariaKey);
+        }
+      }
+
+      if (altKey) {
+        var altValue = resolveValue(locale, altKey, fallback.alt);
+        if (altValue !== undefined) {
+          element.setAttribute('alt', altValue);
         }
       }
     });

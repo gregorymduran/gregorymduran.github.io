@@ -17,8 +17,11 @@
         var btnD = document.getElementById('btn' + label);
         var btnM = document.getElementById('btn' + label + 'M');
         var isActive = label.toLowerCase() === lang;
-        if (btnD) btnD.classList.toggle('active', isActive);
-        if (btnM) btnM.classList.toggle('active', isActive);
+        [btnD, btnM].forEach(function (btn) {
+          if (!btn) return;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-pressed', String(isActive));
+        });
       });
     }
 
@@ -48,43 +51,67 @@
 
     function bindMenu() {
       if (!burger || !menu) return;
-      burger.addEventListener('click', function () {
-        var open = menu.classList.toggle('open');
+
+      function setMenu(open, restoreFocus) {
+        menu.classList.toggle('open', open);
         burger.setAttribute('aria-expanded', String(open));
+        document.documentElement.classList.toggle('menu-open', open);
         updateBurgerLabel(window.i18n.getCurrentLanguage());
+        if (open) {
+          var first = menu.querySelector('a, button');
+          if (first) first.focus();
+        } else if (restoreFocus) {
+          burger.focus();
+        }
+      }
+
+      burger.addEventListener('click', function () {
+        setMenu(!menu.classList.contains('open'), true);
       });
 
       menu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
-          menu.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-          updateBurgerLabel(window.i18n.getCurrentLanguage());
+          setMenu(false, false);
         });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('open')) {
+          setMenu(false, true);
+        }
+      });
+
+      // Si la ventana crece por encima del breakpoint con el menú abierto, se cierra.
+      window.matchMedia('(min-width: 681px)').addEventListener('change', function (mq) {
+        if (mq.matches && menu.classList.contains('open')) setMenu(false, false);
       });
     }
 
     function bindCopyAction() {
       if (!copyBtn || !emailAddr) return;
-      var address = emailAddr.textContent;
+      var address = emailAddr.textContent.trim();
+      var status = document.getElementById('copyStatus');
       copyBtn.addEventListener('click', function () {
         var lang = window.i18n.getCurrentLanguage();
         var locale = window.i18n.getLocale(lang) || {};
         var successText = locale['copy.success'] || (lang === 'es' ? 'Copiado ✓' : 'Copied ✓');
         var restoreText = locale['contact.copyButton'] || (lang === 'es' ? 'Copiar' : 'Copy');
 
+        var restoreLabel = locale['contact.emailLabel'] || restoreText;
+
         var done = function () {
           copyBtn.textContent = successText;
-          copyBtn.setAttribute('aria-label', successText);
+          if (status) status.textContent = successText;
           setTimeout(function () {
             copyBtn.textContent = restoreText;
-            copyBtn.setAttribute('aria-label', restoreText);
+            copyBtn.setAttribute('aria-label', restoreLabel);
+            if (status) status.textContent = '';
           }, 2000);
         };
 
+        // Si el portapapeles no está disponible, el enlace mailto sigue funcionando.
         if (navigator.clipboard) {
-          navigator.clipboard.writeText(address).then(done).catch(done);
-        } else {
-          done();
+          navigator.clipboard.writeText(address).then(done).catch(function () {});
         }
       });
     }
@@ -128,7 +155,11 @@
 
       function captionFor(frame) {
         var cap = frame.parentElement && frame.parentElement.querySelector('.screen-cap');
-        return cap ? cap.textContent.trim() : frame.querySelector('img').alt;
+        if (!cap) return frame.querySelector('img').alt;
+        // Título y descripción del pie van en elementos separados: se unen con un guion.
+        var title = cap.querySelector('strong');
+        var body = title ? cap.textContent.replace(title.textContent, '') : cap.textContent;
+        return title ? title.textContent.trim() + ' — ' + body.trim() : body.trim();
       }
 
       var dialog = document.createElement('dialog');

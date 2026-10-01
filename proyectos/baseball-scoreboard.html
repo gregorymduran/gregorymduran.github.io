@@ -3,145 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOME Live Score — Caso de Estudio | Gregory Durán</title>
-<meta name="description" content="Caso de estudio: sistema de gestión y proyección en tiempo real para torneos de Béisbol Bíblico. De pizarra física a herramienta digital diseñada para operar bajo presión.">
+<title data-i18n="meta.baseball.title">Baseball Scoreboard — Caso de estudio | Gregory Durán</title>
+<meta name="description" content="Caso de estudio de Product Design: marcador en vivo y proyección para un torneo real de Béisbol Bíblico. Investigación, decisiones de diseño, iteración y contexto técnico.">
+<link rel="canonical" href="https://gregorymduran.github.io/proyectos/baseball-scoreboard.html">
+<meta name="author" content="Gregory Durán">
+<meta name="theme-color" content="#F8F7F4">
 <link rel="icon"
   href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='900' fill='%23F8F7F4' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
-<!-- Open Graph / Twitter Card: og:image apunta a un asset que falta subir (recomendado 1200x630) -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="HOME Live Score — Caso de Estudio | Gregory Durán">
-<meta property="og:description" content="Caso de estudio: sistema de gestión y proyección en tiempo real para torneos de Béisbol Bíblico. De pizarra física a herramienta digital diseñada para operar bajo presión.">
+<meta property="og:site_name" content="Gregory Durán">
+<meta property="og:title" content="Baseball Scoreboard — Caso de estudio | Gregory Durán">
+<meta property="og:description" content="Marcador en vivo y proyección para un torneo real de Béisbol Bíblico, diseñado para un operador que trabaja bajo presión y sin internet.">
 <meta property="og:url" content="https://gregorymduran.github.io/proyectos/baseball-scoreboard.html">
 <meta property="og:image" content="https://gregorymduran.github.io/assets/img/baseball-scoreboard/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HOME Live Score — Caso de Estudio | Gregory Durán">
-<meta name="twitter:description" content="Caso de estudio: sistema de gestión y proyección en tiempo real para torneos de Béisbol Bíblico. De pizarra física a herramienta digital diseñada para operar bajo presión.">
+<meta name="twitter:title" content="Baseball Scoreboard — Caso de estudio | Gregory Durán">
+<meta name="twitter:description" content="Marcador en vivo y proyección para un torneo real de Béisbol Bíblico, diseñado para un operador que trabaja bajo presión y sin internet.">
 <meta name="twitter:image" content="https://gregorymduran.github.io/assets/img/baseball-scoreboard/og-cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Baseball Scoreboard — Product Design case study",
+      "description": "Live scoring console and public projection for a real Bible Baseball tournament, designed for a volunteer operator working under pressure and offline.",
+      "image": "https://gregorymduran.github.io/assets/img/baseball-scoreboard/og-cover.jpg",
+      "url": "https://gregorymduran.github.io/proyectos/baseball-scoreboard.html",
+      "mainEntityOfPage": "https://gregorymduran.github.io/proyectos/baseball-scoreboard.html",
+      "inLanguage": ["es", "en"],
+      "genre": "Case study",
+      "author": { "@type": "Person", "@id": "https://gregorymduran.github.io/#person", "name": "Gregory Durán", "url": "https://gregorymduran.github.io/" },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Baseball Scoreboard",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Web browser"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Gregory Durán", "item": "https://gregorymduran.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Baseball Scoreboard", "item": "https://gregorymduran.github.io/proyectos/baseball-scoreboard.html" }
+      ]
+    }
+  ]
+}
+</script>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap">
-<link rel="stylesheet" href="./project-shared.css">
 <link rel="stylesheet" href="../css/base.css">
-<style>
-:root{
-  --accent:#0D0D0D;
-  --font-display:'Satoshi',sans-serif;--font-body:'DM Sans',sans-serif;
-  --sp-8:8px;--sp-16:16px;--sp-24:24px;--sp-32:32px;--sp-48:48px;--sp-64:64px;--sp-96:96px;
-  --r:12px;--r-lg:20px;
-}
-
-body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.g{max-width:920px;margin:0 auto;padding:0 48px}
-.g-wide{max-width:1100px;margin:0 auto;padding:0 48px}
-@media(max-width:860px){.g,.g-wide{padding:0 28px}}
-@media(max-width:540px){.g,.g-wide{padding:0 20px}}
-
-/* Nav */
-.nav-row{height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
-.nav-back:hover{color:var(--ink)}
-.nav-back svg{width:16px;height:16px}
-.nav-contact-lnk{font-size:14px;font-weight:700;color:var(--ink-2);transition:color var(--ease)}
-.nav-contact-lnk:hover{color:var(--ink)}
-@media(max-width:540px){.nav-back span{display:none}}
-
-/* Hero */
-.case-hero{padding:clamp(64px,10vw,128px) 0 clamp(48px,7vw,96px);border-bottom:1px solid var(--line)}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:20px}
-.case-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px}
-.case-hero .subtitle{font-size:clamp(16px,1.7vw,18px);color:var(--ink-2);max-width:560px;line-height:1.65;margin-bottom:40px}
-.meta-row{display:flex;gap:40px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--line)}
-.meta-item .label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
-.meta-item .value{font-size:14px;font-weight:700;color:var(--ink)}
-
-/* Hero image */
-.hero-img{margin-top:40px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:#EAE8E4;aspect-ratio:16/8;position:relative}
-.hero-img img{width:100%;height:100%;object-fit:cover}
-.hero-img::after{content:'Vista previa del proyecto';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.hero-img:has(img[src]:not([src=""]))::after{display:none}
-
-/* Sections */
-.cs{padding:clamp(48px,7vw,96px) 0}
-.cs + .cs{border-top:1px solid var(--line)}
-.cs .eyebrow{margin-bottom:12px}
-.cs h2{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.025em;line-height:1.2;margin-bottom:20px}
-.cs p{font-size:15px;color:var(--ink-2);line-height:1.72;margin-bottom:14px}
-.cs p:last-child{margin-bottom:0}
-
-/* Goal list */
-.goal-list{display:flex;flex-direction:column;gap:14px;margin-top:20px}
-.goal-list li{display:flex;gap:14px;font-size:15px;color:var(--ink);align-items:flex-start}
-.gi{width:26px;height:26px;border-radius:50%;background:#EAE8E4;color:var(--ink-2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;margin-top:1px}
-
-/* Before / After */
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
-@media(max-width:640px){.compare-grid{grid-template-columns:1fr}}
-.compare-card{border-radius:var(--r);padding:var(--sp-24)}
-.compare-card.before{background:#F2F2F0;border:1px solid var(--line)}
-.compare-card.after{background:var(--surface);border:1px solid var(--line)}
-.compare-label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;display:block}
-.compare-card.before .compare-label{color:var(--ink-3)}
-.compare-card.after .compare-label{color:var(--ink)}
-.compare-card p{font-size:14px;color:var(--ink);line-height:1.55;margin-bottom:10px}
-.compare-card p:last-child{margin-bottom:0}
-
-/* Process steps */
-.steps{display:flex;flex-direction:column;gap:24px;margin-top:24px}
-.step{display:flex;gap:20px}
-.step-num{font-family:var(--font-display);font-size:20px;font-weight:900;color:#E6E4E0;flex-shrink:0;width:32px;line-height:1.3}
-.step-body h3{font-family:var(--font-display);font-size:17px;font-weight:800;margin-bottom:6px}
-.step-body p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* Decision cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:760px){.cards{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--sp-24)}
-.card h3{font-family:var(--font-display);font-size:16px;font-weight:800;margin-bottom:8px}
-.card p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* Results */
-.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:640px){.results-grid{grid-template-columns:1fr}}
-.result-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--sp-24);text-align:center}
-.result-stat{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--ink);margin-bottom:8px}
-.result-label{font-size:13px;color:var(--ink-2);line-height:1.5}
-
-/* Screen gallery */
-.screens{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
-@media(max-width:640px){.screens{grid-template-columns:1fr}}
-.screen-frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#EAE8E4;aspect-ratio:16/11;position:relative}
-.screen-frame img{width:100%;height:100%;object-fit:cover}
-.screen-frame::after{content:'Pantalla';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.screen-frame:has(img[src]:not([src=""]))::after{display:none}
-.screen-cap{font-size:12px;font-weight:600;color:var(--ink-3);margin-top:8px;text-align:center}
-
-/* Learnings */
-.learnings{display:flex;flex-direction:column;gap:24px;margin-top:24px}
-.learning{border-left:3px solid var(--line);padding-left:var(--sp-24)}
-.learning h3{font-family:var(--font-display);font-size:17px;font-weight:800;margin-bottom:8px}
-.learning p{font-size:14px;color:var(--ink-2);line-height:1.6}
-
-/* CTA */
-.case-cta{padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--line);text-align:center}
-.case-cta h2{font-family:var(--font-display);font-size:clamp(24px,3.6vw,40px);font-weight:900;letter-spacing:-.025em;margin-bottom:12px}
-.case-cta p{font-size:15px;color:var(--ink-2);margin-bottom:28px}
-.cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn-line{display:inline-flex;align-items:center;gap:7px;height:50px;padding:0 22px;border-radius:99px;font-weight:700;font-size:14px;color:var(--ink-2);border:1.5px solid var(--line);transition:border-color var(--ease),color var(--ease)}
-.btn-line:hover{border-color:var(--ink);color:var(--ink)}
-
-/* Footer */
-.footer-name{font-family:var(--font-display);font-weight:900;font-size:15px}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:13px;font-weight:600;color:var(--ink-3);transition:color var(--ease)}
-.footer-links a:hover{color:var(--ink)}
-.footer-copy{font-size:13px;color:var(--ink-3)}
-
-</style>
+<link rel="stylesheet" href="./project-shared.css">
 </head>
-<body class="project home-live-score">
+<body class="project baseball">
 
 <a href="#main" class="skip" data-i18n="skip">Saltar al contenido</a>
 
@@ -151,11 +72,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-siz
     <div class="nav-right">
       <a href="../index.html#work" class="nav-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span data-i18n="case.nav.back">Volver</span>
+        <span data-i18n="case.nav.back">Proyectos</span>
       </a>
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-        <button id="btnEs" class="active">ES</button>
-        <button id="btnEn">EN</button>
+        <button type="button" id="btnEs" class="active" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+        <button type="button" id="btnEn" lang="en" aria-pressed="false" aria-label="English">EN</button>
       </div>
       <a href="../index.html#contact" class="nav-contact-lnk" data-i18n="navigation.contact">Contacto</a>
     </div>
@@ -166,332 +87,502 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-siz
 
   <!-- HERO ─────────────────────────────────────────── -->
   <div class="g">
-    <section class="case-hero">
-      <p class="eyebrow rv" data-i18n="case.baseball.hero.eyebrow">Caso de Estudio · Producto en uso real</p>
+    <header class="case-hero">
+      <p class="eyebrow rv" data-i18n="case.baseball.hero.eyebrow">Caso de estudio · Producto en uso real</p>
       <h1 class="rv">Baseball Scoreboard</h1>
-      <p class="subtitle rv" data-i18n="case.baseball.hero.subtitle">Transformé un proceso manual, propenso a errores y operado bajo presión, en una herramienta digital que sincroniza en tiempo real la consola del operador con la proyección pública de un torneo de Béisbol Bíblico.</p>
-
-      <div class="meta-row rv">
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.roleLabel">Rol</span>
-          <span class="value" data-i18n="case.baseball.hero.roleValue">Product Designer · Frontend Developer</span>
-        </div>
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.typeLabel">Tipo</span>
-          <span class="value" data-i18n="case.baseball.hero.typeValue">Producto digital · Uso real en torneo</span>
-        </div>
-        <div class="meta-item">
-          <span class="label" data-i18n="case.meta.toolsLabel">Herramientas</span>
-          <span class="value" data-i18n="case.baseball.hero.toolsValue">Figma · Figma Make · React</span>
-        </div>
-      </div>
-
-      <div class="hero-img rv">
-        <img src="../assets/img/baseball-scoreboard/cover-hero.jpg" alt="HOME Live Score — Pantalla de proyección pública junto a la consola del operador durante un partido" width="2400" height="1200">
-      </div>
-    </section>
+      <p class="subtitle rv" data-i18n="case.baseball.hero.subtitle">Cómo convertí un marcador que un voluntario actualizaba a mano, en vivo y frente a todo el público, en una consola diseñada para operar bajo presión y una pantalla pública que se actualiza sola, sin internet.</p>
+    </header>
   </div>
-
-  <!-- CONTEXTO ─────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="contexto">
-      <p class="eyebrow rv" data-i18n="case.baseball.context.eyebrow">Contexto</p>
-      <h2 class="rv" data-i18n="case.baseball.context.heading">De la pizarra física al software</h2>
-      <p class="rv" data-i18n="case.baseball.context.p1">Cada año, el Ministerio Cristiano HOME organiza un torneo comunitario de Béisbol Bíblico. Durante varias ediciones, el marcador se llevó en pizarras físicas y presentaciones de PowerPoint, actualizadas a mano por un operador.</p>
-      <p class="rv" data-i18n="case.baseball.context.p2">Yo era ese operador. Como voluntario, viví de primera mano cuánto dependía el resultado de la atención de una sola persona: un out olvidado, una carrera mal sumada o una diapositiva desincronizada podían romper en segundos la experiencia de todo el público.</p>
-      <p class="rv" data-i18n="case.baseball.context.p3">Esa fricción, repetida torneo tras torneo, fue lo que convirtió una tarea voluntaria en un problema de diseño que quise resolver. El proyecto nació así, como iniciativa personal, y fue evolucionando junto con los organizadores hasta convertirse en el sistema que usa el torneo hoy.</p>
-    </section>
-  </div>
-
-  <!-- ROL Y USUARIOS ───────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="rol">
-      <p class="eyebrow rv" data-i18n="case.baseball.role.eyebrow">Mi rol</p>
-      <h2 class="rv" data-i18n="case.baseball.role.heading">Diseño y desarrollo, de punta a punta</h2>
-      <p class="rv" data-i18n="case.baseball.role.body">Participé en cada etapa del proyecto: investigación de campo, arquitectura de información, diseño de experiencia e interfaz, prototipado, desarrollo frontend, implementación de la lógica del juego y las iteraciones posteriores al uso real.</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.baseball.role.goal1">Investigación del proceso y levantamiento de las reglas del torneo</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.baseball.role.goal2">Arquitectura de información y diseño de experiencia</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.baseball.role.goal3">Diseño visual, prototipado y desarrollo frontend</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.baseball.role.goal4">Sincronización entre vistas e iteración continua tras el uso real</span></li>
-      </ul>
-    </section>
-  </div>
-
   <div class="g-wide">
-    <section class="cs" id="usuarios">
-      <p class="eyebrow rv" data-i18n="case.baseball.users.eyebrow">Usuarios</p>
-      <h2 class="rv" data-i18n="case.baseball.users.heading">Cuatro roles, una sola fuente de verdad</h2>
-      <p class="rv" data-i18n="case.baseball.users.body">El sistema debía servir a personas con necesidades muy distintas dentro del mismo evento, todas sincronizadas alrededor del mismo marcador.</p>
+    <div class="hero-img rv">
+      <img src="../assets/img/baseball-scoreboard/cover-hero.jpg" data-i18n-alt="case.baseball.hero.imageAlt" alt="Pantalla de proyección pública junto a la consola del operador durante un partido" width="2400" height="1200">
+    </div>
+  </div>
+
+  <!-- 01 OVERVIEW ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="overview" aria-labelledby="t-overview">
+      <div class="sec-head">
+        <p class="sec-num"><b>01</b> <span data-i18n="case.sec.overview">Resumen</span></p>
+        <h2 id="t-overview" data-i18n="case.baseball.overview.heading">El proyecto en 30 segundos</h2>
+      </div>
+      <dl class="overview rv">
+        <div class="wide">
+          <dt data-i18n="case.ov.product">Producto</dt>
+          <dd data-i18n="case.baseball.ov.product">Consola de anotación en vivo + pantalla de proyección pública para torneos de Béisbol Bíblico.</dd>
+        </div>
+        <div class="wide">
+          <dt data-i18n="case.ov.context">Contexto</dt>
+          <dd data-i18n="case.baseball.ov.context">Torneo comunitario anual del Ministerio Cristiano HOME, operado por voluntarios en una cancha sin internet confiable.</dd>
+        </div>
+        <div class="full">
+          <dt data-i18n="case.ov.problem">Problema</dt>
+          <dd data-i18n="case.baseball.ov.problem">Un solo voluntario registraba cada jugada a mano en pizarras y PowerPoint, mientras el partido seguía; cualquier error quedaba proyectado frente a todos.</dd>
+        </div>
+        <div class="wide">
+          <dt data-i18n="case.ov.role">Mi rol</dt>
+          <dd data-i18n="case.baseball.ov.role">Product Designer y desarrollador frontend, de punta a punta: investigación, diseño de interacción e interfaz, prototipado, código y la iteración tras el uso real. Proyecto personal, hecho junto a los organizadores.</dd>
+        </div>
+        <div>
+          <dt data-i18n="case.ov.platform">Plataforma</dt>
+          <dd data-i18n="case.baseball.ov.platform">Web app: consola + proyección en una segunda pantalla</dd>
+        </div>
+        <div>
+          <dt data-i18n="case.ov.status">Estado</dt>
+          <dd data-i18n="case.baseball.ov.status">Usado en un torneo real; sigue en evolución</dd>
+        </div>
+        <div class="full">
+          <dt data-i18n="case.ov.tech">Tecnología</dt>
+          <dd>React · TypeScript · Vite · Framer Motion · localStorage + StorageEvent</dd>
+        </div>
+      </dl>
+      <nav class="toc rv" data-i18n-aria="case.toc.label" aria-label="Secciones del caso de estudio">
+        <ol>
+          <li><a href="#context"><span>02</span> <span data-i18n="case.sec.context">Contexto</span></a></li>
+          <li><a href="#problem"><span>03</span> <span data-i18n="case.sec.problem">El problema</span></a></li>
+          <li><a href="#research"><span>04</span> <span data-i18n="case.sec.research">Investigación</span></a></li>
+          <li><a href="#insights"><span>05</span> <span data-i18n="case.sec.insights">Hallazgos clave</span></a></li>
+          <li><a href="#decisions"><span>06</span> <span data-i18n="case.sec.decisions">Decisiones de diseño</span></a></li>
+          <li><a href="#iteration"><span>07</span> <span data-i18n="case.sec.iteration">Iteración</span></a></li>
+          <li><a href="#product"><span>08</span> <span data-i18n="case.sec.product">Producto final</span></a></li>
+          <li><a href="#results"><span>09</span> <span data-i18n="case.sec.results">Resultados</span></a></li>
+          <li><a href="#learnings"><span>10</span> <span data-i18n="case.sec.learnings">Aprendizajes</span></a></li>
+          <li><a href="#tech"><span>11</span> <span data-i18n="case.sec.tech">Contexto técnico</span></a></li>
+        </ol>
+      </nav>
+    </section>
+  </div>
+
+  <!-- 02 CONTEXT ───────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="context" aria-labelledby="t-context">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>02</b> <span data-i18n="case.sec.context">Contexto</span></p>
+        <h2 id="t-context" data-i18n="case.baseball.context.heading">Yo era el operador del marcador</h2>
+      </div>
+      <p class="rv" data-i18n="case.baseball.context.p1">Cada año, el Ministerio Cristiano HOME organiza un torneo comunitario de Béisbol Bíblico. Durante varias ediciones el marcador se llevó en pizarras físicas y diapositivas de PowerPoint, actualizadas a mano por un voluntario.</p>
+      <p class="rv" data-i18n="case.baseball.context.p2">Ese voluntario era yo. Viví de primera mano cuánto dependía el marcador de la atención de una sola persona: un out olvidado, una carrera mal sumada o una diapositiva desincronizada rompían en segundos la experiencia de todo el público. Esa fricción, repetida torneo tras torneo, se convirtió en un problema de diseño que quise resolver.</p>
+
+      <h3 class="sub-head rv" data-i18n="case.baseball.context.usersHead">Quiénes usan el sistema</h3>
       <div class="cards rv">
         <div class="card">
           <h3 data-i18n="case.baseball.users.card1.title">Operador</h3>
-          <p data-i18n="case.baseball.users.card1.body">Registra todas las jugadas en tiempo real. Necesita trabajar rápido y cometer la menor cantidad posible de errores.</p>
+          <p data-i18n="case.baseball.users.card1.body">Registra cada jugada en tiempo real mientras mira el partido.</p>
+          <p class="need" data-i18n="case.baseball.users.card1.need">Necesita: velocidad y cero errores sin dejar de mirar la cancha.</p>
         </div>
         <div class="card">
           <h3 data-i18n="case.baseball.users.card2.title">Coordinador</h3>
-          <p data-i18n="case.baseball.users.card2.body">Registra los equipos y el orden de bateo antes de que comience cada partido.</p>
+          <p data-i18n="case.baseball.users.card2.body">Registra los equipos y el orden de bateo antes de cada partido.</p>
+          <p class="need" data-i18n="case.baseball.users.card2.need">Necesita: preparar el partido sin interferir con el registro en vivo.</p>
         </div>
         <div class="card">
           <h3 data-i18n="case.baseball.users.card3.title">Equipo de proyección</h3>
           <p data-i18n="case.baseball.users.card3.body">Controla la pantalla que ve el público, sin intervenir en el registro del juego.</p>
+          <p class="need" data-i18n="case.baseball.users.card3.need">Necesita: una pantalla que se mantenga sincronizada sola.</p>
         </div>
         <div class="card">
           <h3 data-i18n="case.baseball.users.card4.title">Público</h3>
-          <p data-i18n="case.baseball.users.card4.body">Visualiza el marcador desde la pantalla gigante y también desde sus propios dispositivos móviles.</p>
+          <p data-i18n="case.baseball.users.card4.body">Sigue el marcador en la pantalla grande, a distancia.</p>
+          <p class="need" data-i18n="case.baseball.users.card4.need">Necesita: entender el estado del juego de un vistazo.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head rv" data-i18n="case.baseball.context.constraintsHead">Restricciones</h3>
+      <ul class="goal-list rv">
+        <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.baseball.constraint1">Sin internet confiable en la cancha: el sistema tenía que funcionar completamente offline.</span></li>
+        <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.baseball.constraint2">Un partido en vivo no se pausa para corregir: cada error se arregla con el juego en marcha.</span></li>
+        <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.baseball.constraint3">Voluntarios con poco tiempo para aprender una herramienta nueva.</span></li>
+        <li><span class="gi" aria-hidden="true">4</span><span data-i18n="case.baseball.constraint4">Reglas propias del Béisbol Bíblico que no estaban documentadas en ningún lado.</span></li>
+      </ul>
+      <p class="rv" style="margin-top:20px" data-i18n="case.baseball.context.hard">Lo que lo hacía difícil: el operador tiene que mirar la cancha y la interfaz al mismo tiempo, y todo lo que hace se ve al instante en una pantalla pública.</p>
+    </section>
+  </div>
+
+  <!-- 03 PROBLEM ───────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="problem" aria-labelledby="t-problem">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>03</b> <span data-i18n="case.sec.problem">El problema</span></p>
+        <h2 id="t-problem" data-i18n="case.baseball.problem.heading">No faltaba un marcador. Faltaba una forma segura de operarlo.</h2>
+      </div>
+      <p class="problem-statement rv" data-i18n="case.baseball.problem.statement">¿Cómo puede una sola persona registrar un partido en vivo sin errores visibles, cuando su atención está dividida entre la cancha y la pantalla?</p>
+      <p class="rv" data-i18n="case.baseball.problem.body">Para responder eso, la solución tenía que:</p>
+      <ul class="goal-list rv">
+        <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.baseball.problem.goal1">Hacer difícil cometer errores durante el registro de jugadas, y fácil corregirlos.</span></li>
+        <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.baseball.problem.goal2">Actualizar la pantalla del público automáticamente.</span></li>
+        <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.baseball.problem.goal3">Funcionar completamente sin conexión a internet.</span></li>
+        <li><span class="gi" aria-hidden="true">4</span><span data-i18n="case.baseball.problem.goal4">Integrar las reglas propias del Béisbol Bíblico.</span></li>
+        <li><span class="gi" aria-hidden="true">5</span><span data-i18n="case.baseball.problem.goal5">Reducir la carga cognitiva del operador.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 04 RESEARCH ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="research" aria-labelledby="t-research">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>04</b> <span data-i18n="case.sec.research">Investigación</span></p>
+        <h2 id="t-research" data-i18n="case.baseball.research.heading">Entender el dominio antes de diseñar cualquier pantalla</h2>
+      </div>
+      <div class="methods rv">
+        <div class="method">
+          <span class="tag" data-i18n="case.baseball.research.m1.tag">Observación participante</span>
+          <p data-i18n="case.baseball.research.m1.body">Operé el marcador como voluntario en ediciones anteriores del torneo, con pizarras y PowerPoint.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.baseball.research.m2.tag">Observación en contexto</span>
+          <p data-i18n="case.baseball.research.m2.body">Observé varios torneos para entender el ritmo real de un partido y en qué momentos se acumulaba la presión.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.baseball.research.m3.tag">Análisis del dominio</span>
+          <p data-i18n="case.baseball.research.m3.body">Documenté las reglas del Béisbol Bíblico, que no estaban escritas, y consulté con los organizadores todo lo que no conocía.</p>
+        </div>
+        <div class="method">
+          <span class="tag" data-i18n="case.baseball.research.m4.tag">Análisis de la solución existente</span>
+          <p data-i18n="case.baseball.research.m4.body">Partí del PowerPoint que se usaba para identificar qué información era imprescindible conservar y qué sobraba.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head rv" data-i18n="case.baseball.research.errorsHead">Los errores que la herramienta tenía que prevenir</h3>
+      <ul class="goal-list rv">
+        <li><span class="gi" aria-hidden="true">1</span><span data-i18n="case.baseball.research.goal1">Olvidar registrar un out</span></li>
+        <li><span class="gi" aria-hidden="true">2</span><span data-i18n="case.baseball.research.goal2">Registrar carreras incorrectas</span></li>
+        <li><span class="gi" aria-hidden="true">3</span><span data-i18n="case.baseball.research.goal3">Borrar información por accidente</span></li>
+        <li><span class="gi" aria-hidden="true">4</span><span data-i18n="case.baseball.research.goal4">Recalcular el marcador manualmente</span></li>
+        <li><span class="gi" aria-hidden="true">5</span><span data-i18n="case.baseball.research.goal5">Perder la sincronización con la proyección</span></li>
+      </ul>
+
+      <p class="evidence rv"><strong data-i18n="case.evidence.label">Sobre la evidencia:</strong> <span data-i18n="case.baseball.research.evidence">La investigación fue cualitativa e informal: se basa en mi experiencia directa como operador, la observación de partidos y conversaciones con los organizadores. No hubo entrevistas estructuradas ni pruebas de usabilidad formales con otros operadores.</span></p>
+    </section>
+  </div>
+
+  <!-- 05 INSIGHTS ──────────────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="insights" aria-labelledby="t-insights">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>05</b> <span data-i18n="case.sec.insights">Hallazgos clave</span></p>
+        <h2 id="t-insights" data-i18n="case.baseball.insights.heading">Tres hallazgos que definieron el diseño</h2>
+      </div>
+      <div class="insights rv">
+        <div class="insight">
+          <span class="n" aria-hidden="true">1</span>
+          <h3 data-i18n="case.baseball.insight1.title">La mayoría de las acciones se repiten decenas de veces por partido.</h3>
+          <p data-i18n="case.baseball.insight1.body">Out, carrera, cambio de turno. La frecuencia, no la estructura del deporte, debía ordenar la interfaz.</p>
+          <p class="leads" data-i18n="case.baseball.insight1.leads">→ Decisión 1: acciones frecuentes a un clic</p>
+        </div>
+        <div class="insight">
+          <span class="n" aria-hidden="true">2</span>
+          <h3 data-i18n="case.baseball.insight2.title">Los errores venían de la atención dividida, no de desconocer las reglas.</h3>
+          <p data-i18n="case.baseball.insight2.body">El operador conoce el juego, pero mira la cancha y la pantalla a la vez. Los errores iban a ocurrir; el diseño tenía que hacerlos difíciles de cometer y baratos de corregir.</p>
+          <p class="leads" data-i18n="case.baseball.insight2.leads">→ Decisión 3: prevenir y recuperar</p>
+        </div>
+        <div class="insight">
+          <span class="n" aria-hidden="true">3</span>
+          <h3 data-i18n="case.baseball.insight3.title">El operador y el público necesitan información distinta.</h3>
+          <p data-i18n="case.baseball.insight3.body">El operador necesita controles y detalle; el público, leer el estado del juego a distancia. Una sola vista para ambos no sirve a ninguno.</p>
+          <p class="leads" data-i18n="case.baseball.insight3.leads">→ Decisión 2: una proyección diseñada aparte</p>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- PROBLEMA ─────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="problema">
-      <p class="eyebrow rv" data-i18n="case.baseball.problem.eyebrow">El Problema</p>
-      <h2 class="rv" data-i18n="case.baseball.problem.heading">Operar un torneo en vivo, bajo presión</h2>
-      <p class="rv" data-i18n="case.baseball.problem.body">El reto no era mostrar un marcador. Era diseñar para un operador que registra jugadas en tiempo real, sin margen para pausar el partido ni corregir con calma.</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.baseball.problem.goal1">Evitar errores humanos durante el registro de jugadas</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.baseball.problem.goal2">Actualizar automáticamente la pantalla del público</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.baseball.problem.goal3">Funcionar completamente sin conexión a internet</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.baseball.problem.goal4">Adaptarse a las reglas propias del Béisbol Bíblico</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.baseball.problem.goal5">Reducir la carga cognitiva del operador</span></li>
-      </ul>
-    </section>
-  </div>
-
-  <!-- ANTES / DESPUÉS ──────────────────────────────── -->
-  <div class="g">
-    <section class="cs">
-      <p class="eyebrow rv" data-i18n="case.compare.eyebrow">Comparativa</p>
-      <h2 class="rv" data-i18n="case.compare.heading">Antes y después</h2>
-      <div class="compare-grid rv">
-        <div class="compare-card before">
-          <span class="compare-label" data-i18n="case.compare.beforeLabel">Antes</span>
-          <p data-i18n="case.baseball.compare.before1">Pizarras físicas y diapositivas de PowerPoint actualizadas a mano por un solo operador.</p>
-          <p data-i18n="case.baseball.compare.before2">Errores frecuentes al recalcular el marcador en vivo, sin forma de deshacerlos.</p>
-          <p data-i18n="case.baseball.compare.before3">Ninguna sincronización entre lo que registraba el operador y lo que veía el público.</p>
-        </div>
-        <div class="compare-card after">
-          <span class="compare-label" data-i18n="case.compare.afterLabel">Después</span>
-          <p data-i18n="case.baseball.compare.after1">Registro digital: las acciones más frecuentes se ejecutan con un solo clic.</p>
-          <p data-i18n="case.baseball.compare.after2">Sincronización automática entre la consola del operador y la pantalla de proyección.</p>
-          <p data-i18n="case.baseball.compare.after3">Funciona por completo sin internet, con las reglas del Béisbol Bíblico integradas.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- INVESTIGACIÓN ────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="investigacion">
-      <p class="eyebrow rv" data-i18n="case.baseball.research.eyebrow">Investigación</p>
-      <h2 class="rv" data-i18n="case.baseball.research.heading">Entender el dominio antes de diseñar cualquier pantalla</h2>
-      <p class="rv" data-i18n="case.baseball.research.p1">Antes de tocar una sola interfaz, observé varios torneos, participé como operador, documenté las reglas y consulté con los organizadores todo lo que no conocía. El conocimiento del dominio —el ritmo del juego, las reglas propias del Béisbol Bíblico, la presión real del operador— fue indispensable antes de diseñar nada.</p>
-      <p class="rv" data-i18n="case.baseball.research.p2">De ese trabajo de campo salieron los errores más comunes que la herramienta tenía que prevenir:</p>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.baseball.research.goal1">Olvidar registrar un out</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.baseball.research.goal2">Registrar carreras incorrectas</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.baseball.research.goal3">Borrar información por accidente</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.baseball.research.goal4">Recalcular el marcador manualmente</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.baseball.research.goal5">Perder la sincronización con la proyección</span></li>
-      </ul>
-      <p class="rv" data-i18n="case.baseball.research.p3">También noté que la mayoría de las acciones durante un partido eran repetitivas. Esa observación se convirtió en el principio rector de todo el diseño: cada acción frecuente debía resolverse con la menor cantidad posible de clics.</p>
-    </section>
-  </div>
-
-  <!-- PRINCIPIOS ───────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="principios">
-      <p class="eyebrow rv" data-i18n="case.baseball.principles.eyebrow">Principios</p>
-      <h2 class="rv" data-i18n="case.baseball.principles.heading">Reglas que guiaron cada decisión</h2>
-      <ul class="goal-list rv">
-        <li><span class="gi">1</span><span data-i18n="case.baseball.principles.item1">Minimizar la carga cognitiva del operador</span></li>
-        <li><span class="gi">2</span><span data-i18n="case.baseball.principles.item2">Un clic por cada acción frecuente</span></li>
-        <li><span class="gi">3</span><span data-i18n="case.baseball.principles.item3">Prevenir errores antes que corregirlos</span></li>
-        <li><span class="gi">4</span><span data-i18n="case.baseball.principles.item4">Mostrar únicamente la información necesaria</span></li>
-        <li><span class="gi">5</span><span data-i18n="case.baseball.principles.item5">Mantener siempre visibles las acciones críticas</span></li>
-        <li><span class="gi">6</span><span data-i18n="case.baseball.principles.item6">Ocultar las configuraciones secundarias</span></li>
-        <li><span class="gi">7</span><span data-i18n="case.baseball.principles.item7">Permitir recuperación mediante historial</span></li>
-        <li><span class="gi">8</span><span data-i18n="case.baseball.principles.item8">Poder aprender el sistema en pocos minutos</span></li>
-      </ul>
-    </section>
-  </div>
-
-  <!-- PROCESO ──────────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="proceso">
-      <p class="eyebrow rv" data-i18n="case.process.eyebrow">Proceso</p>
-      <h2 class="rv" data-i18n="case.baseball.process.heading">Cuatro iteraciones, validadas en la cancha</h2>
-      <div class="steps rv">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div class="step-body">
-            <h3 data-i18n="case.baseball.process.step1.title">Bocetos sobre la solución existente</h3>
-            <p data-i18n="case.baseball.process.step1.body">Partí de bocetos rápidos usando como referencia el PowerPoint que se usaba hasta entonces, para identificar qué información era imprescindible conservar.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div class="step-body">
-            <h3 data-i18n="case.baseball.process.step2.title">Prototipo funcional en Figma</h3>
-            <p data-i18n="case.baseball.process.step2.body">Usé Figma Make para acelerar la construcción de un primer prototipo funcional, lo que me permitió validar rápido la distribución de la interfaz y entender mejor el flujo operativo real.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div class="step-body">
-            <h3 data-i18n="case.baseball.process.step3.title">Iteración asistida por IA</h3>
-            <p data-i18n="case.baseball.process.step3.body">A partir de esa base, iteré apoyándome en herramientas de inteligencia artificial para explorar alternativas de interfaz, refinar componentes, revisar flujos y detectar casos límite. Las decisiones finales de producto, experiencia e interfaz siempre fueron mías, validadas durante el uso real del sistema.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <div class="step-body">
-            <h3 data-i18n="case.baseball.process.step4.title">Validación en torneo real</h3>
-            <p data-i18n="case.baseball.process.step4.body">Usé el sistema como operador en partidos reales. Ese uso real permitió detectar nuevas reglas y seguir ajustando el producto entre ediciones del torneo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- PANTALLAS ────────────────────────────────────── -->
+  <!-- 06 DECISIONS ─────────────────────────────────── -->
   <div class="g-wide">
-    <section class="cs" id="pantallas">
-      <p class="eyebrow rv" data-i18n="case.screens.eyebrow">Diseño</p>
-      <h2 class="rv" data-i18n="case.screens.heading">Pantallas principales</h2>
-      <div class="screens rv">
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/baseball-scoreboard/screen-consola.jpg" alt="Consola del operador: registro de jugadas, conteo, corredores en bases y puntuación por inning" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.baseball.screens.cap1">Consola del operador</p>
+    <section class="cs" id="decisions" aria-labelledby="t-decisions">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>06</b> <span data-i18n="case.sec.decisions">Decisiones de diseño</span></p>
+          <h2 id="t-decisions" data-i18n="case.baseball.decisions.heading">Cada decisión responde a un problema observado</h2>
         </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/baseball-scoreboard/screen-proyeccion.jpg" alt="Pantalla de proyección: marcador, equipo al bate, bases y carreras por inning" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.baseball.screens.cap2">Pantalla de proyección</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/baseball-scoreboard/screen-historial.jpg" alt="Historial de jugadas por inning, equipo, jugador y hora" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.baseball.screens.cap3">Historial de jugadas</p>
-        </div>
-        <div>
-          <div class="screen-frame">
-            <img src="../assets/img/baseball-scoreboard/screen-oscuro.jpg" alt="Consola del operador en modo oscuro" loading="lazy" width="2400" height="1500">
-          </div>
-          <p class="screen-cap" data-i18n="case.baseball.screens.cap4">Modo oscuro</p>
-        </div>
+      </div>
+      <div class="decisions">
+        <article class="decision rv">
+          <div class="decision-head"><span class="n">D1</span><h3 data-i18n="case.baseball.d1.title">Acciones frecuentes a un solo clic</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.baseball.d1.problem">Registrar un out o una carrera exigía editar y recalcular a mano mientras el juego seguía.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.baseball.d1.insight">Las acciones más frecuentes se repiten decenas de veces por partido.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.baseball.d1.decision">Cada acción frecuente es un botón siempre visible; la configuración poco usada queda oculta hasta que se necesita.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.baseball.d1.why">Menos pasos y menos carga cognitiva cuando la atención está en la cancha, no en la pantalla.</dd></div>
+          </dl>
+        </article>
+
+        <article class="decision rv">
+          <div class="decision-head"><span class="n">D2</span><h3 data-i18n="case.baseball.d2.title">Una proyección diseñada aparte, no un espejo de la consola</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.baseball.d2.problem">Proyectar la consola expondría controles, datos internos y estados intermedios frente al público.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.baseball.d2.insight">El público necesita leer el marcador a distancia; el operador necesita controles.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.baseball.d2.decision">Una vista de proyección propia, sincronizada con la consola, que muestra solo el marcador esencial en tamaño grande.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.baseball.d2.why">Legibilidad a distancia y ningún control expuesto en la pantalla pública.</dd></div>
+          </dl>
+        </article>
+
+        <article class="decision rv">
+          <div class="decision-head"><span class="n">D3</span><h3 data-i18n="case.baseball.d3.title">Prevenir y recuperar, en lugar de exigir perfección</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.baseball.d3.problem">Un toque equivocado en pleno partido podía borrar información sin vuelta atrás.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.baseball.d3.insight">Con la atención dividida, los errores van a ocurrir.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.baseball.d3.decision">Separar las acciones destructivas de las frecuentes, pedir confirmación para lo irreversible y registrar cada jugada en un historial que permite deshacer.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.baseball.d3.why">Corregir sin detener el partido ni recalcular el marcador a mano.</dd></div>
+          </dl>
+          <p class="tradeoff"><strong data-i18n="case.tradeoff">Trade-off:</strong> <span data-i18n="case.baseball.d3.tradeoff">deshacer cubre solo la última jugada; las correcciones más antiguas se hacen desde el historial. Mantenerlo en un nivel lo hace predecible bajo presión.</span></p>
+        </article>
+
+        <article class="decision rv">
+          <div class="decision-head"><span class="n">D4</span><h3 data-i18n="case.baseball.d4.title">Funcionar sin internet, sin servidor</h3></div>
+          <dl class="pidw">
+            <div><dt data-i18n="case.pidw.problem">Problema</dt><dd data-i18n="case.baseball.d4.problem">La cancha no tiene conexión confiable, y la pantalla del público debía actualizarse sola.</dd></div>
+            <div><dt data-i18n="case.pidw.insight">Hallazgo</dt><dd data-i18n="case.baseball.d4.insight">Depender de un servidor convertía cualquier falla de red en un marcador congelado frente a todos.</dd></div>
+            <div class="is-decision"><dt data-i18n="case.pidw.decision">Decisión</dt><dd data-i18n="case.baseball.d4.decision">Sincronizar consola y proyección dentro del navegador, en la misma computadora, sin servidor.</dd></div>
+            <div><dt data-i18n="case.pidw.why">Por qué</dt><dd data-i18n="case.baseball.d4.why">El sistema funciona igual con o sin red, con menos piezas que puedan fallar en vivo.</dd></div>
+          </dl>
+          <p class="tradeoff"><strong data-i18n="case.tradeoff">Trade-off:</strong> <span data-i18n="case.baseball.d4.tradeoff">ambas vistas deben correr en el mismo equipo. Para sincronizar varios dispositivos se agregó después un backend opcional, sin quitar el modo local.</span></p>
+        </article>
+      </div>
+
+      <div class="g" style="padding:0;margin:0">
+        <h3 class="sub-head rv" data-i18n="case.minor.head">Decisiones más pequeñas</h3>
+        <ul class="minor rv">
+          <li><strong data-i18n="case.baseball.minor1.title">Modo oscuro</strong><span data-i18n="case.baseball.minor1.body">Pensado para reducir la fatiga visual del operador en jornadas de varios partidos seguidos. Es una intención de diseño, no algo medido.</span></li>
+          <li><strong data-i18n="case.baseball.minor2.title">Reglas integradas</strong><span data-i18n="case.baseball.minor2.body">Las reglas del Béisbol Bíblico viven en el sistema, no en la memoria del operador.</span></li>
+          <li><strong data-i18n="case.baseball.minor3.title">Información mínima</strong><span data-i18n="case.baseball.minor3.body">Cada pantalla muestra solo lo necesario para la tarea de ese momento.</span></li>
+          <li><strong data-i18n="case.baseball.minor4.title">Aprender en minutos</strong><span data-i18n="case.baseball.minor4.body">Pensado para voluntarios que no tienen tiempo de capacitarse antes del torneo.</span></li>
+        </ul>
       </div>
     </section>
   </div>
 
-  <!-- DECISIONES ───────────────────────────────────── -->
+  <!-- 07 ITERATION ─────────────────────────────────── -->
   <div class="g-wide">
-    <section class="cs" id="decisiones">
-      <p class="eyebrow rv" data-i18n="case.decisions.eyebrow">Decisiones</p>
-      <h2 class="rv" data-i18n="case.decisions.heading">Decisiones de diseño</h2>
-      <div class="cards rv">
-        <div class="card">
-          <h3 data-i18n="case.baseball.decisions.card1.title">Consola del operador</h3>
-          <p data-i18n="case.baseball.decisions.card1.body">Diseñada para velocidad y precisión: las acciones más frecuentes permanecen siempre visibles, mientras las configuraciones poco usadas quedan ocultas hasta que se necesitan.</p>
+    <section class="cs" id="iteration" aria-labelledby="t-iteration">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>07</b> <span data-i18n="case.sec.iteration">Iteración</span></p>
+          <h2 id="t-iteration" data-i18n="case.baseball.iteration.heading">De la pizarra a la consola, validado en la cancha</h2>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.baseball.decisions.card2.title">Pantalla de proyección</h3>
-          <p data-i18n="case.baseball.decisions.card2.body">No es una copia de la consola. Se diseñó exclusivamente para el público, priorizando la legibilidad a distancia y mostrando solo la información esencial del marcador.</p>
+      </div>
+      <div class="iteration rv">
+        <div class="stage before">
+          <p class="stage-label" data-i18n="case.stage.before">Antes</p>
+          <ul>
+            <li data-i18n="case.baseball.before1">Pizarras físicas y diapositivas de PowerPoint actualizadas a mano.</li>
+            <li data-i18n="case.baseball.before2">El operador recalcula el marcador en su cabeza.</li>
+            <li data-i18n="case.baseball.before3">La pantalla del público no sabe nada del juego: hay que editarla aparte.</li>
+          </ul>
+          <div class="diagram" role="img" data-i18n-aria="case.baseball.before.diagram" aria-label="Diagrama: el operador anota en la pizarra y además edita a mano la diapositiva que va al proyector; son dos tareas separadas.">
+            <svg viewBox="0 0 220 172" aria-hidden="true" focusable="false">
+              <g font-family="DM Sans, sans-serif" font-size="14" fill="#0D0D0D" text-anchor="middle">
+                <rect x="60" y="6" width="100" height="34" rx="6" fill="#fff" stroke="#6E6E69"/>
+                <text x="110" y="28" data-i18n="case.diagram.operator">Operador</text>
+                <path d="M96 40 L56 90" stroke="#6E6E69" stroke-dasharray="4 3" fill="none"/>
+                <path d="M124 40 L164 90" stroke="#6E6E69" stroke-dasharray="4 3" fill="none"/>
+                <rect x="4" y="90" width="104" height="34" rx="6" fill="#fff" stroke="#6E6E69"/>
+                <text x="56" y="112" data-i18n="case.diagram.board">Pizarra</text>
+                <rect x="112" y="90" width="104" height="34" rx="6" fill="#fff" stroke="#6E6E69"/>
+                <text x="164" y="112" data-i18n="case.diagram.ppt">PowerPoint</text>
+                <text x="110" y="160" font-size="13" fill="#4F4F4C" data-i18n="case.diagram.manual">dos tareas a mano</text>
+              </g>
+            </svg>
+          </div>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.baseball.decisions.card3.title">Registro con un clic</h3>
-          <p data-i18n="case.baseball.decisions.card3.body">Las acciones que ocurren decenas de veces por partido —un out, una carrera, un cambio de turno— se ejecutan con una sola acción, sin pasos intermedios.</p>
+        <div class="stage">
+          <p class="stage-label" data-i18n="case.stage.exploration">Exploración</p>
+          <ul>
+            <li data-i18n="case.baseball.explore1">Bocetos sobre el PowerPoint existente para decidir qué información conservar.</li>
+            <li data-i18n="case.baseball.explore2">Prototipo funcional con Figma Make para validar la distribución y el flujo operativo.</li>
+            <li data-i18n="case.baseball.explore3">Exploración asistida por IA de alternativas de interfaz y casos límite.</li>
+            <li data-i18n="case.baseball.explore4">Uso como operador en partidos reales: aparecieron reglas nuevas que se incorporaron entre ediciones.</li>
+          </ul>
+          <p class="discarded"><strong data-i18n="case.discarded">Descartado:</strong> <span data-i18n="case.baseball.discarded">una sola vista para operador y público. Mostraba controles al público y ocultaba información al operador.</span></p>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.baseball.decisions.card4.title">Prevención de errores</h3>
-          <p data-i18n="case.baseball.decisions.card4.body">Separación de acciones, estados visuales claros y un historial de jugadas permiten deshacer y recuperar información sin interrumpir el partido.</p>
+        <div class="stage after">
+          <p class="stage-label" data-i18n="case.stage.after">Después</p>
+          <ul>
+            <li data-i18n="case.baseball.after1">Acciones frecuentes a un clic, siempre visibles.</li>
+            <li data-i18n="case.baseball.after2">La proyección se actualiza sola desde la consola.</li>
+            <li data-i18n="case.baseball.after3">Funciona sin internet, con las reglas integradas.</li>
+          </ul>
+          <div class="diagram" role="img" data-i18n-aria="case.baseball.after.diagram" aria-label="Diagrama: el operador registra una vez en la consola y la proyección se actualiza automáticamente.">
+            <svg viewBox="0 0 220 172" aria-hidden="true" focusable="false">
+              <g font-family="DM Sans, sans-serif" font-size="14" fill="#0D0D0D" text-anchor="middle">
+                <rect x="60" y="6" width="100" height="34" rx="6" fill="#fff" stroke="#0D0D0D"/>
+                <text x="110" y="28" data-i18n="case.diagram.operator">Operador</text>
+                <path d="M110 40 V52 M105 47 L110 53 L115 47" stroke="#0D0D0D" fill="none"/>
+                <rect x="60" y="54" width="100" height="34" rx="6" fill="#0D0D0D"/>
+                <text x="110" y="76" fill="#fff" data-i18n="case.diagram.console">Consola</text>
+                <path d="M110 88 V100 M105 95 L110 101 L115 95" stroke="#0D0D0D" fill="none"/>
+                <rect x="60" y="102" width="100" height="34" rx="6" fill="#fff" stroke="#0D0D0D"/>
+                <text x="110" y="124" data-i18n="case.diagram.projection">Proyección</text>
+                <text x="110" y="162" font-size="13" fill="#4F4F4C" data-i18n="case.diagram.sync">sincronización automática</text>
+              </g>
+            </svg>
+          </div>
         </div>
-        <div class="card">
-          <h3 data-i18n="case.baseball.decisions.card5.title">Modo oscuro</h3>
-          <p data-i18n="case.baseball.decisions.card5.body">No fue una decisión estética. Reduce la fatiga visual del operador durante jornadas con varios partidos consecutivos.</p>
+      </div>
+
+      <div class="g" style="padding:0;margin:0">
+        <div class="ai-note rv">
+          <p><strong data-i18n="case.ai.explorationTitle">Exploración e implementación asistidas por IA.</strong> <span data-i18n="case.baseball.ai.body">Usé IA para explorar alternativas de interfaz, revisar flujos y detectar casos límite antes de prototipar, y como copiloto de código durante la implementación. Revisé, adapté y probé cada cambio; las decisiones de producto, experiencia e interfaz fueron mías y se validaron con el uso real.</span></p>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- IMPLEMENTACIÓN ───────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="implementacion">
-      <p class="eyebrow rv" data-i18n="case.baseball.implementation.eyebrow">Implementación</p>
-      <h2 class="rv" data-i18n="case.baseball.implementation.heading">Cómo funciona por dentro</h2>
-      <p class="rv" data-i18n="case.baseball.implementation.p1">Construido con React, TypeScript y Vite, con Framer Motion para las transiciones de la interfaz.</p>
-      <p class="rv" data-i18n="case.baseball.implementation.p2">La consola del operador y la pantalla de proyección se sincronizan mediante localStorage y StorageEvent, lo que permite que el sistema funcione por completo sin conexión a internet — un requisito no negociable en el lugar donde se juega el torneo.</p>
-      <p class="rv" data-i18n="case.baseball.implementation.p3">La lógica del juego (conteo de outs, carreras, entradas y reglas especiales del Béisbol Bíblico) se implementó como funciones puras, separadas de la interfaz, para poder probarlas y ajustarlas de forma aislada cada vez que aparecía una regla nueva.</p>
-    </section>
-  </div>
-
-  <!-- RESULTADOS ───────────────────────────────────── -->
-  <div class="g">
-    <section class="cs" id="resultados">
-      <p class="eyebrow rv" data-i18n="case.results.eyebrow">Resultados</p>
-      <h2 class="rv" data-i18n="case.baseball.results.heading">Un sistema probado partido tras partido, en un torneo real</h2>
-      <div class="results-grid rv">
-        <div class="result-card">
-          <p class="result-stat">10–15</p>
-          <p class="result-label" data-i18n="case.baseball.results.stat1.label">Partidos operados con el sistema</p>
-        </div>
-        <div class="result-card">
-          <p class="result-stat">6</p>
-          <p class="result-label" data-i18n="case.baseball.results.stat2.label">Equipos participantes en el torneo</p>
-        </div>
-        <div class="result-card">
-          <p class="result-stat">25–50</p>
-          <p class="result-label" data-i18n="case.baseball.results.stat3.label">Espectadores presenciales por jornada</p>
+  <!-- 08 FINAL PRODUCT ─────────────────────────────── -->
+  <div class="g-wide">
+    <section class="cs" id="product" aria-labelledby="t-product">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>08</b> <span data-i18n="case.sec.product">Producto final</span></p>
+          <h2 id="t-product" data-i18n="case.baseball.product.heading">Lo que se usó en el torneo</h2>
         </div>
       </div>
-      <p class="rv" style="margin-top:24px" data-i18n="case.baseball.results.note">La solución funcionó durante todo el torneo y, en el proceso, salieron a la luz reglas nuevas que siguen alimentando iteraciones del producto. El sistema volverá a usarse en futuras ediciones.</p>
+      <figure class="figure-lg rv">
+        <div class="screen-frame">
+          <img src="../assets/img/baseball-scoreboard/screen-consola.jpg" data-i18n-alt="case.baseball.img.console" alt="Consola del operador: registro de jugadas, conteo, corredores en bases y puntuación por inning" loading="lazy" width="2400" height="1500">
+        </div>
+        <figcaption class="screen-cap"><strong data-i18n="case.baseball.cap1.title">Consola del operador · D1, D3</strong><span data-i18n="case.baseball.cap1.body">Las acciones frecuentes están siempre a la vista; bases, conteo y carreras por inning se leen en un solo vistazo. Las acciones destructivas quedan separadas de las frecuentes.</span></figcaption>
+      </figure>
+      <figure class="figure-lg rv">
+        <div class="screen-frame">
+          <img src="../assets/img/baseball-scoreboard/screen-proyeccion.jpg" data-i18n-alt="case.baseball.img.projection" alt="Pantalla de proyección: marcador, equipo al bate, bases y carreras por inning" loading="lazy" width="2400" height="1500">
+        </div>
+        <figcaption class="screen-cap"><strong data-i18n="case.baseball.cap2.title">Pantalla de proyección · D2</strong><span data-i18n="case.baseball.cap2.body">Solo lo que el público necesita: marcador, equipo al bate, bases y carreras por inning, en tamaño legible a distancia. Ningún control visible.</span></figcaption>
+      </figure>
+      <div class="screens">
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/baseball-scoreboard/screen-historial.jpg" data-i18n-alt="case.baseball.img.history" alt="Historial de jugadas por inning, equipo, jugador y hora" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.baseball.cap3.title">Historial de jugadas · D3</strong><span data-i18n="case.baseball.cap3.body">Cada jugada queda registrada por inning, equipo, jugador y hora: la base para corregir sin recalcular.</span></figcaption>
+        </figure>
+        <figure class="rv">
+          <div class="screen-frame">
+            <img src="../assets/img/baseball-scoreboard/screen-oscuro.jpg" data-i18n-alt="case.baseball.img.dark" alt="Consola del operador en modo oscuro" loading="lazy" width="2400" height="1500">
+          </div>
+          <figcaption class="screen-cap"><strong data-i18n="case.baseball.cap4.title">Modo oscuro</strong><span data-i18n="case.baseball.cap4.body">La misma consola para jornadas largas con varios partidos seguidos.</span></figcaption>
+        </figure>
+      </div>
     </section>
   </div>
 
-  <!-- APRENDIZAJES ─────────────────────────────────── -->
+  <!-- 09 RESULTS ───────────────────────────────────── -->
+  <div class="g-wide">
+    <section class="cs" id="results" aria-labelledby="t-results">
+      <div class="g" style="padding:0;margin:0">
+        <div class="sec-head rv">
+          <p class="sec-num"><b>09</b> <span data-i18n="case.sec.results">Resultados</span></p>
+          <h2 id="t-results" data-i18n="case.baseball.results.heading">Lo que sé, lo que no medí y lo que esperaba</h2>
+        </div>
+      </div>
+      <div class="results rv">
+        <div class="result-col usage">
+          <h3 data-i18n="case.results.usage">Uso</h3>
+          <p class="result-kind" data-i18n="case.results.usageKind">Contexto real de uso.</p>
+          <div class="stat"><span class="v">10–15</span><span class="l" data-i18n="case.baseball.results.stat1">partidos operados con el sistema</span></div>
+          <div class="stat"><span class="v">6</span><span class="l" data-i18n="case.baseball.results.stat2">equipos participantes</span></div>
+          <div class="stat"><span class="v">25–50</span><span class="l" data-i18n="case.baseball.results.stat3">espectadores presenciales por jornada</span></div>
+        </div>
+        <div class="result-col measured">
+          <h3 data-i18n="case.results.measured">Resultados medidos</h3>
+          <p class="result-kind" data-i18n="case.results.measuredKind">Lo que se puede afirmar con evidencia.</p>
+          <ul>
+            <li data-i18n="case.baseball.results.measured1">El sistema se usó durante todo el torneo.</li>
+            <li data-i18n="case.baseball.results.measured2">El uso real reveló reglas que no estaban contempladas; se incorporaron en iteraciones posteriores.</li>
+            <li data-i18n="case.baseball.results.measured3">No medí tasas de error ni tiempos antes y después, así que no reporto mejoras cuantitativas.</li>
+          </ul>
+        </div>
+        <div class="result-col expected">
+          <h3 data-i18n="case.results.expected">Resultados esperados</h3>
+          <p class="result-kind" data-i18n="case.results.expectedKind">Intención del diseño, no medida.</p>
+          <ul>
+            <li data-i18n="case.baseball.results.expected1">Menos errores de marcador visibles para el público.</li>
+            <li data-i18n="case.baseball.results.expected2">Menor carga cognitiva para el operador.</li>
+            <li data-i18n="case.baseball.results.expected3">Una pantalla pública siempre sincronizada.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="g" style="padding:0;margin:0">
+        <p class="rv" style="margin-top:24px" data-i18n="case.baseball.results.note">El sistema está previsto para usarse de nuevo en futuras ediciones del torneo.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- 10 LEARNINGS ─────────────────────────────────── -->
   <div class="g">
-    <section class="cs" id="aprendizajes">
-      <p class="eyebrow rv" data-i18n="case.learnings.eyebrow">Aprendizajes</p>
-      <h2 class="rv" data-i18n="case.learnings.heading">Lo que me llevo</h2>
+    <section class="cs" id="learnings" aria-labelledby="t-learnings">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>10</b> <span data-i18n="case.sec.learnings">Aprendizajes</span></p>
+        <h2 id="t-learnings" data-i18n="case.baseball.learnings.heading">Lo que me llevo y lo que haría distinto</h2>
+      </div>
       <div class="learnings rv">
         <div class="learning">
-          <h3 data-i18n="case.baseball.learnings.item1.title">Entender el dominio antes de diseñar</h3>
-          <p data-i18n="case.baseball.learnings.item1.body">Las reglas del Béisbol Bíblico y el ritmo real de un partido no estaban documentados en ningún lado. Sin ese trabajo de campo, cualquier interfaz habría resuelto el problema equivocado.</p>
+          <p class="k" data-i18n="case.learn.learned">Lo que aprendí</p>
+          <h3 data-i18n="case.baseball.learn1.title">El dominio primero</h3>
+          <p data-i18n="case.baseball.learn1.body">Las reglas y el ritmo real de un partido no estaban escritos en ningún lado. Sin ese trabajo de campo, cualquier interfaz habría resuelto el problema equivocado.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.baseball.learnings.item2.title">Diseñar para usuarios bajo presión</h3>
-          <p data-i18n="case.baseball.learnings.item2.body">Un operador en pleno partido no tiene tiempo de pensar la interfaz. Cada decisión de diseño tuvo que evaluarse contra esa presión, no contra un escenario de uso ideal.</p>
+          <p class="k" data-i18n="case.learn.learned">Lo que aprendí</p>
+          <h3 data-i18n="case.baseball.learn2.title">Diseñar contra la presión real</h3>
+          <p data-i18n="case.baseball.learn2.body">Un operador en pleno partido no tiene tiempo de pensar la interfaz. Cada decisión tuvo que evaluarse contra esa presión, no contra un escenario ideal.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.baseball.learnings.item3.title">Validar en escenarios reales</h3>
-          <p data-i18n="case.baseball.learnings.item3.body">Ningún prototipo reveló tanto como operar el sistema yo mismo durante un torneo real, partido tras partido.</p>
+          <p class="k" data-i18n="case.learn.different">Lo que haría diferente</p>
+          <h3 data-i18n="case.baseball.learn3.title">Medir una línea base antes de reemplazar el proceso</h3>
+          <p data-i18n="case.baseball.learn3.body">Registrar cuántos errores y correcciones ocurrían con pizarras y PowerPoint me habría permitido hablar de impacto con datos, no solo con la experiencia de uso.</p>
         </div>
         <div class="learning">
-          <h3 data-i18n="case.baseball.learnings.item4.title">Convertir reglas complejas en experiencias simples</h3>
-          <p data-i18n="case.baseball.learnings.item4.body">Las reglas especiales del Béisbol Bíblico añadían casos límite constantes. El reto de diseño fue absorber esa complejidad sin trasladarla al operador.</p>
-        </div>
-        <div class="learning">
-          <h3 data-i18n="case.baseball.learnings.item5.title">IA como acelerador, no como reemplazo del criterio</h3>
-          <p data-i18n="case.baseball.learnings.item5.body">Usé inteligencia artificial para explorar alternativas y acelerar la implementación, pero las decisiones de producto, experiencia e interfaz siguieron siendo mías, validadas con uso real.</p>
+          <p class="k" data-i18n="case.learn.limits">Limitaciones</p>
+          <h3 data-i18n="case.baseball.learn4.title">La validación viene sobre todo de mi propio uso</h3>
+          <p data-i18n="case.baseball.learn4.body">Fui el operador principal. Con más tiempo, probaría el sistema con voluntarios que no lo conozcan, para comprobar si de verdad se aprende en minutos.</p>
         </div>
       </div>
+    </section>
+  </div>
+
+  <!-- 11 TECHNICAL CONTEXT ─────────────────────────── -->
+  <div class="g">
+    <section class="cs" id="tech" aria-labelledby="t-tech">
+      <div class="sec-head rv">
+        <p class="sec-num"><b>11</b> <span data-i18n="case.sec.tech">Contexto técnico</span></p>
+        <h2 id="t-tech" data-i18n="case.baseball.tech.heading">Las decisiones técnicas que moldearon la experiencia</h2>
+      </div>
+      <p class="rv" data-i18n="case.baseball.tech.intro">Diseñar y construir el producto yo mismo me permitió tratar las restricciones técnicas como parte del diseño, no como algo que se descubre al final.</p>
+      <ul class="tech rv">
+        <li>
+          <h3 data-i18n="case.baseball.tech1.title">Sincronización local, sin servidor</h3>
+          <p data-i18n="case.baseball.tech1.body">Consola y proyección se comunican mediante localStorage y StorageEvent dentro del mismo navegador.</p>
+          <p class="impact" data-i18n="case.baseball.tech1.impact">En la experiencia: la pantalla pública se actualiza sola aunque no haya red (D4).</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.baseball.tech2.title">Reglas como funciones puras</h3>
+          <p data-i18n="case.baseball.tech2.body">La lógica del juego (outs, carreras, entradas, reglas especiales) vive separada de la interfaz y tiene pruebas unitarias.</p>
+          <p class="impact" data-i18n="case.baseball.tech2.impact">En la experiencia: cada regla nueva descubierta en la cancha se ajusta sin romper la interfaz.</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.baseball.tech3.title">Historial y deshacer</h3>
+          <p data-i18n="case.baseball.tech3.body">Cada jugada queda registrada con su contexto, y antes de aplicarla se guarda una copia del estado del partido.</p>
+          <p class="impact" data-i18n="case.baseball.tech3.impact">En la experiencia: deshacer y corregir sin recalcular a mano (D3).</p>
+        </li>
+        <li>
+          <h3 data-i18n="case.baseball.tech4.title">Crecer sin perder el modo local</h3>
+          <p data-i18n="case.baseball.tech4.body">Hoy existe además un backend opcional (Express, Prisma, PostgreSQL) para sincronizar varios dispositivos y gestionar roles.</p>
+          <p class="impact" data-i18n="case.baseball.tech4.impact">En la experiencia: el modo offline sigue siendo el predeterminado.</p>
+        </li>
+      </ul>
+      <ul class="stack-chips rv" data-i18n-aria="case.stack.label" aria-label="Tecnologías">
+        <li>React</li><li>TypeScript</li><li>Vite</li><li>Framer Motion</li><li>localStorage + StorageEvent</li><li>Figma · Figma Make</li>
+      </ul>
     </section>
   </div>
 
   <!-- CTA ──────────────────────────────────────────── -->
   <div class="g">
-    <section class="case-cta rv">
-      <h2 data-i18n="case.cta.title">¿Tienes un proyecto?</h2>
-      <p data-i18n="case.cta.subtitle">Hablemos.</p>
+    <section class="case-cta rv" aria-labelledby="t-cta">
+      <h2 id="t-cta" data-i18n="case.cta.title">¿Buscas a alguien que diseñe pensando en cómo se construye?</h2>
+      <p data-i18n="case.cta.subtitle">Estoy abierto a roles remotos de Product Design a tiempo completo.</p>
       <div class="cta-row">
-        <a href="../index.html#contact" class="btn-fill" data-i18n="navigation.contact">Contacto</a>
-        <a href="../index.html#work" class="btn-line" data-i18n="case.cta.moreProjects">Ver más proyectos</a>
+        <a href="../index.html#contact" class="btn-fill" data-i18n="case.cta.contact">Contactarme</a>
+        <a href="./kerygma-stage.html" class="btn-line"><span data-i18n="case.cta.next">Siguiente caso:</span> Kerygma Stage →</a>
       </div>
     </section>
   </div>
@@ -500,9 +591,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-siz
 
 <footer class="g-wide footer">
   <span class="footer-name">Gregory Durán</span>
-  <nav class="footer-links">
-    <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/gregorymduran" target="_blank" rel="noopener">GitHub</a>
+  <nav class="footer-links" data-i18n-aria="footer.navLabel" aria-label="Enlaces del pie de página">
+    <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/gregorymduran" target="_blank" rel="noopener">GitHub ↗</a>
     <a href="../index.html#work" data-i18n="navigation.work">Proyectos</a>
     <a href="../index.html#contact" data-i18n="navigation.contact">Contacto</a>
   </nav>

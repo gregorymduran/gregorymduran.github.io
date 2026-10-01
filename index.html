@@ -4,27 +4,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gregory Durán — Product Designer</title>
+  <title data-i18n="meta.home.title">Gregory Durán — Product Designer · Software Engineering</title>
   <meta name="description"
-    content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+    content="Product Designer con formación en Ingeniería de Software. Diseño productos digitales claros y sistemas de interacción que funcionan bajo restricciones reales de tecnología y uso.">
+  <link rel="canonical" href="https://gregorymduran.github.io/">
+  <meta name="author" content="Gregory Durán">
+  <meta name="theme-color" content="#F8F7F4">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='58' font-weight='900' fill='%23F8F7F4' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
-  <!-- Open Graph / Twitter Card: og:image apunta a un asset que falta subir (recomendado 1200x630) -->
+
+  <!-- Open Graph / Twitter Card -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Gregory Durán — Product Designer">
+  <meta property="og:site_name" content="Gregory Durán">
+  <meta property="og:locale" content="es_DO">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Gregory Durán — Product Designer · Software Engineering">
   <meta property="og:description"
-    content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+    content="Diseño productos digitales claros y sistemas de interacción que funcionan bajo restricciones reales de tecnología y uso.">
   <meta property="og:url" content="https://gregorymduran.github.io/">
   <meta property="og:image" content="https://gregorymduran.github.io/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gregory Durán — Product Designer. Product Design × Systems × Software Engineering">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gregory Durán — Product Designer">
+  <meta name="twitter:title" content="Gregory Durán — Product Designer · Software Engineering">
   <meta name="twitter:description"
-    content="Product Designer con formación en Ingeniería de Software. Diseño aplicando lógica de ingeniería.">
+    content="Diseño productos digitales claros y sistemas de interacción que funcionan bajo restricciones reales de tecnología y uso.">
   <meta name="twitter:image" content="https://gregorymduran.github.io/assets/img/og-cover.jpg">
+  <meta name="twitter:image:alt" content="Gregory Durán — Product Designer. Product Design × Systems × Software Engineering">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://gregorymduran.github.io/#person",
+        "name": "Gregory Durán",
+        "alternateName": "Gregory Iralbel Mendoza Durán",
+        "jobTitle": "Product Designer",
+        "description": "Product Designer with a Software Engineering background.",
+        "url": "https://gregorymduran.github.io/",
+        "image": "https://gregorymduran.github.io/assets/img/og-cover.jpg",
+        "email": "mailto:gregorymduran01@outlook.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "DO" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad APEC" },
+        "knowsLanguage": ["es", "en"],
+        "knowsAbout": ["Product Design", "UX/UI Design", "Interaction Design", "Design Systems", "User Research", "Prototyping", "Software Engineering"],
+        "sameAs": [
+          "https://www.linkedin.com/in/gregmduran/",
+          "https://github.com/gregorymduran",
+          "https://www.behance.net/gregmduran"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://gregorymduran.github.io/#website",
+        "url": "https://gregorymduran.github.io/",
+        "name": "Gregory Durán — Product Designer",
+        "inLanguage": ["es", "en"],
+        "author": { "@id": "https://gregorymduran.github.io/#person" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Selected case studies",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://gregorymduran.github.io/proyectos/baseball-scoreboard.html", "name": "Baseball Scoreboard" },
+          { "@type": "ListItem", "position": 2, "url": "https://gregorymduran.github.io/proyectos/kerygma-stage.html", "name": "Kerygma Stage" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700,800,900&display=swap">
   <link rel="stylesheet" href="css/base.css">
   <style>
@@ -53,12 +110,6 @@
       .g {
         padding: 0 20px
       }
-    }
-
-    button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-      border-radius: 4px
     }
 
     /* ── Nav ─────────────────────────────── */
@@ -108,11 +159,12 @@
 
     .nav-burger {
       display: none;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       align-items: center;
       justify-content: center;
-      border-radius: 8px
+      border-radius: 8px;
+      color: var(--ink)
     }
 
     .m-menu {
@@ -121,7 +173,8 @@
       inset: 60px 0 0;
       background: var(--bg);
       z-index: 99;
-      padding: 32px 20px
+      padding: 32px 20px;
+      overflow-y: auto
     }
 
     .m-menu.open {
@@ -147,12 +200,17 @@
 
     .m-menu .lang-toggle {
       margin-top: 24px;
-      height: 42px
+      height: 44px;
+      width: max-content
     }
 
     .m-menu .lang-toggle button {
       font-size: 14px;
       padding: 0 18px
+    }
+
+    html.menu-open {
+      overflow: hidden
     }
 
     @media(max-width:680px) {
@@ -173,67 +231,96 @@
 
     /* ── Hero ─────────────────────────────── */
     .hero {
-      padding: clamp(72px, 11vw, 148px) 0 clamp(56px, 8vw, 112px);
+      padding: clamp(64px, 10vw, 136px) 0 clamp(56px, 8vw, 104px);
       border-bottom: 1px solid var(--line)
     }
 
-    .hero-tag {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      color: var(--ink-2);
-      margin-bottom: 28px
-    }
-
-    .portfolio-note {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
-      width: min(100%, 720px);
-      margin: 28px auto 36px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(13, 13, 13, 0.03);
+      font-size: 13px;
+      font-weight: 500;
       color: var(--ink-2);
+      padding: 6px 12px 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      background: var(--surface);
+      margin-bottom: 32px
+    }
+
+    .hero-status .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1F8A4C;
+      box-shadow: 0 0 0 3px rgba(31, 138, 76, .15);
+      flex-shrink: 0
+    }
+
+    .hero-tag {
       font-size: 14px;
-      line-height: 1.5;
-      text-align: center;
-    }
-
-    .portfolio-note .note-icon {
-      flex-shrink: 0;
-      margin-top: 1px;
-      line-height: 1;
-    }
-
-    .portfolio-note > span:last-child {
-      max-width: 640px;
-    }
-
-    .portfolio-note strong {
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: .02em;
       color: var(--ink);
+      margin-bottom: 20px
+    }
+
+    .hero-tag span {
+      color: var(--ink-2);
+      font-weight: 500
     }
 
     .hero h1 {
       font-family: 'Satoshi', sans-serif;
-      font-size: clamp(44px, 7vw, 92px);
+      font-size: clamp(36px, 5.6vw, 72px);
       font-weight: 900;
       letter-spacing: -.035em;
-      line-height: 1.02;
-      max-width: 16ch;
+      line-height: 1.04;
+      max-width: 19ch;
       margin-bottom: 28px;
     }
 
     .hero-desc {
       font-size: clamp(16px, 1.7vw, 19px);
       color: var(--ink-2);
-      max-width: 520px;
+      max-width: 600px;
       line-height: 1.65;
-      margin-bottom: 44px
+      margin-bottom: 20px
+    }
+
+    .hero-quote {
+      font-size: clamp(16px, 1.6vw, 18px);
+      font-style: italic;
+      color: var(--ink);
+      max-width: 600px;
+      line-height: 1.6;
+      padding-left: 16px;
+      border-left: 2px solid var(--ink);
+      margin-bottom: 40px
+    }
+
+    @media(max-width:540px) {
+      .hero {
+        padding-top: 36px
+      }
+
+      .hero-status {
+        margin-bottom: 24px
+      }
+
+      .hero h1 {
+        font-size: 34px;
+        margin-bottom: 20px
+      }
+
+      .hero-desc {
+        font-size: 16px
+      }
+
+      .hero-quote {
+        margin-bottom: 28px
+      }
     }
 
     .hero-btns {
@@ -252,8 +339,9 @@
       border-radius: 99px;
       font-weight: 700;
       font-size: 14px;
-      color: var(--ink-2);
-      transition: color var(--ease);
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+      transition: border-color var(--ease);
     }
 
     .btn-line svg {
@@ -261,20 +349,36 @@
     }
 
     .btn-line:hover {
-      color: var(--ink)
+      border-color: var(--ink)
     }
 
     .btn-line:hover svg {
       transform: translateX(3px)
     }
 
-    /* ── Work ─────────────────────────────── */
-    .work {
-      padding: clamp(56px, 8vw, 112px) 0
+    .hero-proof {
+      margin-top: 28px;
+      font-size: 14px;
+      color: var(--ink-2)
     }
 
+    .hero-proof a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: var(--line);
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+      transition: text-decoration-color var(--ease)
+    }
+
+    .hero-proof a:hover {
+      text-decoration-color: var(--ink)
+    }
+
+    /* ── Section labels ───────────────────── */
     .row-label {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -292,6 +396,11 @@
       background: var(--line)
     }
 
+    /* ── Work ─────────────────────────────── */
+    .work {
+      padding: clamp(56px, 8vw, 112px) 0
+    }
+
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -301,26 +410,26 @@
     @media(max-width:768px) {
       .work-grid {
         grid-template-columns: 1fr;
-        gap: 48px
+        gap: 56px
       }
     }
 
     .proj {
       display: flex;
       flex-direction: column;
-      cursor: pointer;
       position: relative
     }
 
     .proj-link {
       position: absolute;
       inset: 0;
-      z-index: 3
+      z-index: 3;
+      border-radius: 14px
     }
 
     .proj-link:focus-visible {
       outline: 2px solid var(--ink);
-      outline-offset: 2px;
+      outline-offset: 6px;
       border-radius: 14px
     }
 
@@ -333,7 +442,6 @@
       border: 1px solid var(--line);
       margin-bottom: 20px;
       transition: transform var(--ease), box-shadow var(--ease);
-      position: relative;
     }
 
     .proj-img img {
@@ -341,25 +449,6 @@
       height: 100%;
       object-fit: cover;
       transition: transform var(--ease)
-    }
-
-    .proj-img::after {
-      content: 'Preview';
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-      pointer-events: none;
-    }
-
-    .proj-img:has(img[src]:not([src=""]))::after {
-      display: none
     }
 
     .proj:hover .proj-img {
@@ -371,13 +460,10 @@
       transform: scale(1.03)
     }
 
-    .proj:hover .proj-name {
+    .proj:hover .proj-name,
+    .proj-link:focus-visible~.proj-body .proj-name {
       text-decoration: underline;
       text-underline-offset: 4px
-    }
-
-    .proj-body {
-      width: 100%
     }
 
     .proj-meta {
@@ -390,7 +476,7 @@
 
     .proj-num {
       font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--ink-3);
       border: 1px solid var(--line);
@@ -399,7 +485,7 @@
     }
 
     .proj-type {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .04em;
       text-transform: uppercase;
@@ -407,53 +493,75 @@
     }
 
     .proj-status {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: .04em;
       text-transform: uppercase;
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 99px;
-      border: 1px solid var(--line);
-      color: var(--ink-2)
-    }
-
-    .proj-status.live {
-      border-color: currentColor;
+      border: 1px solid currentColor;
       color: var(--ink)
     }
 
     .proj-name {
       font-family: 'Satoshi', sans-serif;
-      font-size: 22px;
+      font-size: clamp(22px, 2.4vw, 26px);
       font-weight: 800;
       letter-spacing: -.02em;
       line-height: 1.2;
       color: var(--ink);
-      margin-bottom: 8px;
-      transition: color var(--ease)
+      margin-bottom: 10px;
     }
 
     .proj-desc {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--ink-2);
-      line-height: 1.6;
+      line-height: 1.65;
+      margin-bottom: 16px
+    }
+
+    .proj-role {
+      font-size: 14px;
+      color: var(--ink);
       margin-bottom: 14px
+    }
+
+    .proj-role strong {
+      font-weight: 700
     }
 
     .proj-kpi {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap
     }
 
-    .proj-kpi span {
-      font-size: 12px;
-      font-weight: 700;
+    .proj-kpi li {
+      font-size: 13px;
+      font-weight: 500;
       color: var(--ink);
       background: var(--surface);
       padding: 4px 10px;
       border-radius: 6px;
       border: 1px solid var(--line)
+    }
+
+    .proj-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink)
+    }
+
+    .proj-cta svg {
+      transition: transform var(--ease)
+    }
+
+    .proj:hover .proj-cta svg {
+      transform: translateX(3px)
     }
 
     /* ── About ────────────────────────────── */
@@ -464,12 +572,13 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: clamp(40px, 6vw, 88px);
-      align-items: start
+      align-items: start;
+      margin-bottom: clamp(56px, 7vw, 88px)
     }
 
-    @media(max-width:720px) {
+    @media(max-width:760px) {
       .about-grid {
         grid-template-columns: 1fr
       }
@@ -477,50 +586,169 @@
 
     .about-left h2 {
       font-family: 'Satoshi', sans-serif;
-      font-size: clamp(26px, 3.6vw, 42px);
+      font-size: clamp(28px, 3.6vw, 42px);
       font-weight: 900;
       letter-spacing: -.025em;
       line-height: 1.12;
       margin-bottom: 20px
     }
 
-    .about-left p {
-      font-size: 15px;
-      color: var(--ink-2);
-      line-height: 1.72;
+    .about-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
       margin-bottom: 14px
     }
 
-    .about-left p:last-child {
-      margin-bottom: 0
+    .about-left p:not(.about-kicker) {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.72;
+      margin-bottom: 14px
     }
 
     .about-right {
       display: flex;
       flex-direction: column;
       gap: 28px;
-      padding-top: 4px
+      padding-top: 6px
     }
 
-    .cred h3 {
-      font-size: 11px;
+    .principles li {
+      padding: 16px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .principles li:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .principles strong {
+      display: block;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px
+    }
+
+    .principles span {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.6
+    }
+
+    /* Skills */
+    .skills-head {
+      font-family: 'Satoshi', sans-serif;
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      margin-bottom: 8px
+    }
+
+    .skills-sub {
+      font-size: 15px;
+      color: var(--ink-2);
+      margin-bottom: 28px;
+      max-width: 620px
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: clamp(48px, 6vw, 72px)
+    }
+
+    @media(max-width:960px) {
+      .skills {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:540px) {
+      .skills {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px
+    }
+
+    .skill h3 {
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--ink-3);
-      margin-bottom: 10px
+      margin-bottom: 12px
     }
 
-    .cred ul {
+    .skill ul {
       display: flex;
       flex-direction: column;
-      gap: 7px
+      gap: 6px;
+      margin-bottom: 14px
     }
 
-    .cred li {
-      font-size: 14px;
+    .skill li {
+      font-size: 15px;
       font-weight: 500;
       color: var(--ink)
+    }
+
+    .skill .tools {
+      font-size: 13px;
+      color: var(--ink-2);
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      line-height: 1.5
+    }
+
+    /* Education */
+    .edu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line)
+    }
+
+    @media(max-width:680px) {
+      .edu {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .edu h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 8px
+    }
+
+    .edu p {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink)
+    }
+
+    .edu p span {
+      display: block
+    }
+
+    .edu p span+span {
+      font-weight: 400;
+      color: var(--ink-2)
     }
 
     /* ── Contact ──────────────────────────── */
@@ -552,9 +780,10 @@
     }
 
     .contact-sub {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--ink-2);
-      margin-bottom: 28px
+      margin-bottom: 28px;
+      max-width: 560px
     }
 
     .email-copy {
@@ -563,15 +792,27 @@
       border: 1.5px solid var(--line);
       border-radius: 99px;
       background: var(--surface);
-      overflow: hidden
+      overflow: hidden;
+      max-width: 100%
     }
 
-    .email-copy span {
+    .email-copy a {
       padding: 0 18px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--ink);
-      white-space: nowrap
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .email-copy a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px
+    }
+
+    .email-copy a:focus-visible {
+      outline-offset: -3px
     }
 
     .email-copy button {
@@ -579,22 +820,28 @@
       padding: 0 20px;
       background: var(--ink);
       color: #fff;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       border-radius: 0 99px 99px 0;
       transition: opacity var(--ease);
-      white-space: nowrap
+      white-space: nowrap;
+      flex-shrink: 0
     }
 
     .email-copy button:hover {
       opacity: .8
     }
 
+    .email-copy button:focus-visible {
+      outline-offset: -4px;
+      outline-color: #fff
+    }
+
     .social-col {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 10px
+      gap: 12px
     }
 
     @media(max-width:680px) {
@@ -602,15 +849,16 @@
         flex-direction: row;
         align-items: flex-start;
         flex-wrap: wrap;
-        gap: 16px
+        gap: 12px 20px
       }
     }
 
     .social-col a {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--ink-2);
-      transition: color var(--ease)
+      transition: color var(--ease);
+      padding: 4px 0
     }
 
     .social-col a:hover {
@@ -638,20 +886,20 @@
   <!-- NAV -->
   <header class="nav" id="siteNav">
     <div class="g nav-row">
-      <a href="#" class="nav-name">Gregory Durán</a>
+      <a href="#main" class="nav-name">Gregory Durán</a>
       <div class="nav-right">
-        <nav class="nav-links" aria-label="Principal">
+        <nav class="nav-links" data-i18n-aria="navigation.label" aria-label="Principal">
           <a href="#work" data-i18n="navigation.work">Proyectos</a>
           <a href="#about" data-i18n="navigation.about">Sobre mí</a>
           <a href="#contact" data-i18n="navigation.contact">Contacto</a>
         </nav>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-          <button id="btnEs" class="active">ES</button>
-          <button id="btnEn">EN</button>
+          <button type="button" id="btnEs" class="active" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+          <button type="button" id="btnEn" lang="en" aria-pressed="false" aria-label="English">EN</button>
         </div>
         <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
       </div>
-      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
+      <button type="button" class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mMenu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="6" x2="21" y2="6" />
@@ -662,14 +910,14 @@
     </div>
   </header>
 
-  <nav class="m-menu" id="mMenu" aria-label="Menú móvil">
+  <nav class="m-menu" id="mMenu" data-i18n-aria="navigation.mobileLabel" aria-label="Menú móvil">
     <a href="#work" data-i18n="navigation.work">Proyectos</a>
     <a href="#about" data-i18n="navigation.about">Sobre mí</a>
     <a href="#contact" data-i18n="navigation.contact">Contacto</a>
     <a href="#contact" class="nav-contact" data-i18n="navigation.cta">Hablemos</a>
-    <div class="lang-toggle" role="group" aria-label="Idioma / Language" style="margin-top:24px;height:42px">
-      <button id="btnEsM" class="active">ES</button>
-      <button id="btnEnM">EN</button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="btnEsM" class="active" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" id="btnEnM" lang="en" aria-pressed="false" aria-label="English">EN</button>
     </div>
   </nav>
 
@@ -677,92 +925,90 @@
 
     <!-- HERO -->
     <div class="g">
-      <section class="hero">
-        <p class="hero-tag rv" data-i18n="hero.tag">Product Design & Systems</p>
-        <h1 class="rv" data-i18n="hero.title">Me fascina el espacio donde el software y la vida cotidiana se cruzan.</h1>
-        <p class="hero-desc rv" data-i18n="hero.description">Me motiva transformar ideas complejas en experiencias claras y útiles. No veo las interfaces como elementos aislados, sino como parte de un sistema donde cada componente tiene un propósito y contribuye a una experiencia coherente.</p>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="hero-status rv"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.status">Disponible para roles remotos de tiempo completo</span></p>
+        <p class="hero-tag rv">Gregory Durán <span>— Product Designer · Software Engineering</span></p>
+        <h1 class="rv" id="hero-title" data-i18n="hero.title">Diseño productos digitales que funcionan bajo restricciones reales de tecnología y de uso.</h1>
+        <p class="hero-desc rv" data-i18n="hero.description">Product Designer con formación en Ingeniería de Software. Diseño la experiencia y también el sistema que la hace posible: flujos, estados, reglas y prevención de errores para personas que operan bajo presión.</p>
+        <p class="hero-quote rv" data-i18n="hero.quote">Me fascina el espacio donde el software y la vida cotidiana se cruzan.</p>
         <div class="hero-btns rv">
           <a href="#work" class="btn-fill">
-            <span data-i18n="hero.buttonProjects">Explorar proyectos</span>
+            <span data-i18n="hero.buttonProjects">Ver proyectos</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
+              <path d="M12 5v14M5 12l7 7 7-7" />
             </svg>
           </a>
           <a href="#contact" class="btn-line">
-            <span data-i18n="hero.buttonContact">Conversar sobre producto</span>
+            <span data-i18n="hero.buttonContact">Contactarme</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
+        <p class="hero-proof rv"><span data-i18n="hero.proof">Dos productos en uso real:</span> <a href="proyectos/baseball-scoreboard.html">Baseball Scoreboard</a> · <a href="proyectos/kerygma-stage.html">Kerygma Stage</a></p>
       </section>
     </div>
 
     <!-- WORK -->
     <div class="g">
-      <section class="work" id="work">
-        <p class="row-label" data-i18n="work.label">Proyectos seleccionados</p>
-
-        <div class="portfolio-note rv" role="note">
-          <span class="note-icon" aria-hidden="true">🚧</span>
-          <span><strong>Nota:</strong> Actualmente estoy renovando la documentación de mis proyectos y casos de estudio. Algunos trabajos se encuentran en proceso de publicación mientras actualizo su contenido, proceso y resultados.</span>
-        </div>
+      <section class="work" id="work" aria-labelledby="work-title">
+        <h2 class="row-label" id="work-title" data-i18n="work.label">Proyectos seleccionados</h2>
 
         <div class="work-grid" role="list">
           <!-- PROJECTS:START -->
           <!-- 01 Baseball Scoreboard -->
-          <div class="proj rv" role="listitem">
-            <a href="proyectos/baseball-scoreboard.html" class="proj-link" data-i18n-aria="projects.baseball.aria"></a>
+          <article class="proj rv" role="listitem">
+            <a href="proyectos/baseball-scoreboard.html" class="proj-link" data-i18n-aria="projects.baseball.aria" aria-label="Baseball Scoreboard — Ver caso de estudio"></a>
             <div class="proj-img">
-              <img src="assets/img/baseball-scoreboard/cover.jpg" alt="Preview Baseball Scoreboard" loading="lazy">
+              <img src="assets/img/baseball-scoreboard/cover.jpg" data-i18n-alt="projects.baseball.imageAlt" alt="Consola del operador y pantalla de proyección de Baseball Scoreboard" width="1600" height="1000" loading="lazy">
             </div>
             <div class="proj-body">
               <div class="proj-meta">
                 <span class="proj-num">01</span>
-                <span class="proj-type" data-i18n="projects.baseball.type"></span>
-                <span class="proj-status live" data-i18n="projects.baseball.status"></span>
+                <span class="proj-type" data-i18n="projects.baseball.type">Web App</span>
+                <span class="proj-status" data-i18n="projects.baseball.status">En uso real</span>
               </div>
-              <p class="proj-name" data-i18n="projects.baseball.title"></p>
-              <p class="proj-desc" data-i18n="projects.baseball.description"></p>
+              <h3 class="proj-name" data-i18n="projects.baseball.title">Baseball Scoreboard</h3>
+              <p class="proj-desc" data-i18n="projects.baseball.description">Marcador en vivo para un torneo comunitario de Béisbol Bíblico. Reemplacé pizarras y diapositivas actualizadas a mano por una consola donde las acciones frecuentes toman un clic y la pantalla del público se actualiza sola, sin depender de internet.</p>
+              <p class="proj-role"><strong data-i18n="projects.roleLabel">Rol:</strong> <span data-i18n="projects.baseball.role">Product Design + desarrollo frontend</span></p>
+              <ul class="proj-kpi">
+                <li data-i18n="projects.baseball.fact1">10–15 partidos operados</li>
+                <li data-i18n="projects.baseball.fact2">4 tipos de usuario</li>
+                <li data-i18n="projects.baseball.fact3">Funciona sin conexión</li>
+              </ul>
+              <span class="proj-cta" aria-hidden="true"><span data-i18n="projects.cta">Ver caso de estudio</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </span>
             </div>
-          </div>
+          </article>
 
           <!-- 02 Kerygma Stage -->
-          <div class="proj rv" role="listitem">
-            <a href="proyectos/kerygma-stage.html" class="proj-link" data-i18n-aria="projects.kerygma.aria"></a>
+          <article class="proj rv" role="listitem">
+            <a href="proyectos/kerygma-stage.html" class="proj-link" data-i18n-aria="projects.kerygma.aria" aria-label="Kerygma Stage — Ver caso de estudio"></a>
             <div class="proj-img">
-              <img src="assets/img/kerygma-stage/cover.jpg" alt="Preview Kerygma Stage" loading="lazy">
+              <img src="assets/img/kerygma-stage/cover.jpg" data-i18n-alt="projects.kerygma.imageAlt" alt="Consola del operador de Kerygma Stage con vista previa y vista en vivo" width="1600" height="1000" loading="lazy">
             </div>
             <div class="proj-body">
               <div class="proj-meta">
                 <span class="proj-num">02</span>
-                <span class="proj-type" data-i18n="projects.kerygma.type"></span>
-                <span class="proj-status live" data-i18n="projects.kerygma.status"></span>
+                <span class="proj-type" data-i18n="projects.kerygma.type">Desktop App</span>
+                <span class="proj-status" data-i18n="projects.kerygma.status">En uso semanal</span>
               </div>
-              <p class="proj-name" data-i18n="projects.kerygma.title"></p>
-              <p class="proj-desc" data-i18n="projects.kerygma.description"></p>
+              <h3 class="proj-name" data-i18n="projects.kerygma.title">Kerygma Stage</h3>
+              <p class="proj-desc" data-i18n="projects.kerygma.description">Software de proyección para cultos en vivo. La decisión central fue separar lo que el operador prepara de lo que ve la congregación, para que un error nunca llegue a la pantalla pública. Subtítulos y detección de versículos corren en el dispositivo, sin nube.</p>
+              <p class="proj-role"><strong data-i18n="projects.roleLabel">Rol:</strong> <span data-i18n="projects.kerygma.role">Product Design + desarrollo de punta a punta</span></p>
+              <ul class="proj-kpi">
+                <li data-i18n="projects.kerygma.fact1">Vista previa vs. en vivo</li>
+                <li data-i18n="projects.kerygma.fact2">3 audiencias, una app</li>
+                <li data-i18n="projects.kerygma.fact3">Offline-first</li>
+              </ul>
+              <span class="proj-cta" aria-hidden="true"><span data-i18n="projects.cta">Ver caso de estudio</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </span>
             </div>
-          </div>
-
-          <!-- 03 Nexo -->
-          <div class="proj rv" role="listitem">
-            <a href="proyectos/nexo.html" class="proj-link" data-i18n-aria="projects.nexo.aria"></a>
-            <div class="proj-img">
-              <!-- REEMPLAZAR: sube tu screenshot a assets/img/nexo/cover.jpg y descomenta -->
-              <!-- <img src="assets/img/nexo/cover.jpg" alt="Preview Nexo"> -->
-            </div>
-            <div class="proj-body">
-              <div class="proj-meta">
-                <span class="proj-num">03</span>
-                <span class="proj-type" data-i18n="projects.nexo.type"></span>
-                <span class="proj-status wip" data-i18n="projects.nexo.status"></span>
-              </div>
-              <p class="proj-name" data-i18n="projects.nexo.title"></p>
-              <p class="proj-desc" data-i18n="projects.nexo.description"></p>
-            </div>
-          </div>
+          </article>
           <!-- PROJECTS:END -->
 
         </div>
@@ -771,56 +1017,85 @@
 
     <!-- ABOUT -->
     <div class="g">
-      <section class="about" id="about">
+      <section class="about" id="about" aria-labelledby="about-title">
         <div class="about-grid">
           <div class="about-left rv">
-            <h2 data-i18n="about.title"></h2>
-            <p data-i18n="about.paragraph0"></p>
-            <p data-i18n="about.paragraph1"></p>
-            <p data-i18n="about.paragraph2"></p>
-            <p data-i18n="about.paragraph3"></p>
+            <p class="about-kicker" data-i18n="about.kicker">Cómo pienso</p>
+            <h2 id="about-title" data-i18n="about.title">Entiendo el sistema antes de diseñar la pantalla.</h2>
+            <p data-i18n="about.paragraph1">Estudié Ingeniería de Software en la Universidad APEC y terminé especializándome en diseño de producto. Esa formación cambió cómo diseño: una pantalla nunca es solo una pantalla, también es un conjunto de estados, reglas, dependencias y casos límite que alguien tendrá que construir y mantener.</p>
+            <p data-i18n="about.paragraph2">No sigo un proceso rígido. Primero intento entender cómo funciona el proceso real y dónde aparece la fricción; a veces eso significa observar, a veces operar el sistema yo mismo, y a veces entiendo el problema mientras prototipo. Valoro los estándares, pero cada producto necesita una forma propia de relacionarse con quienes lo usan.</p>
           </div>
           <div class="about-right rv">
-            <div class="cred">
-              <h3 data-i18n="about.disciplines.title"></h3>
+            <ul class="principles">
+              <li><strong data-i18n="about.principle1.title">Entender antes de diseñar</strong><span data-i18n="about.principle1.body">Cómo funciona el proceso hoy, dónde se rompe y qué necesitan realmente las personas.</span></li>
+              <li><strong data-i18n="about.principle2.title">Pensar en sistemas</strong><span data-i18n="about.principle2.body">Cada pantalla forma parte de algo más grande, con reglas, estados y dependencias.</span></li>
+              <li><strong data-i18n="about.principle3.title">Diseño e ingeniería, una misma conversación</strong><span data-i18n="about.principle3.body">Las mejores decisiones consideran a la vez a las personas y la realidad técnica del producto.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Qué hago -->
+        <div class="rv">
+          <h2 class="skills-head" data-i18n="skills.title">Lo que hago</h2>
+          <p class="skills-sub" data-i18n="skills.subtitle">Capacidades primero; las herramientas son secundarias.</p>
+          <div class="skills">
+            <div class="skill">
+              <h3 data-i18n="skills.design.title">Diseño</h3>
               <ul>
-                <li data-i18n="about.disciplines.item1"></li>
-                <li data-i18n="about.disciplines.item2"></li>
-                <li data-i18n="about.disciplines.item3"></li>
-                <li data-i18n="about.disciplines.item4"></li>
-                <li data-i18n="about.disciplines.item5"></li>
+                <li data-i18n="skills.design.item1">Product Design</li>
+                <li data-i18n="skills.design.item2">Diseño de interacción</li>
+                <li data-i18n="skills.design.item3">UX/UI</li>
+                <li data-i18n="skills.design.item4">Prototipado</li>
+                <li data-i18n="skills.design.item5">Accesibilidad (WCAG 2.1 AA)</li>
               </ul>
+              <p class="tools" data-i18n="skills.design.tools">Figma · Figma Make · Affinity</p>
             </div>
-            <div class="cred">
-              <h3 data-i18n="about.stack.title"></h3>
+            <div class="skill">
+              <h3 data-i18n="skills.research.title">Investigación</h3>
               <ul>
-                <li data-i18n="about.stack.item1"></li>
-                <li data-i18n="about.stack.item2"></li>
-                <li data-i18n="about.stack.item3"></li>
-                <li data-i18n="about.stack.item4"></li>
+                <li data-i18n="skills.research.item1">Observación en contexto</li>
+                <li data-i18n="skills.research.item2">Análisis de dominio y reglas</li>
+                <li data-i18n="skills.research.item3">Análisis de productos existentes</li>
+                <li data-i18n="skills.research.item4">Validación en uso real</li>
               </ul>
+              <p class="tools" data-i18n="skills.research.tools">Notas de campo · análisis funcional</p>
             </div>
-            <div class="cred">
-              <h3 data-i18n="about.learning.title"></h3>
+            <div class="skill">
+              <h3 data-i18n="skills.systems.title">Sistemas</h3>
               <ul>
-                <li data-i18n="about.learning.item1"></li>
+                <li data-i18n="skills.systems.item1">Sistemas de diseño</li>
+                <li data-i18n="skills.systems.item2">Arquitectura de información</li>
+                <li data-i18n="skills.systems.item3">Estados y flujos</li>
+                <li data-i18n="skills.systems.item4">Prevención de errores</li>
               </ul>
+              <p class="tools" data-i18n="skills.systems.tools">Fluent Design System · componentes reutilizables</p>
             </div>
-            <div class="cred">
-              <h3 data-i18n="about.education.title"></h3>
+            <div class="skill">
+              <h3 data-i18n="skills.engineering.title">Ingeniería</h3>
               <ul>
-                <li data-i18n="about.education.item1"></li>
-                <li data-i18n="about.education.item2"></li>
+                <li>HTML/CSS</li>
+                <li>JavaScript / TypeScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <li>Git</li>
               </ul>
+              <p class="tools" data-i18n="skills.engineering.tools">Usado en proyectos: Vite · Tauri (Rust) · VS Code</p>
             </div>
-            <div class="cred">
-              <h3 data-i18n="about.philosophy.title"></h3>
-              <ul>
-                <li data-i18n="about.philosophy.item1"></li>
-                <li data-i18n="about.philosophy.item2"></li>
-                <li data-i18n="about.philosophy.item3"></li>
-              </ul>
-            </div>
+          </div>
+        </div>
+
+        <div class="edu rv">
+          <div>
+            <h3 data-i18n="about.education.title">Educación</h3>
+            <p><span data-i18n="about.education.degree">Ingeniería de Software</span><span>Universidad APEC</span></p>
+          </div>
+          <div>
+            <h3 data-i18n="about.languages.title">Idiomas</h3>
+            <p><span data-i18n="about.languages.value">Español · Inglés</span></p>
+          </div>
+          <div>
+            <h3 data-i18n="about.location.title">Ubicación</h3>
+            <p><span data-i18n="about.location.value">República Dominicana · trabajo remoto</span></p>
           </div>
         </div>
       </section>
@@ -828,21 +1103,22 @@
 
     <!-- CONTACT -->
     <div class="g">
-      <section class="contact" id="contact">
+      <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="contact-grid">
           <div class="rv">
-            <h2 data-i18n-html="contact.title">Si piensas el producto<br>de forma parecida, hablemos.</h2>
-            <p class="contact-sub" data-i18n="contact.subtitle">Disponible para un rol remoto de tiempo completo. Respondo en español e inglés.</p>
+            <h2 id="contact-title" data-i18n-html="contact.title">Si piensas el producto<br>de forma parecida, hablemos.</h2>
+            <p class="contact-sub" data-i18n="contact.subtitle">Abierto a oportunidades de Product Design remotas y de tiempo completo. Respondo en español e inglés.</p>
             <div class="email-copy">
-              <span id="emailAddr">gregorymduran01@outlook.com</span>
-              <button id="copyBtn" data-i18n="contact.copyButton" data-i18n-title="contact.emailLabel" title="Copiar correo electrónico">Copiar</button>
+              <a href="mailto:gregorymduran01@outlook.com" id="emailAddr">gregorymduran01@outlook.com</a>
+              <button type="button" id="copyBtn" data-i18n="contact.copyButton" data-i18n-aria="contact.emailLabel" aria-label="Copiar correo electrónico">Copiar</button>
             </div>
+            <p class="sr-only" id="copyStatus" role="status" aria-live="polite"></p>
           </div>
           <div class="social-col rv">
             <a href="https://www.linkedin.com/in/gregmduran/" target="_blank" rel="noopener" data-i18n="contact.social.linkedin">LinkedIn ↗</a>
             <a href="https://github.com/gregorymduran" target="_blank" rel="noopener" data-i18n="contact.social.github">GitHub ↗</a>
             <a href="https://www.behance.net/gregmduran" target="_blank" rel="noopener" data-i18n="contact.social.behance">Behance ↗</a>
-            <a href="assets/cv/CV_Gregory_Mendoza.pdf" target="_blank" rel="noopener" data-i18n="contact.social.cv">Descargar CV ↗</a>
+            <a href="assets/cv/CV_Gregory_Mendoza.pdf" target="_blank" rel="noopener" data-i18n="contact.social.cv">Descargar CV (PDF) ↗</a>
           </div>
         </div>
       </section>
@@ -852,13 +1128,13 @@
 
   <footer class="g footer">
     <span data-i18n="footer.left">Gregory Iralbel Mendoza Durán · República Dominicana · 2026</span>
-    <span data-i18n="footer.right">Diseño + Ingeniería de Software</span>
+    <span data-i18n="footer.right">Product Design × Software Engineering</span>
   </footer>
 
   <script src="./js/i18n.js"></script>
   <script src="./js/main.js"></script>
 
-  <!-- Agente conversacional local: lee ./portfolio.md, sin backend -->
+  <!-- Asistente local (opcional): responde con el contenido de ./agent/*.md, sin backend -->
   <script src="./agent.js" defer></script>
 </body>
 

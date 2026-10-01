@@ -1,185 +1,228 @@
 # Gregory Durán {tags: intro, identity, product, technology}
 
-Product Designer with a background in Software Engineering.
+Product Designer with a Software Engineering background.
 
-My interest never started with interface design. It started with imagining how technology would evolve: operating systems, new ways of interacting, and how people would live alongside software in the future.
+I design digital products with an understanding of both the experience and the system that makes it possible: flows, states, rules, and error prevention for people who work under pressure.
 
-I design products before screens because I believe an interface only makes sense when it responds to a bigger idea.
-
----
-
-## Who am I? {intent: identity, aliases: who are you, who're you, about you, introduce yourself, tell me about yourself, gregory; tags: identity, intro; priority: 10}
-
-I've always loved technology.
-
-Before I learned design, I already spent hours watching futuristic Windows concepts, imagining how operating systems, smart homes, and the interaction between people and computers might change.
-
-Over time I understood that what I really wanted to do was take part in building those products.
-
-That's why I studied Software Engineering and ended up specializing in product design.
-
-Today I still have the same curiosity: understanding how digital products evolve.
+I'm fascinated by the space where software meets everyday life.
 
 ---
 
-## How do I think? {intent: mindset, aliases: how do you think, your mindset, your philosophy, your criteria, how you think; tags: philosophy, mindset; priority: 10}
+## Who am I? {intent: identity; aliases: who are you, who're you, about you, introduce yourself, tell me about yourself, gregory; tags: identity, intro; priority: 10}
 
-I don't usually start by thinking about colors or components.
+I'm Gregory Durán, a Product Designer with a Software Engineering background, based in the Dominican Republic.
 
-I try to understand what idea sustains the product.
+I've always loved technology. Before I learned design, I spent hours looking at futuristic Windows concepts, imagining how operating systems and the way people interact with computers might change.
 
-When I use a new app I first observe what works.
-
-Then I try to figure out why someone made certain decisions.
-
-Only then do I think about how it could be improved.
-
-I'm interested in understanding the reasoning behind the product before judging the solution.
+Over time I realized I wanted to help build those products. That's why I studied Software Engineering at Universidad APEC and ended up specializing in product design.
 
 ---
 
-## How do I design? {intent: design_process, aliases: how do you design, your process, your workflow, your methodology, how you work; tags: process, ux, ui; priority: 10}
+## What do I do? {intent: what_i_do; aliases: what do you do, what's your role, your role, value, what value do you bring; tags: identity, product; priority: 10}
 
-I don't follow a fixed methodology.
+I design clear digital products, interaction systems, and experiences that hold up under real technical and real-world constraints.
 
-Every project needs to find its own process.
+My edge is understanding how what I design gets built. That lets me treat technical constraints as part of the design, not something discovered at the end.
 
-Sometimes I start by writing ideas.
-
-Other times I make mental diagrams.
-
-Sometimes I start designing directly because I often understand the problem while building the interface.
-
-I also compare products from completely different industries to find solutions that can be adapted to other contexts.
-
-While I design I'm already thinking about how it could be built technically.
-
-I don't separate design and development.
+My two main case studies, Baseball Scoreboard and Kerygma Stage, are products in real use that I designed and built end to end.
 
 ---
 
-## What do I value? {intent: philosophy, aliases: your values, your principles, what you value; tags: philosophy; priority: 9}
+## How do I think? {intent: mindset; aliases: how do you think, your mindset, your philosophy, your criteria, how you think; tags: philosophy, mindset; priority: 10}
 
-I believe standards matter.
+I understand the system before I design the screen.
 
-But I also believe many products end up feeling the same.
+I start by understanding how the process works today, where it breaks, and what people actually need.
 
-Every product should develop its own personality when that difference adds value.
+I think in systems: every screen is part of something bigger, with its own rules, states, and dependencies.
 
-I'd rather adapt the process to the project than follow rigid methodologies.
-
-I'm not interested in designing by chasing trends.
-
-I'm interested in understanding why a solution works.
+And for me, design and engineering are one conversation: the best decisions account for people and for the technical reality of the product at the same time.
 
 ---
 
-## Software Engineering {intent: engineering, aliases: engineering, university, studies, education, software engineering; tags: engineering, education; priority: 9}
+## How do I design? {intent: design_process; aliases: how do you design, your process, your workflow, your methodology, how you work; tags: process, ux, ui; priority: 10}
 
-Studying Software Engineering completely changed how I design.
+I don't follow a fixed methodology; every project needs its own process.
 
-I learned to think in requirements, architecture, technical constraints, and scalability.
+I start by understanding how the real process works and where the friction is. Sometimes that means observing, sometimes running the system myself (on Baseball Scoreboard I was the scoreboard operator), and sometimes I only understand the problem once I'm prototyping.
 
-That's why an interface never represents just one screen.
+I try to tie every decision to an observed problem: problem, insight, decision, and why.
 
-It also represents states, flows, components, and decisions that will need to hold up as the product evolves.
+I validate in real use: with real users, in the real context, on real hardware.
 
 ---
 
-## Skills {intent: skills, aliases: skills, stack, technologies, tools, what do you know; tags: skills; priority: 8}
+## What do I value? {intent: philosophy; aliases: your values, your principles, what you value; tags: philosophy; priority: 9}
 
-### Product Design {tags: design}
+I think standards matter because they bring clarity and consistency.
 
-- UX
-- UI
-- Information architecture
+But many products end up feeling the same. Every product should develop its own way of relating to the people who use it, when that difference adds value.
+
+I care about understanding why a solution works, not about following trends.
+
+---
+
+## Software Engineering {intent: engineering; aliases: engineering, university, studies, education, software engineering, apec; tags: engineering, education; priority: 9}
+
+I studied Software Engineering at Universidad APEC.
+
+That background changed how I design: I learned to think about requirements, architecture, technical constraints, and scalability.
+
+That's why an interface is never just a screen: it's also a set of states, rules, dependencies, and edge cases that someone will have to build and maintain.
+
+---
+
+## Skills {intent: skills; aliases: skills, stack, technologies, tools, what do you know, capabilities; tags: skills; priority: 8}
+
+I put capabilities ahead of tools.
+
+### Design {tags: design}
+
+- Product Design
+- Interaction Design
+- UX/UI
+- Prototyping
+- Accessibility (WCAG 2.1 AA)
+
+Tools: Figma, Figma Make, Affinity.
+
+### Research {tags: research}
+
+- Contextual observation
+- Domain and rules analysis
+- Competitive product analysis
+- Validation in real use
+
+### Systems {tags: systems}
+
 - Design systems
-- User research
-- Wireframes
-- High-fidelity prototypes
-- Accessibility
+- Information architecture
+- States and flows
+- Error prevention
 
-### Frontend Development {tags: frontend}
+Reference: Fluent Design System.
 
-- HTML
-- CSS
-- JavaScript
-- TypeScript
+### Engineering {tags: frontend, engineering}
+
+- HTML/CSS
+- JavaScript / TypeScript
 - React
-- Vite
-
-### Tools {tags: tools}
-
-- Figma
-- Affinity Suite
+- Python
 - Git
-- GitHub
+
+I've also used Vite and Tauri (Rust) in projects.
 
 ---
 
-## What inspires me? {intent: inspiration, aliases: inspiration, references, influences, windows, fluent; tags: inspiration; priority: 8}
+## What inspires me? {intent: inspiration; aliases: inspiration, references, influences, windows, fluent; tags: inspiration; priority: 8}
 
-I'm especially inspired by operating systems.
+Operating systems inspire me the most.
 
 I enjoy analyzing Windows, Fluent Design, iOS, iPadOS, Microsoft Office, Notion, Feedly, and DoorDash.
 
-Not because I want to copy their look.
-
-I'm interested in understanding how they organize information, how they build identity, and how they solve interaction problems.
+Not to copy how they look: I want to understand how they organize information, build identity, and solve interaction problems.
 
 ---
 
-## Projects {intent: projects, aliases: projects, portfolio, cases, work, case studies; tags: projects; priority: 8}
+## Projects {intent: projects; aliases: projects, portfolio, cases, work, case studies; tags: projects; priority: 8}
 
-Projects represent different stages of how I think.
+My two main case studies are products in real use that I designed and built end to end:
 
-More than showing features, they show how I approached each problem.
+- Baseball Scoreboard: a live scoreboard and projection screen for a community Bible Baseball tournament.
+- Kerygma Stage: presentation software for live church services, used every week at a church.
 
-### Baseball Scoreboard {intent: baseball_scoreboard; tags: realtime, sports, javascript; priority: 10}
+Each case covers the context, research, design decisions, iteration, results (separating usage, measured, and expected outcomes), and what I learned.
 
-A system used during a real tournament to sync an operator console with a projection screen without relying on a server.
+### Baseball Scoreboard {intent: baseball_scoreboard; aliases: baseball, scoreboard, bible baseball; tags: realtime, sports, offline; priority: 10}
 
-Besides the design, I took part in all of the product logic and its implementation.
+A live scoreboard and projection screen for the community Bible Baseball tournament run by Ministerio Cristiano HOME.
 
-It was the project where I learned the most about synchronization, architecture, and design for real-time use.
+The problem: a single volunteer logged every play by hand on whiteboards and PowerPoint while the game kept going, and any mistake was projected in front of everyone. That volunteer was me.
 
----
-
-### Kerygma Stage {intent: kerygma_stage; tags: realtime, church, offline, rust; priority: 10}
-
-Desktop software that replaces PowerPoint and ProPresenter for projecting song lyrics and Bible verses during a live worship service. Iglesia Hogar de Salvación y Alabanza uses it weekly.
-
-I designed and built the whole product: a React interface over a Rust backend (Tauri), with live captions and voice-driven verse detection that run 100% on-device, with no dependency on the internet or the cloud.
-
-The most important decision was separating what the operator stages from what the audience actually sees, so no one in the congregation ever sees a mistake mid-correction.
+My role: Product Designer and front-end developer, end to end (React, TypeScript, Vite).
 
 ---
 
-### Jobs Hunter {intent: jobs_hunter; tags: ux, research; priority: 9}
+### Baseball Scoreboard: design decisions {intent: baseball_decisions; aliases: baseball decisions, scoreboard decisions; tags: baseball, decisions; priority: 8}
 
-Conceptual redesign of a job search platform.
+Four main decisions, each tied to an observed problem:
 
-I analyzed similar products, documented comparisons, and validated decisions with users to understand which problems were real and which came from initial assumptions.
-
----
-
-### Pulse {intent: pulse; tags: windows, fluent; priority: 9}
-
-Conceptual time-tracking app aimed at independent workers.
-
-It was an opportunity to explore Fluent Design and think about how an operating system can shape a product's entire experience.
+1. One click for frequent actions, because outs, runs, and inning changes repeat dozens of times per game.
+2. A projection designed on its own, not a mirror of the console: the audience needs to read the score from a distance, the operator needs controls.
+3. Prevent and recover: destructive actions kept apart, confirmation for anything irreversible, a play history, and undo for the last play.
+4. Work without internet: the console and the projection sync inside the browser, with no server.
 
 ---
 
-### HidroCity {intent: hidrocity; tags: mobile, public_services; priority: 8}
+### Baseball Scoreboard: results {intent: baseball_results; aliases: baseball results, baseball impact, baseball metrics, metrics; tags: baseball, results; priority: 8}
 
-Concept app for managing drinking-water services.
+Usage: 10–15 games run on the system, 6 teams, and 25–50 in-person spectators per game day. It was used throughout the tournament.
 
-The goal was to simplify everyday processes and adapt the experience for both citizens and institution staff.
+Real use surfaced rules that hadn't been accounted for, and they were added later.
+
+I didn't measure error rates or timings before and after, so I don't report quantitative improvements. Fewer visible mistakes and a lighter load for the operator are the design intent, not measured results.
 
 ---
 
-## What kind of products do I enjoy? {intent: interests, aliases: what products do you like, favorite products, your interests; tags: interests; priority: 8}
+### Kerygma Stage {intent: kerygma_stage; aliases: kerygma, presentation software, church, service; tags: realtime, church, offline, rust; priority: 10}
+
+Desktop software for projecting lyrics, verses, and announcements during a live church service. Iglesia Hogar de Salvación y Alabanza uses it every week.
+
+The problem: in general-purpose tools like PowerPoint or Google Slides, preparing means exposing. Fixing a typo, finding a verse, or improvising all happens in front of the whole congregation.
+
+My role: Product Designer and full-stack developer, end to end: a React interface on a Rust back end (Tauri).
+
+---
+
+### Kerygma Stage: design decisions {intent: kerygma_decisions; aliases: kerygma decisions, preview, live, offline first, suggest; tags: kerygma, decisions; priority: 8}
+
+Three decisions matter more than every feature combined:
+
+1. Preview vs. live: the operator prepares and reviews in the preview; nothing reaches the projection until they confirm it, even when editing live.
+2. Suggest vs. automate: when the system detects a verse in what's being said, it suggests it to the operator; the projection doesn't change until they confirm.
+3. Offline-first: everything works with no connection; captions and verse detection run on the device and the audio never leaves the building.
+
+Other features: Bible search, Ctrl+K, editor, multi-monitor, phone remote control, and a confidence monitor.
+
+---
+
+### Kerygma Stage: results {intent: kerygma_results; aliases: kerygma results, kerygma impact; tags: kerygma, results; priority: 8}
+
+Usage: weekly, in services at Iglesia Hogar de Salvación y Alabanza, serving three audiences with the same app: operator, stage, and congregation.
+
+Testing in real services surfaced problems the tests didn't catch (microphone permissions, audio dropouts, spoken numbers), and they were fixed.
+
+There are no formal before-and-after metrics yet; the rest are expected outcomes, not measured ones.
+
+---
+
+### What I learned {intent: learnings; aliases: learnings, what did you learn, lessons, what would you do differently; tags: learnings; priority: 7}
+
+Understand the domain before designing: without fieldwork, any interface would have solved the wrong problem.
+
+Design against real pressure, not an ideal scenario.
+
+What I'd do differently: define how to measure from the start, for example by logging mistakes and corrections before replacing a process, so I can talk about impact with data.
+
+---
+
+### Concept work {intent: concept_projects; aliases: jobs hunter, pulse, hidrocity, nexo, concepts; tags: concepts; priority: 6}
+
+I've also worked on concept projects such as Jobs Hunter, Pulse, HidroCity, and Nexo. They aren't published as case studies because they don't yet have enough documented process to present with evidence.
+
+---
+
+## How do I use AI? {intent: ai_workflow; aliases: ai, artificial intelligence, chatgpt, claude, copilot; tags: ai, process; priority: 9}
+
+I use AI as a design and engineering copilot to explore ideas, analyze information, challenge assumptions, and speed up implementation.
+
+Product decisions, design direction, validation, and final judgment are mine.
+
+On Baseball Scoreboard I used it to explore interface alternatives and edge cases, and as a coding copilot. On Kerygma Stage, as a coding copilot. In both cases I reviewed, adapted, and tested everything in real use.
+
+---
+
+## What kind of products do I enjoy? {intent: interests; aliases: what products do you like, favorite products, your interests; tags: interests; priority: 8}
 
 I'm especially interested in:
 
@@ -187,70 +230,49 @@ I'm especially interested in:
 - Productivity tools.
 - Dashboards.
 - Enterprise software.
-- Complex platforms.
-- Interfaces where interaction plays a major role.
+- Products used under pressure or in real time.
+- Interfaces where interaction plays an important role.
 
-If I had unlimited resources I'd spend several years designing an operating system.
-
-I consider it the most complete digital product because it connects practically every experience we have with technology.
+With unlimited resources, I'd spend years designing an operating system: it's the digital product that connects nearly every experience we have with technology.
 
 ---
 
-## FAQ {intent: faq, aliases: faq, frequently asked questions, questions; tags: faq; priority: 10}
+## FAQ {intent: faq; aliases: faq, frequently asked questions, questions; tags: faq; priority: 10}
 
-Some questions that tend to come up:
+Some questions that come up often:
 
-Who are you? I'm Gregory Durán, a Product Designer with a background in Software Engineering. My interest in design started long before I learned any tools; it began by imagining how technology would evolve, especially operating systems and new ways for people and software to interact.
+Who are you? I'm Gregory Durán, a Product Designer with a Software Engineering background.
 
-What do you do? I design digital products. I'm interested in understanding the whole problem before designing a single isolated screen. I try to connect user needs, product goals, and technical possibilities into one coherent solution.
+What do you do? I design digital products with an understanding of both the experience and the system that makes it possible.
 
-Are you a designer or a developer? I have a background in Software Engineering and work as a Product Designer. While I design I also think about how a solution will be implemented technically, so I don't see the two disciplines as separate worlds.
+Are you a designer or a developer? I'm a Product Designer. My Software Engineering background lets me design with an understanding of how the product gets built, and I also implemented both of my case studies.
 
-How did you get started in design? My interest started by watching futuristic Windows concepts, operating systems, and new ways of interacting. Before designing interfaces I did some graphic design work, but over time I discovered what I really enjoyed was thinking through whole products.
+Which project best represents you? Baseball Scoreboard and Kerygma Stage: products in real use where technical constraints shaped many of the experience decisions.
 
-What's your design process like? I don't follow a fixed methodology. Sometimes I start by writing ideas, other times with mental diagrams, and sometimes by designing directly. I often understand the problem while building the interface.
+Do you have impact metrics? I report real usage data (for example, 10–15 games on Baseball Scoreboard and weekly use of Kerygma Stage). I didn't formally measure errors or timings before and after, so I don't present quantitative improvements.
 
-How do you analyze an app? When I use a new app I first try to figure out what works. Then I try to understand why someone made certain decisions. Only then do I think about possible improvements.
+How do you do research? Through contextual observation, domain and competitive analysis, and validation in real use. On Baseball Scoreboard I was the operator; on Kerygma Stage I started from problems reported by presentation operators.
 
-What do you value in an interface? I value an interface having personality and responding to the product's context. I believe standards matter, but they shouldn't make every product feel the same.
+What tools do you use? Figma, Figma Make, and Affinity for design; HTML/CSS, JavaScript, TypeScript, React, Python, and Git as technical context. Tools come second to judgment.
 
-What don't you like about current design? I don't like generic interfaces or products that follow trends without asking whether they actually add value. I'd rather adapt the process to each project.
+Do you use AI? Yes, as a copilot to explore, challenge assumptions, and speed up implementation. The decisions and the validation are mine.
 
-What products inspire you? I'm especially inspired by Windows, Fluent Design, iOS, iPadOS, Microsoft Office, Notion, Feedly, and DoorDash. More than copying their look, I'm interested in understanding how they organize information and build experiences.
+How do you work with developers? I try to understand technical constraints from the start and keep an ongoing conversation so design and development evolve together.
 
-Why do you like Windows? Windows was one of the reasons I got interested in product design. I was always drawn to how its interfaces evolved and how an operating system can define the experience of an entire ecosystem.
+How do you take feedback? I listen first. I want to understand the reasoning behind each comment before deciding whether a solution should change or stay.
 
-Why did you study Software Engineering? Software Engineering taught me to think in architecture, requirements, scalability, and technical constraints. I use that knowledge every time I design a product today.
+What are you looking for right now? Full-time remote Product Design roles where I can take part in how the product evolves, not just in designing screens.
 
-What tools do you use? I mainly work with Figma, Adobe Creative Cloud, HTML, CSS, JavaScript, TypeScript, and React. That said, I consider tools secondary compared to design judgment.
+Which languages do you work in? Spanish and English.
 
-What technologies do you know? I have experience with HTML, CSS, JavaScript, TypeScript, React, Vite, and Git. I also work with Fluent Design System and WinUI as references for interface design.
-
-Which project best represents you? Probably Baseball Scoreboard. It was a real project where I took part in both design and development, and it let me solve real-time interaction and synchronization problems.
-
-What was the biggest challenge you've faced? One of the biggest challenges was designing solutions that were easy to use while solving real technical constraints. I'm interested in finding that balance between experience and implementation.
-
-What kind of projects do you enjoy? I'm especially interested in operating systems, productivity tools, dashboards, enterprise software, and any product where I can explore new ways of interacting.
-
-What would you build with unlimited resources? I'd build an operating system. I think it's the most complex digital product and the one that most influences how we experience every other app.
-
-How do you work with developers? I like working collaboratively. I try to understand technical constraints from the start and keep an ongoing conversation so design and development evolve together.
-
-How do you take feedback? I listen first. I'm interested in understanding the reasoning behind each comment before deciding whether a solution should change or stay the same.
-
-What are you currently looking for? I'm open to full-time remote opportunities related to product design and digital products, where I can take part in the product's evolution, not only in designing screens.
-
-What languages can you work in? I can communicate in Spanish and English.
-
-How can I contact you? You can write to me at: gregorymduran01@outlook.com
+How can I contact you? Email me at: gregorymduran01@outlook.com
 
 ---
 
-## Contact {intent: contact, aliases: contact, get in touch, email, hire, work together, availability; tags: contact; priority: 10}
+## Contact {intent: contact; aliases: contact, get in touch, email, hire, work together, availability, available, cv, resume, linkedin; tags: contact; priority: 10}
 
-I'm currently open to full-time remote opportunities related to product design.
+I'm open to full-time remote Product Design opportunities. I work in Spanish and English.
 
-I also enjoy talking about technology, operating systems, interaction, and the evolution of digital products.
+Email: gregorymduran01@outlook.com
 
-Email:
-gregorymduran01@outlook.com
+You can also find me on LinkedIn (linkedin.com/in/gregmduran), GitHub (github.com/gregorymduran), and Behance (behance.net/gregmduran). My CV is available in the contact section.

@@ -423,12 +423,12 @@
   // HTML directo con file:// en vez de por un servidor) — así nunca se muestra
   // la clave cruda ("agent.xxx") en pantalla.
   var FAQ_ANSWER_FALLBACK_ES = {
-    who: 'Soy Gregory Durán, Product Designer con formación en Ingeniería de Software.',
-    what: 'Diseño productos digitales y me enfoco en entender el problema completo antes de pensar en una solución visual.',
-    projects: 'He trabajado en proyectos como Baseball Scoreboard, Jobs Hunter, Pulse e HidroCity.',
-    skills: 'Tengo experiencia en diseño de producto, UX/UI, investigación, arquitectura de información y desarrollo frontend con HTML, CSS, JavaScript, TypeScript y React.',
-    contact: 'Puedes escribirme a gregorymduran01@outlook.com.',
-    process: 'No sigo una metodología fija. A veces empiezo escribiendo ideas, otras haciendo diagramas mentales o diseñando directamente según el contexto del proyecto.'
+    who: "Soy Gregory Durán, Product Designer con formación en Ingeniería de Software.",
+    what: "Diseño productos digitales entendiendo tanto la experiencia como el sistema que la hace posible.",
+    projects: "Mis casos de estudio principales son Baseball Scoreboard y Kerygma Stage: dos productos en uso real que diseñé y construí de punta a punta.",
+    skills: "Diseño de producto, diseño de interacción, UX/UI, sistemas de diseño e investigación; y como contexto técnico, HTML/CSS, JavaScript/TypeScript, React, Python y Git.",
+    contact: "Puedes escribirme a gregorymduran01@outlook.com.",
+    process: "No sigo una metodología fija: primero intento entender cómo funciona el proceso real y dónde aparece la fricción. A veces observo, a veces opero el sistema yo mismo y a veces entiendo el problema mientras prototipo."
   };
 
   function reverseTriggerMap(lang) {
@@ -488,6 +488,7 @@
   // CHAT UI — HTML/CSS aislado, liquid glass, barra flotante persistente sin botón de enviar
   // ═════════════════════════════════════════════
   var STYLE = `
+  body{padding-bottom:96px}
   .gd-agent-bar{
     position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
     z-index:9999;width:640px;max-width:calc(100vw - 32px);
@@ -538,8 +539,8 @@
 
   .gd-agent-input:focus,
   .gd-agent-input:focus-visible{
-    background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.24);
-    box-shadow:0 0 0 3px rgba(0,0,0,.08);
+    background:rgba(0,0,0,.05);border-color:#0D0D0D;
+    box-shadow:0 0 0 3px rgba(0,0,0,.12);
   }
 
   .gd-agent-input:focus::before,
@@ -569,9 +570,11 @@
     background:rgba(0,0,0,.12);
   }
   .gd-agent-toggle:focus-visible{
-    outline:2px solid rgba(0,0,0,.24);outline-offset:2px;
+    outline:2px solid #0D0D0D;outline-offset:2px;
   }
   .gd-agent-bar.collapsed .gd-agent-toggle{transform:rotate(180deg)}
+  .gd-agent-toggle svg{width:16px;height:16px}
+  .gd-agent-toggle .gd-ico-chat{display:none}
 
   .gd-agent-body{
     display:flex;flex-direction:column;max-height:380px;overflow:hidden;
@@ -593,7 +596,7 @@
   .gd-agent-messages::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.35)}
 
   .gd-agent-msg{
-    max-width:88%;font-size:13px;line-height:1.6;padding:11px 14px;
+    max-width:88%;font-size:14px;line-height:1.6;padding:11px 14px;
     border-radius:16px;white-space:pre-wrap;word-wrap:break-word;
     transition:all 220ms cubic-bezier(.2,.0,.8,1);
   }
@@ -651,16 +654,25 @@
     .gd-agent-messages{max-height:50vh;padding:12px 14px}
     .gd-agent-chips{padding:0 14px 14px}
     .gd-agent-inputrow{padding:12px 12px}
-    .gd-agent-input{padding:11px 16px;font-size:14px}
+    .gd-agent-input{padding:11px 16px;font-size:16px}
+    /* En móvil, minimizado se reduce a un botón redondo en la esquina
+       para no tapar el contenido ni los CTA. */
+    .gd-agent-bar.collapsed{left:auto;width:auto;border-radius:99px}
+    .gd-agent-bar.collapsed .gd-agent-body,
+    .gd-agent-bar.collapsed .gd-agent-input{display:none}
+    .gd-agent-bar.collapsed .gd-agent-inputrow{padding:6px;border-top:0}
+    .gd-agent-bar.collapsed .gd-agent-toggle{transform:none;width:44px;height:44px;background:#0D0D0D;color:#fff;border-color:#0D0D0D}
+    .gd-agent-bar.collapsed .gd-ico-chev{display:none}
+    .gd-agent-bar.collapsed .gd-ico-chat{display:block}
   }
 
   @media(max-width:480px){
     .gd-agent-bar{bottom:12px;left:12px;right:12px}
     .gd-agent-messages{padding:10px 12px;gap:10px}
-    .gd-agent-msg{max-width:92%;font-size:12.5px;padding:9px 12px}
+    .gd-agent-msg{max-width:92%;font-size:14px;padding:9px 12px}
     .gd-agent-chips{padding:0 12px 12px;gap:6px}
-    .gd-agent-chip{padding:6px 12px;font-size:11px}
-    .gd-agent-input{padding:10px 14px;font-size:13px}
+    .gd-agent-chip{padding:8px 12px;font-size:13px}
+    .gd-agent-input{padding:10px 14px;font-size:16px}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -680,15 +692,16 @@
   function buildWidget() {
     var wrap = document.createElement('div');
     wrap.innerHTML =
-      '<div class="gd-agent-bar" id="gdAgentBar">' +
+      '<div class="gd-agent-bar collapsed" id="gdAgentBar">' +
         '<div class="gd-agent-body" id="gdAgentBody">' +
           '<div class="gd-agent-messages" id="gdAgentMessages"></div>' +
           '<div class="gd-agent-chips" id="gdAgentChips"></div>' +
         '</div>' +
         '<div class="gd-agent-inputrow">' +
-          '<input class="gd-agent-input" id="gdAgentInput" type="text" data-i18n-placeholder="agent.placeholder" placeholder="Pregúntame sobre este portafolio…" autocomplete="off">' +
-          '<button class="gd-agent-toggle" id="gdAgentToggle" data-i18n-aria="agent.toggleAria" aria-label="Minimizar/expandir conversación">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>' +
+          '<input class="gd-agent-input" id="gdAgentInput" type="text" data-i18n-placeholder="agent.placeholder" data-i18n-aria="agent.placeholder" placeholder="Pregúntame sobre este portafolio…" aria-label="Pregúntame sobre este portafolio…" autocomplete="off">' +
+          '<button type="button" class="gd-agent-toggle" id="gdAgentToggle" data-i18n-aria="agent.toggleAria" aria-label="Minimizar/expandir conversación" aria-controls="gdAgentBody" aria-expanded="false">' +
+            '<svg class="gd-ico-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>' +
+            '<svg class="gd-ico-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>' +
           '</button>' +
         '</div>' +
       '</div>';
@@ -739,7 +752,13 @@
     var index = { byTitle: {}, byIntent: {}, byKeyword: {}, byAlias: {}, byFile: {} };
     var ready = false;
 
-    toggle.addEventListener('click', function () { bar.classList.toggle('collapsed'); });
+    // Empieza minimizado: el asistente es un extra, no el camino principal para ver el trabajo.
+    function setExpanded(open) {
+      bar.classList.toggle('collapsed', !open);
+      toggle.setAttribute('aria-expanded', String(open));
+    }
+    toggle.addEventListener('click', function () { setExpanded(bar.classList.contains('collapsed')); });
+    input.addEventListener('focus', function () { setExpanded(true); });
     input.addEventListener('click', function (e) { e.stopPropagation(); });
 
     function showChips(lastSection) {
@@ -836,7 +855,7 @@
     function handleQuery(query) {
       query = (query || '').trim();
       if (!query) return;
-      if (bar.classList.contains('collapsed')) bar.classList.remove('collapsed');
+      if (bar.classList.contains('collapsed')) setExpanded(true);
       addMessage(messages, query, 'user');
       input.value = '';
 

@@ -46,14 +46,29 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
 
   html {
     scroll-behavior: auto;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip {
@@ -71,7 +86,9 @@ ul {
   left: 0;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
   border-radius: 4px;
@@ -140,6 +157,7 @@ a:focus-visible {
 
 .lang-toggle button {
   height: 100%;
+  min-width: 40px;
   padding: 0 12px;
   font-size: 12px;
   font-weight: 700;
@@ -158,20 +176,28 @@ a:focus-visible {
   color: var(--ink);
 }
 
-.rv {
+/* Revelado al hacer scroll: solo se oculta el contenido si JS está activo
+   (la clase .js la pone un script inline en <head>), así nunca queda invisible. */
+.js .rv {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 520ms ease, transform 520ms ease;
 }
 
-.rv.in {
+.js .rv.in {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rv {
+  .js .rv {
     opacity: 1;
     transform: none;
+    transition: none;
   }
+}
+
+.lang-toggle button:focus-visible {
+  outline-offset: -3px;
+  border-radius: 99px;
 }
